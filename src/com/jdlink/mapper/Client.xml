@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jdlink.mapper.ClientMapper">
+    <insert id="add" parameterType="Client" >
+        insert into client ( clientId, temporaryId, groupId, companyName,
+          organizationCode, licenseCode, representative, postCode, enterpriseType, operationMode,
+          operationType, contingencyPlan, operationRecord, location, street, applicationStatus,
+          materialAttachmentUrl, processAttachmentUrl, processDesp, contactName, phone, mobile,
+          email, status, industry, product )
+        values (#{clientId}, #{temporaryId}, #{groupId}, #{companyName},
+          #{organizationCode}, #{licenseCode}, #{representative}, #{postCode}, #{enterpriseType},
+          #{operationMode}, #{operationType}, #{contingencyPlan}, #{operationRecord}, #{location},
+          #{street}, #{applicationStatus}, #{materialAttachmentUrl}, #{processAttachmentUrl},
+          #{processDesp}, #{contactName}, #{phone}, #{mobile}, #{email}, #{status}, #{industry}, #{product})
+    </insert>
+
+    <delete id="delete" parameterType="Client" >
+        delete from client where clientId= #{clientId}
+    </delete>
+
+    <select id="get" parameterType="map" resultType="Client">
+        select * from client
+        <where>
+            <if test="clientId!=null and clientId!=''">
+                and clientId = #{clientId}
+            </if>
+            <if test="username != null and username != ''">
+                and temporaryId = #{temporaryId}
+            </if>
+            <if test="groupId != null and groupId != ''">
+                and groupId = #{groupId}
+            </if>
+            <if test="keyword != null and keyword != ''">
+                and companyName like "%"#{keyword}"%" or clientId like "%"#{keyword}"%"
+                or contactName like "%"#{keyword}"%" or mobile like "%"#{keyword}"%"
+                or applicationStatus like "%"#{keyword}"%" or status like "%"#{keyword}"%"
+            </if>
+        </where>
+    </select>
+
+    <select id="getByClientId" parameterType="String" resultType="Client">
+        SELECT * FROM client WHERE clientId = #{clientId}
+    </select>
+
+    <update id="update" parameterType="Client" >
+        update client set clientId=#{clientId} where temporaryId=#{temporaryId}
+    </update>
+    <select id="list" resultType="Client">
+        select * from client
+    </select>
+</mapper>

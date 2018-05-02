@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="SVSP_0.2:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/SVSP_0_2_war_exploded.war</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="SVSP_0.2/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="SVSP_0.2" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="SSM" />
+          <element id="library" level="project" name="upload" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

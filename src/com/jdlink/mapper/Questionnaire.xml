@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jdlink.mapper.QuestionnaireMapper">
+    <insert id="add" parameterType="Questionnaire" >
+        insert into questionnaire ( questionnaireId, clientId, evaluationnaireId )
+        values ( #{questionnaireId}, #{clientId}, #{evaluationnaireId} )
+    </insert>
+
+    <delete id="delete" parameterType="Questionnaire" >
+        delete from questionnaire where questionnaireId= #{questionnaireId}
+    </delete>
+
+    <select id="get" parameterType="String" resultType="Questionnaire">
+        select * from questionnaire
+        <where>
+            <if test="questionnaireId != null and questionnaireId != ''">
+                and questionnaireId like "%"#{keyword}"%"
+            </if>
+        </where>
+    </select>
+
+    <select id="getByClientId" parameterType="String" resultType="Questionnaire">
+        SELECT * FROM questionnaire WHERE clientId = #{clientId}
+    </select>
+
+    <update id="update" parameterType="Questionnaire" >
+        update questionnaire set clientId=#{clientId} where questionnaireId=#{questionnaireId}
+    </update>
+    <select id="list" resultType="Questionnaire">
+        select * from questionnaire
+    </select>
+</mapper>
