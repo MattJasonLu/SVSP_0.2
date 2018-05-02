@@ -67,4 +67,144 @@ public class DeriveWastes {
      */
     private List<SensitiveElement> sensitiveElementList;
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public FormType getFormType() {
+        return formType;
+    }
+
+    public void setFormType(FormType formType) {
+        this.formType = formType;
+    }
+
+    public String getFormTypeDetail() {
+        return formTypeDetail;
+    }
+
+    public void setFormTypeDetail(String formTypeDetail) {
+        this.formTypeDetail = formTypeDetail;
+    }
+
+    public SmellType getSmellType() {
+        return smellType;
+    }
+
+    public void setSmellType(SmellType smellType) {
+        this.smellType = smellType;
+    }
+
+    public String getSmellTypeDetail() {
+        return smellTypeDetail;
+    }
+
+    public void setSmellTypeDetail(String smellTypeDetail) {
+        this.smellTypeDetail = smellTypeDetail;
+    }
+
+    public Solubility getSolubility() {
+        return solubility;
+    }
+
+    public void setSolubility(Solubility solubility) {
+        this.solubility = solubility;
+    }
+
+    public String getSolubilityDetail() {
+        return solubilityDetail;
+    }
+
+    public void setSolubilityDetail(String solubilityDetail) {
+        this.solubilityDetail = solubilityDetail;
+    }
+
+    public boolean isLowTemp() {
+        return isLowTemp;
+    }
+
+    public void setLowTemp(boolean lowTemp) {
+        isLowTemp = lowTemp;
+    }
+
+    public float getLowTemp() {
+        return lowTemp;
+    }
+
+    public void setLowTemp(float lowTemp) {
+        this.lowTemp = lowTemp;
+    }
+
+    public float getSolubleTemp() {
+        return solubleTemp;
+    }
+
+    public void setSolubleTemp(float solubleTemp) {
+        this.solubleTemp = solubleTemp;
+    }
+
+    public boolean isMixture() {
+        return isMixture;
+    }
+
+    public void setMixture(boolean mixture) {
+        isMixture = mixture;
+    }
+
+    public List<MixingElement> getMixingElementList() {
+        return mixingElementList;
+    }
+
+    public void setMixingElementList(List<MixingElement> mixingElementList) {
+        this.mixingElementList = mixingElementList;
+    }
+
+    public List<SensitiveElement> getSensitiveElementList() {
+        return sensitiveElementList;
+    }
+
+    public void setSensitiveElementList(List<SensitiveElement> sensitiveElementList) {
+        this.sensitiveElementList = sensitiveElementList;
+    }
+
+    @Override
+    public String toString() {
+        return "DeriveWastes{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", code='" + code + '\'' +
+                ", formType=" + formType +
+                ", formTypeDetail='" + formTypeDetail + '\'' +
+                ", smellType=" + smellType +
+                ", smellTypeDetail='" + smellTypeDetail + '\'' +
+                ", solubility=" + solubility +
+                ", solubilityDetail='" + solubilityDetail + '\'' +
+                ", isLowTemp=" + isLowTemp +
+                ", lowTemp=" + lowTemp +
+                ", solubleTemp=" + solubleTemp +
+                ", isMixture=" + isMixture +
+                ", mixingElementList=" + mixingElementList +
+                ", sensitiveElementList=" + sensitiveElementList +
+                '}';
+    }
 }
