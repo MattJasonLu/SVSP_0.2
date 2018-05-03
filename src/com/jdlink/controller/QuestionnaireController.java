@@ -8,11 +8,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.tags.form.FormTag;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by matt on 2018/4/28.
@@ -91,14 +95,37 @@ public class QuestionnaireController {
         Questionnaire questionnaire = (Questionnaire) session.getAttribute("questionnaire");
         questionnaire.addRawWastes(rawWastes);
         questionnaire.addWasteProcess(wasteProcess);
+
+        // 遍历枚举数据
+        List<String> formTypeStrList = new ArrayList<>();
+        for (FormType formType : FormType.values()) {
+            formTypeStrList.add(formType.getName());
+        }
+        List<String> smellTypeStrList = new ArrayList<>();
+        for (SmellType smellType : SmellType.values()) {
+            smellTypeStrList.add(smellType.getName());
+        }
+        List<String> solubilityStrList = new ArrayList<>();
+        for (Solubility solubility : Solubility.values()) {
+            solubilityStrList.add(solubility.getName());
+        }
+        mav.addObject("formTypeStrList", formTypeStrList);
+        mav.addObject("smellTypeStrList", smellTypeStrList);
+        mav.addObject("solubilityStrList", solubilityStrList);
         mav.setViewName("questionnaire3");
         return mav;
     }
+
+    // TODO: 对于DeriveWastes参数绑定，浮点型数据不填则无法绑定，出现错误400，待完善
 
     @RequestMapping("forthQuestionnaire")
     public ModelAndView forthQuestionnaire(HttpSession session, DeriveWastes deriveWastes) {
         ModelAndView mav = new ModelAndView();
 
+        Questionnaire questionnaire = (Questionnaire) session.getAttribute("questionnaire");
+        questionnaire.addDeriveWastesList(deriveWastes);
+
+        mav.addObject("deriveWastes", deriveWastes);
         mav.setViewName("questionnaire4");
         return mav;
     }

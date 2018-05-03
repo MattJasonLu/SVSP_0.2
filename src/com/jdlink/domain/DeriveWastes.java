@@ -1,5 +1,6 @@
 package com.jdlink.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -61,11 +62,11 @@ public class DeriveWastes {
     /**
      * 混合物成分列表
      */
-    private List<MixingElement> mixingElementList;
+    private List<MixingElement> mixingElementList = new ArrayList<>();
     /**
      * 敏感成分列表
      */
-    private List<SensitiveElement> sensitiveElementList;
+    private List<SensitiveElement> sensitiveElementList = new ArrayList<>();
 
     public String getId() {
         return id;

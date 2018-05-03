@@ -12,4 +12,20 @@ public class SensitiveElement {
      * 是否有机
      */
     private boolean isOrganic;
+
+    public ChemicalType getChemicalType() {
+        return chemicalType;
+    }
+
+    public void setChemicalType(ChemicalType chemicalType) {
+        this.chemicalType = chemicalType;
+    }
+
+    public boolean isOrganic() {
+        return isOrganic;
+    }
+
+    public void setOrganic(boolean organic) {
+        isOrganic = organic;
+    }
 }

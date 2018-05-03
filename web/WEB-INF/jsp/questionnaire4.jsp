@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>危险废物数据调查表4</title>
@@ -43,8 +44,8 @@
                 <th colspan="2">应急对应措施</th>
             </tr>
             <tr>
-                <td rowspan="6">1</td>
-                <td rowspan="6"></td>
+                <td rowspan="6">${deriveWastes.id}</td>
+                <td rowspan="6">${deriveWastes.name}</td>
                 <td rowspan="6">
                     <input type="checkbox">毒性
                     <input type="checkbox">易燃<br>

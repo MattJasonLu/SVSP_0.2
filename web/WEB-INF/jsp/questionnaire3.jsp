@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>危险废物数据调查表3</title>
@@ -54,10 +55,13 @@
                 <td>
                     <select name="formType">
                         <option value="0">--请选择--</option>
+                        <c:forEach items="${formTypeStrList}" var="formTypeStr" varStatus="id">
+                            <option value="${id.index+1}">${formTypeStr}</option>
+                        </c:forEach>
                     </select>
                 </td>
                 <td colspan="4">
-                    <input type="radio" name="isMixture" value="false">均质
+                    <input type="radio" name="isMixture" value="false" checked>均质
                     <input type="radio" name="isMixture" value="true">混合多项物
                 </td>
                 <td>组份</td>
@@ -77,6 +81,9 @@
                 <td>
                     <select name="smellType">
                         <option value="0">--请选择--</option>
+                        <c:forEach items="${smellTypeStrList}" var="smellTypeStr" varStatus="id">
+                            <option value="${id.index+1}">${smellTypeStr}</option>
+                        </c:forEach>
                     </select>
                 </td>
                 <td>最低</td>
@@ -98,6 +105,9 @@
                 <td>
                     <select name="solubility">
                         <option value="0">--请选择--</option>
+                        <c:forEach items="${solubilityStrList}" var="solubilityStr" varStatus="id">
+                            <option value="${id.index+1}">${solubilityStr}</option>
+                        </c:forEach>
                     </select>
                 </td>
                 <td/><td/><td/><td/>
@@ -115,7 +125,7 @@
             <tr>
                 <td rowspan="2">储存温度</td>
                 <td>
-                    <input type="radio" name="isLowTemp" value="false">常温
+                    <input type="radio" name="isLowTemp" value="false" checked>常温
                 </td>
                 <td/><td/><td/><td/>
                 <td><input type="checkbox" name="ChemicalType" value="6">磷</td>

@@ -6,12 +6,12 @@ import org.springframework.core.convert.converter.ConverterFactory;
 /**
  * Created by matt on 2018/4/24.
  */
+@SuppressWarnings("unchecked")
 final class StringToEnumConverterFactory implements
         ConverterFactory<String, Enum> {
 
     public <T extends Enum> Converter<String, T> getConverter(
             Class<T> targetType) {
-        System.out.println("done");
         return new StringToEnum(targetType);
     }
 
@@ -27,7 +27,6 @@ final class StringToEnumConverterFactory implements
             if (source.length() == 0) {
                 return null;
             }
-
             return (T) Enum.valueOf(this.enumType, source.trim());
         }
     }
