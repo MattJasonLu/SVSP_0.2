@@ -5,8 +5,14 @@
 
 <mapper namespace="com.jdlink.mapper.QuestionnaireMapper">
     <insert id="add" parameterType="Questionnaire" >
-        insert into questionnaire ( questionnaireId, clientId, evaluationnaireId )
-        values ( #{questionnaireId}, #{clientId}, #{evaluationnaireId} )
+        insert into questionnaire ( questionnaireId, clientId, evaluationnaireId, time, author )
+        values ( #{questionnaireId}, #{clientId}, #{evaluationnaireId} ,#{time}, #{author} );
+
+        insert into r_questionnaireAndRawWastes (questionnaireId,rawWastesId)
+        values
+        <foreach collection="rawWastesList" item="rawWastes" index="index" separator=",">
+            (#{questionnaireId,jdbcType=VARCHAR},#{rawWastes.materialId,jdbcType=VARCHAR})
+        </foreach>
     </insert>
 
     <delete id="delete" parameterType="Questionnaire" >

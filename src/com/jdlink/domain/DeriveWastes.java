@@ -67,6 +67,38 @@ public class DeriveWastes {
      * 敏感成分列表
      */
     private List<SensitiveElement> sensitiveElementList = new ArrayList<>();
+    /**
+     * 特性列表
+     */
+    private List<WasteCharacter> wasteCharacterList = new ArrayList<>();
+    /**
+     * 个人防护列表
+     */
+    private List<WasteProtect> wasteProtectList = new ArrayList<>();
+    /**
+     * 若不慎入眼应急对应措施
+     */
+    private String eyeMeasures;
+    /**
+     * 若接触到皮肤应急对应措施
+     */
+    private String skinMeasures;
+    /**
+     * 若吞食应急对应措施
+     */
+    private String swallowMeasures;
+    /**
+     * 若吸入应急对应措施
+     */
+    private String suctionMeasures;
+    /**
+     * 灭火方法
+     */
+    private String putOutFireMeasures;
+    /**
+     * 泄漏处理方法
+     */
+    private String leakMeasures;
 
     public String getId() {
         return id;
@@ -186,6 +218,70 @@ public class DeriveWastes {
 
     public void setSensitiveElementList(List<SensitiveElement> sensitiveElementList) {
         this.sensitiveElementList = sensitiveElementList;
+    }
+
+    public List<WasteCharacter> getWasteCharacterList() {
+        return wasteCharacterList;
+    }
+
+    public void setWasteCharacterList(List<WasteCharacter> wasteCharacterList) {
+        this.wasteCharacterList = wasteCharacterList;
+    }
+
+    public List<WasteProtect> getWasteProtectList() {
+        return wasteProtectList;
+    }
+
+    public void setWasteProtectList(List<WasteProtect> wasteProtectList) {
+        this.wasteProtectList = wasteProtectList;
+    }
+
+    public String getEyeMeasures() {
+        return eyeMeasures;
+    }
+
+    public void setEyeMeasures(String eyeMeasures) {
+        this.eyeMeasures = eyeMeasures;
+    }
+
+    public String getSkinMeasures() {
+        return skinMeasures;
+    }
+
+    public void setSkinMeasures(String skinMeasures) {
+        this.skinMeasures = skinMeasures;
+    }
+
+    public String getSwallowMeasures() {
+        return swallowMeasures;
+    }
+
+    public void setSwallowMeasures(String swallowMeasures) {
+        this.swallowMeasures = swallowMeasures;
+    }
+
+    public String getSuctionMeasures() {
+        return suctionMeasures;
+    }
+
+    public void setSuctionMeasures(String suctionMeasures) {
+        this.suctionMeasures = suctionMeasures;
+    }
+
+    public String getPutOutFireMeasures() {
+        return putOutFireMeasures;
+    }
+
+    public void setPutOutFireMeasures(String putOutFireMeasures) {
+        this.putOutFireMeasures = putOutFireMeasures;
+    }
+
+    public String getLeakMeasures() {
+        return leakMeasures;
+    }
+
+    public void setLeakMeasures(String leakMeasures) {
+        this.leakMeasures = leakMeasures;
     }
 
     @Override

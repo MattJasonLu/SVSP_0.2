@@ -3,6 +3,8 @@ package com.jdlink.controller;
 import com.jdlink.domain.*;
 import com.jdlink.service.ClientService;
 import com.jdlink.service.QuestionnaireService;
+import com.jdlink.service.RawWastesService;
+import com.jdlink.util.RandomUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,7 +27,8 @@ import java.util.Map;
 public class QuestionnaireController {
     @Autowired
     QuestionnaireService questionnaireService;
-
+    @Autowired
+    RawWastesService rawWastesService;
     @Autowired
     ClientService clientService;
 
@@ -48,8 +51,27 @@ public class QuestionnaireController {
     }
 
     @RequestMapping("addQuestionnaire")
-    public ModelAndView addQuestionnaire(Questionnaire questionnaire) {
+    public ModelAndView addQuestionnaire(HttpSession session, DeriveWastes deriveWastes) {
         ModelAndView mav = new ModelAndView();
+        // 从session中获取
+        Questionnaire questionnaire = (Questionnaire) session.getAttribute("questionnaire");
+        // 更新数据
+        DeriveWastes deriveWastes1 = questionnaire.getDeriveWastesList().get(0);
+        deriveWastes1.setWasteCharacterList(deriveWastes.getWasteCharacterList());
+        deriveWastes1.setWasteProtectList(deriveWastes.getWasteProtectList());
+        deriveWastes1.setEyeMeasures(deriveWastes.getEyeMeasures());
+        deriveWastes1.setSkinMeasures(deriveWastes.getSkinMeasures());
+        deriveWastes1.setSwallowMeasures(deriveWastes.getSwallowMeasures());
+        deriveWastes1.setSuctionMeasures(deriveWastes.getSuctionMeasures());
+        deriveWastes1.setPutOutFireMeasures(deriveWastes.getPutOutFireMeasures());
+        deriveWastes1.setLeakMeasures(deriveWastes.getLeakMeasures());
+
+        // 添加调查表
+        questionnaireService.add(questionnaire);
+        // 添加调查表中的原材料
+        for (RawWastes rawWastes : questionnaire.getRawWastesList()) {
+            rawWastesService.add(rawWastes);
+        }
 
         mav.addObject("message", "新增调查表成功！");
         mav.setViewName("success");
@@ -73,6 +95,7 @@ public class QuestionnaireController {
         Questionnaire questionnaire = new Questionnaire();
         questionnaire.setTime(now);
         questionnaire.setClientId(client.getClientId());
+        questionnaire.setQuestionnaireId(RandomUtil.getRandomFileName());
 
         session.setAttribute("questionnaire", questionnaire);
         return mav;
@@ -93,6 +116,8 @@ public class QuestionnaireController {
     public ModelAndView thirdQuestionnaire(HttpSession session, RawWastes rawWastes, WasteProcess wasteProcess) {
         ModelAndView mav = new ModelAndView();
         Questionnaire questionnaire = (Questionnaire) session.getAttribute("questionnaire");
+        // 设置原材料的编号，随机
+        rawWastes.setMaterialId(RandomUtil.getRandomFileName());
         questionnaire.addRawWastes(rawWastes);
         questionnaire.addWasteProcess(wasteProcess);
 

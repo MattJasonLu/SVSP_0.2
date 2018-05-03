@@ -43,6 +43,8 @@
                 <bean class="com.jdlink.util.StringToFormTypeConverter"/>
                 <bean class="com.jdlink.util.StringToSmellTypeConverter"/>
                 <bean class="com.jdlink.util.StringToSolubilityConverter"/>
+                <bean class="com.jdlink.util.StringToWasteCharacterConverter"/>
+                <bean class="com.jdlink.util.StringToWasteProtectConverter"/>
                 <!--<bean class="com.jdlink.util.StringToEnumConverterFactory"/>-->
                 <bean class="com.jdlink.util.StringToDateConverter"/>
             </set>
