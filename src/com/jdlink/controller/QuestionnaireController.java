@@ -4,6 +4,7 @@ import com.jdlink.domain.*;
 import com.jdlink.service.ClientService;
 import com.jdlink.service.QuestionnaireService;
 import com.jdlink.service.RawWastesService;
+import com.jdlink.service.WasteProcessService;
 import com.jdlink.util.RandomUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,12 +26,15 @@ import java.util.Map;
  */
 @Controller
 public class QuestionnaireController {
+
+    @Autowired
+    ClientService clientService;
     @Autowired
     QuestionnaireService questionnaireService;
     @Autowired
     RawWastesService rawWastesService;
     @Autowired
-    ClientService clientService;
+    WasteProcessService wasteProcessService;
 
     @RequestMapping("listQuestionnaire")
     public ModelAndView listQuestionnaire(HttpSession session) {
@@ -71,6 +75,10 @@ public class QuestionnaireController {
         // 添加调查表中的原材料
         for (RawWastes rawWastes : questionnaire.getRawWastesList()) {
             rawWastesService.add(rawWastes);
+        }
+        // 添加调查表中的处理流程
+        for (WasteProcess wasteProcess : questionnaire.getWasteProcessList()) {
+            wasteProcessService.add(wasteProcess);
         }
 
         mav.addObject("message", "新增调查表成功！");
@@ -118,6 +126,7 @@ public class QuestionnaireController {
         Questionnaire questionnaire = (Questionnaire) session.getAttribute("questionnaire");
         // 设置原材料的编号，随机
         rawWastes.setMaterialId(RandomUtil.getRandomFileName());
+        wasteProcess.setProcessId(RandomUtil.getRandomFileName());
         questionnaire.addRawWastes(rawWastes);
         questionnaire.addWasteProcess(wasteProcess);
 

@@ -8,11 +8,21 @@
         insert into questionnaire ( questionnaireId, clientId, evaluationnaireId, time, author )
         values ( #{questionnaireId}, #{clientId}, #{evaluationnaireId} ,#{time}, #{author} );
 
-        insert into r_questionnaireAndRawWastes (questionnaireId,rawWastesId)
-        values
-        <foreach collection="rawWastesList" item="rawWastes" index="index" separator=",">
-            (#{questionnaireId,jdbcType=VARCHAR},#{rawWastes.materialId,jdbcType=VARCHAR})
-        </foreach>
+        <if test="rawWastesList.size() > 0">
+            insert into r_questionnaireAndRawWastes (questionnaireId,rawWastesId)
+            values
+            <foreach collection="rawWastesList" item="rawWastes" index="index" separator="," close=";">
+                (#{questionnaireId,jdbcType=VARCHAR},#{rawWastes.materialId,jdbcType=VARCHAR})
+            </foreach>
+        </if>
+        <if test="wasteProcessList.size() > 0">
+            insert into r_questionnaireAndWasteProcess (questionnaireId,wasteProcessId)
+            values
+            <foreach collection="wasteProcessList" item="wasteProcess" index="index" separator="," close=";">
+                (#{questionnaireId,jdbcType=VARCHAR},#{wasteProcess.processId,jdbcType=VARCHAR})
+            </foreach>
+        </if>
+
     </insert>
 
     <delete id="delete" parameterType="Questionnaire" >
