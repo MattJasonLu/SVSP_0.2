@@ -46,9 +46,9 @@
                 <th colspan="3">敏感酸性组份</th>
             </tr>
             <tr>
-                <td rowspan="9"><input type="text" name="id" value="1"></td>
-                <td rowspan="9"><input type="text" name="name"></td>
-                <td rowspan="9">
+                <td rowspan="12">1</td>
+                <td rowspan="12"><input type="text" name="name"></td>
+                <td rowspan="12">
                     <input type="search" name="code" value="查询">
                 </td>
                 <td rowspan="2">物质形态</td>
@@ -95,7 +95,10 @@
             </tr>
             <tr>
                 <td>说明<input type="text" name="smellTypeDetail"></td>
-                <td/><td/><td/><td/>
+                <td><input type="text" name="mixingElementList[0].name"></td>
+                <td><input type="text" name="mixingElementList[0].minimum" size="3"></td>
+                <td><input type="text" name="mixingElementList[0].average" size="3"></td>
+                <td><input type="text" name="mixingElementList[0].maximum" size="3"></td>
                 <td><input type="checkbox" name="ChemicalType" value="3">溴</td>
                 <td><input type="radio" name="isOrganic_3" value="true"></td>
                 <td><input type="radio" name="isOrganic_3" value="false"></td>
@@ -110,14 +113,20 @@
                         </c:forEach>
                     </select>
                 </td>
-                <td/><td/><td/><td/>
+                <td><input type="text" name="mixingElementList[1].name"></td>
+                <td><input type="text" name="mixingElementList[1].minimum" size="3"></td>
+                <td><input type="text" name="mixingElementList[1].average" size="3"></td>
+                <td><input type="text" name="mixingElementList[1].maximum" size="3"></td>
                 <td><input type="checkbox" name="ChemicalType" value="4">碘</td>
                 <td><input type="radio" name="isOrganic_4" value="true"></td>
                 <td><input type="radio" name="isOrganic_4" value="false"></td>
             </tr>
             <tr>
                 <td>说明<input type="text" name="solubilityDetail"></td>
-                <td/><td/><td/><td/>
+                <td><input type="text" name="mixingElementList[2].name"></td>
+                <td><input type="text" name="mixingElementList[2].minimum" size="3"></td>
+                <td><input type="text" name="mixingElementList[2].average" size="3"></td>
+                <td><input type="text" name="mixingElementList[2].maximum" size="3"></td>
                 <td><input type="checkbox" name="ChemicalType" value="5">硫</td>
                 <td><input type="radio" name="isOrganic_5" value="true"></td>
                 <td><input type="radio" name="isOrganic_5" value="false"></td>
@@ -127,7 +136,10 @@
                 <td>
                     <input type="radio" name="isLowTemp" value="false" checked>常温
                 </td>
-                <td/><td/><td/><td/>
+                <td><input type="text" name="mixingElementList[3].name"></td>
+                <td><input type="text" name="mixingElementList[3].minimum" size="3"></td>
+                <td><input type="text" name="mixingElementList[3].average" size="3"></td>
+                <td><input type="text" name="mixingElementList[3].maximum" size="3"></td>
                 <td><input type="checkbox" name="ChemicalType" value="6">磷</td>
                 <td><input type="radio" name="isOrganic_6" value="true"></td>
                 <td><input type="radio" name="isOrganic_6" value="false"></td>
@@ -136,20 +148,44 @@
                 <td>
                     <input type="radio" name="isLowTemp" value="true">低温<input type="text" size="3" name="lowTemp">˚C
                 </td>
-                <td/><td/><td/><td/>
+                <td><input type="text" name="mixingElementList[4].name"></td>
+                <td><input type="text" name="mixingElementList[4].minimum" size="3"></td>
+                <td><input type="text" name="mixingElementList[4].average" size="3"></td>
+                <td><input type="text" name="mixingElementList[4].maximum" size="3"></td>
                 <td><input type="checkbox" name="ChemicalType" value="7">氮</td>
                 <td><input type="radio" name="isOrganic_7" value="true"></td>
                 <td><input type="radio" name="isOrganic_7" value="false"></td>
             </tr>
             <tr>
-                <td rowspan="2">其他</td>
-                <td>
+                <td rowspan="4">其他</td>
+                <td rowspan="4">
                     如为精馏残渣<br>其可溶温度：<input type="text" size="3" name="solubleTemp">˚C
                 </td>
-                <td/><td/><td/><td/>
-                <td class="red" colspan="3">
+                <td><input type="text" name="mixingElementList[5].name"></td>
+                <td><input type="text" name="mixingElementList[5].minimum" size="3"></td>
+                <td><input type="text" name="mixingElementList[5].average" size="3"></td>
+                <td><input type="text" name="mixingElementList[5].maximum" size="3"></td>
+                <td class="red" colspan="3" rowspan="4">
                     备注：主要成分避免<br>使用溶废剂、废油等<br>笼统描述，尽可能详<br>尽算出含量
                 </td>
+            </tr>
+            <tr>
+                <td><input type="text" name="mixingElementList[6].name"></td>
+                <td><input type="text" name="mixingElementList[6].minimum" size="3"></td>
+                <td><input type="text" name="mixingElementList[6].average" size="3"></td>
+                <td><input type="text" name="mixingElementList[6].maximum" size="3"></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="mixingElementList[7].name"></td>
+                <td><input type="text" name="mixingElementList[7].minimum" size="3"></td>
+                <td><input type="text" name="mixingElementList[7].average" size="3"></td>
+                <td><input type="text" name="mixingElementList[7].maximum" size="3"></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="mixingElementList[8].name"></td>
+                <td><input type="text" name="mixingElementList[8].minimum" size="3"></td>
+                <td><input type="text" name="mixingElementList[8].average" size="3"></td>
+                <td><input type="text" name="mixingElementList[8].maximum" size="3"></td>
             </tr>
             <tr>
                 <td>

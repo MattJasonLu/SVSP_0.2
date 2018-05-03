@@ -5,6 +5,8 @@ package com.jdlink.domain;
  * 混合物成分
  */
 public class MixingElement {
+
+    private String name;
     /**
      * 最低预估含量(%)
      */
@@ -17,6 +19,14 @@ public class MixingElement {
      * 最高预估含量(%)
      */
     private float maximum;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public float getMinimum() {
         return minimum;
