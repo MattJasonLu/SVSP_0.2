@@ -1,10 +1,7 @@
 package com.jdlink.controller;
 
 import com.jdlink.domain.*;
-import com.jdlink.service.ClientService;
-import com.jdlink.service.QuestionnaireService;
-import com.jdlink.service.RawWastesService;
-import com.jdlink.service.WasteProcessService;
+import com.jdlink.service.*;
 import com.jdlink.util.RandomUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,6 +32,8 @@ public class QuestionnaireController {
     RawWastesService rawWastesService;
     @Autowired
     WasteProcessService wasteProcessService;
+    @Autowired
+    DeriveWastesService deriveWastesService;
 
     @RequestMapping("listQuestionnaire")
     public ModelAndView listQuestionnaire(HttpSession session) {
@@ -79,6 +78,10 @@ public class QuestionnaireController {
         // 添加调查表中的处理流程
         for (WasteProcess wasteProcess : questionnaire.getWasteProcessList()) {
             wasteProcessService.add(wasteProcess);
+        }
+        // 添加调查表中的次生危废
+        for (DeriveWastes wastes : questionnaire.getDeriveWastesList()) {
+            deriveWastesService.add(wastes);
         }
 
         mav.addObject("message", "新增调查表成功！");
@@ -155,8 +158,8 @@ public class QuestionnaireController {
     @RequestMapping("forthQuestionnaire")
     public ModelAndView forthQuestionnaire(HttpSession session, DeriveWastes deriveWastes) {
         ModelAndView mav = new ModelAndView();
-
         Questionnaire questionnaire = (Questionnaire) session.getAttribute("questionnaire");
+        deriveWastes.setId(RandomUtil.getRandomFileName());
         questionnaire.addDeriveWastesList(deriveWastes);
 
         mav.addObject("deriveWastes", deriveWastes);

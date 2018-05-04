@@ -23,6 +23,14 @@
             </foreach>
         </if>
 
+        <if test="deriveWastesList.size() > 0">
+            insert into r_questionnaireAndDeriveWastes (questionnaireId,deriveWastesId)
+            values
+            <foreach collection="deriveWastesList" item="deriveWastes" index="index" separator="," close=";">
+                (#{questionnaireId,jdbcType=VARCHAR},#{deriveWastes.id,jdbcType=VARCHAR})
+            </foreach>
+        </if>
+
     </insert>
 
     <delete id="delete" parameterType="Questionnaire" >

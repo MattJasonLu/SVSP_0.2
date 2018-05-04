@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jdlink.mapper.DeriveWastesMapper">
+    <insert id="add" parameterType="DeriveWastes" >
+        insert into t_deriveWastes ( id, name, code, formType, formTypeDetail,
+        smellType, smellTypeDetail, solubility, solubilityDetail, isLowTemp,
+        lowTemp, solubleTemp, isMixture )
+        values (#{id}, #{name}, #{code}, #{formType}, #{formTypeDetail},
+        #{smellType}, #{smellTypeDetail}, #{solubility}, #{solubilityDetail},
+        #{isLowTemp}, #{lowTemp}, #{solubleTemp}, #{isMixture} )
+    </insert>
+
+    <delete id="delete" parameterType="String" >
+        delete from t_deriveWastes where id= #{id}
+    </delete>
+
+    <select id="get" parameterType="map" resultType="DeriveWastes">
+        select * from client
+        <where>
+            <if test="id!=null and id!=''">
+                and id = #{id}
+            </if>
+        </where>
+    </select>
+
+    <select id="getById" parameterType="String" resultType="DeriveWastes">
+        SELECT * FROM t_deriveWastes WHERE id = #{id}
+    </select>
+
+    <select id="list" resultType="DeriveWastes">
+        select * from t_deriveWastes
+    </select>
+</mapper>

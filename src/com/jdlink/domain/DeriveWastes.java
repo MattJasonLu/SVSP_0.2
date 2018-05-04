@@ -62,19 +62,19 @@ public class DeriveWastes {
     /**
      * 混合物成分列表
      */
-    private List<MixingElement> mixingElementList = new ArrayList<>();
+    private List<MixingElement> mixingElementList;
     /**
      * 敏感成分列表
      */
-    private List<SensitiveElement> sensitiveElementList = new ArrayList<>();
+    private List<SensitiveElement> sensitiveElementList;
     /**
      * 特性列表
      */
-    private List<WasteCharacter> wasteCharacterList = new ArrayList<>();
+    private List<WasteCharacter> wasteCharacterList;
     /**
      * 个人防护列表
      */
-    private List<WasteProtect> wasteProtectList = new ArrayList<>();
+    private List<WasteProtect> wasteProtectList;
     /**
      * 若不慎入眼应急对应措施
      */
