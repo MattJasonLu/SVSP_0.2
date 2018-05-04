@@ -6,6 +6,8 @@ package com.jdlink.domain;
  */
 public class MixingElement {
 
+    private String id;
+
     private String name;
     /**
      * 最低预估含量(%)
@@ -19,6 +21,14 @@ public class MixingElement {
      * 最高预估含量(%)
      */
     private float maximum;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

@@ -34,6 +34,10 @@ public class QuestionnaireController {
     WasteProcessService wasteProcessService;
     @Autowired
     DeriveWastesService deriveWastesService;
+    @Autowired
+    MixingElementService mixingElementService;
+    @Autowired
+    SensitiveElementService sensitiveElementService;
 
     @RequestMapping("listQuestionnaire")
     public ModelAndView listQuestionnaire(HttpSession session) {
@@ -82,6 +86,14 @@ public class QuestionnaireController {
         // 添加调查表中的次生危废
         for (DeriveWastes wastes : questionnaire.getDeriveWastesList()) {
             deriveWastesService.add(wastes);
+            if (wastes.getMixingElementList() != null)
+            for (MixingElement mixingElement : wastes.getMixingElementList()) {
+                mixingElementService.add(mixingElement);
+            }
+            if (wastes.getSensitiveElementList() != null)
+            for (SensitiveElement sensitiveElement : wastes.getSensitiveElementList()) {
+                sensitiveElementService.add(sensitiveElement);
+            }
         }
 
         mav.addObject("message", "新增调查表成功！");
@@ -160,6 +172,20 @@ public class QuestionnaireController {
         ModelAndView mav = new ModelAndView();
         Questionnaire questionnaire = (Questionnaire) session.getAttribute("questionnaire");
         deriveWastes.setId(RandomUtil.getRandomFileName());
+        // 对于此处更新混合物成分列表的操作，因迭代时删除发生错误故采取不删反增继续事务
+        List<MixingElement> newMixingElementList = new ArrayList<>();
+        for (MixingElement mixingElement : deriveWastes.getMixingElementList()) {
+            if (mixingElement.getName() != "") {
+                mixingElement.setId(RandomUtil.getRandomFileName());
+                newMixingElementList.add(mixingElement);
+            }
+        }
+        deriveWastes.setMixingElementList(newMixingElementList);
+        if (deriveWastes.getSensitiveElementList() != null) {
+            for (SensitiveElement sensitiveElement : deriveWastes.getSensitiveElementList()) {
+                sensitiveElement.setId(RandomUtil.getRandomFileName());
+            }
+        }
         questionnaire.addDeriveWastesList(deriveWastes);
 
         mav.addObject("deriveWastes", deriveWastes);

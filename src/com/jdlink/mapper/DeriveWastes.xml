@@ -10,7 +10,21 @@
         lowTemp, solubleTemp, isMixture )
         values (#{id}, #{name}, #{code}, #{formType}, #{formTypeDetail},
         #{smellType}, #{smellTypeDetail}, #{solubility}, #{solubilityDetail},
-        #{isLowTemp}, #{lowTemp}, #{solubleTemp}, #{isMixture} )
+        #{isLowTemp}, #{lowTemp}, #{solubleTemp}, #{isMixture} );
+        <if test="mixingElementList != null and mixingElementList.size() > 0">
+            insert into r_deriveWastesAndMixingElement (deriveWastesId,mixingElementId)
+            values
+            <foreach collection="mixingElementList" item="mixingElement" index="index" separator="," close=";">
+                (#{id,jdbcType=VARCHAR},#{mixingElement.id,jdbcType=VARCHAR})
+            </foreach>
+        </if>
+        <if test="sensitiveElementList != null and sensitiveElementList.size() > 0">
+            insert into r_deriveWastesAndSensitiveElement (deriveWastesId,sensitiveElementId)
+            values
+            <foreach collection="sensitiveElementList" item="sensitiveElement" index="index" separator="," close=";">
+                (#{id,jdbcType=VARCHAR},#{sensitiveElement.id,jdbcType=VARCHAR})
+            </foreach>
+        </if>
     </insert>
 
     <delete id="delete" parameterType="String" >
