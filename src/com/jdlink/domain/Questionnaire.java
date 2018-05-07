@@ -30,6 +30,10 @@ public class Questionnaire {
      */
     private List<RawWastes> rawWastesList = new ArrayList<>();
     /**
+     * 特别关注的物质
+     */
+    private List<WasteInclusionType> wasteInclusionTypeList;
+    /**
      * 处理流程
      */
     private List<WasteProcess> wasteProcessList = new ArrayList<>();
@@ -116,5 +120,28 @@ public class Questionnaire {
 
     public void setTime(Date time) {
         this.time = time;
+    }
+
+    public List<WasteInclusionType> getWasteInclusionTypeList() {
+        return wasteInclusionTypeList;
+    }
+
+    public void setWasteInclusionTypeList(List<WasteInclusionType> wasteInclusionTypeList) {
+        this.wasteInclusionTypeList = wasteInclusionTypeList;
+    }
+
+    @Override
+    public String toString() {
+        return "Questionnaire{" +
+                "questionnaireId='" + questionnaireId + '\'' +
+                ", clientId='" + clientId + '\'' +
+                ", evaluationnaireId='" + evaluationnaireId + '\'' +
+                ", author='" + author + '\'' +
+                ", rawWastesList=" + rawWastesList +
+                ", wasteInclusionTypeList=" + wasteInclusionTypeList +
+                ", wasteProcessList=" + wasteProcessList +
+                ", deriveWastesList=" + deriveWastesList +
+                ", time=" + time +
+                '}';
     }
 }

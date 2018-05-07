@@ -27,10 +27,7 @@ public class RawWastes {
      * 可能引入物质
      */
     private String draginMaterial;
-    /**
-     * 特别关注的物质
-     */
-    private List<WasteInclusionType> wasteInclusionTypeList = new ArrayList<>();
+
 
     public String getMaterialId() {
         return materialId;
@@ -72,14 +69,6 @@ public class RawWastes {
         this.draginMaterial = draginMaterial;
     }
 
-    public List<WasteInclusionType> getWasteInclusionTypeList() {
-        return wasteInclusionTypeList;
-    }
-
-    public void setWasteInclusionTypeList(List<WasteInclusionType> wasteInclusionTypeList) {
-        this.wasteInclusionTypeList = wasteInclusionTypeList;
-    }
-
     @Override
     public String toString() {
         return "RawWastes{" +
@@ -88,7 +77,6 @@ public class RawWastes {
                 ", mainMaterial='" + mainMaterial + '\'' +
                 ", auxMaterial='" + auxMaterial + '\'' +
                 ", draginMaterial='" + draginMaterial + '\'' +
-                ", wasteInclusionTypeList=" + wasteInclusionTypeList +
                 '}';
     }
 }

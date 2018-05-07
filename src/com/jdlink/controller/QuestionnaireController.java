@@ -59,6 +59,7 @@ public class QuestionnaireController {
 
     @RequestMapping("addQuestionnaire")
     public ModelAndView addQuestionnaire(HttpSession session, DeriveWastes deriveWastes) {
+        // TODO: 当前增加调查表仅支持单个材料，多个材料后期完善
         ModelAndView mav = new ModelAndView();
         // 从session中获取
         Questionnaire questionnaire = (Questionnaire) session.getAttribute("questionnaire");
@@ -114,13 +115,18 @@ public class QuestionnaireController {
         String time = new SimpleDateFormat("yyyy-MM-dd").format(now);
         mav.addObject("time", time);
         mav.setViewName("questionnaire1");
-        // 创建调查表数据对象
-        Questionnaire questionnaire = new Questionnaire();
-        questionnaire.setTime(now);
-        questionnaire.setClientId(client.getClientId());
-        questionnaire.setQuestionnaireId(RandomUtil.getRandomFileName());
+        if (session.getAttribute("questionnaire") == null) {
+            // 创建调查表数据对象
+            Questionnaire questionnaire = new Questionnaire();
+            questionnaire.setTime(now);
+            questionnaire.setClientId(client.getClientId());
+            questionnaire.setQuestionnaireId(RandomUtil.getRandomFileName());
 
-        session.setAttribute("questionnaire", questionnaire);
+            session.setAttribute("questionnaire", questionnaire);
+        } else {
+            Questionnaire questionnaire = (Questionnaire) session.getAttribute("questionnaire");
+            mav.addObject("questionnaire", questionnaire);
+        }
         return mav;
     }
 
@@ -129,23 +135,42 @@ public class QuestionnaireController {
         ModelAndView mav = new ModelAndView();
 
         Questionnaire questionnaire = (Questionnaire) session.getAttribute("questionnaire");
-        questionnaire.setAuthor(author);
-
+        if (author != null) {
+            questionnaire.setAuthor(author);
+        }
         mav.setViewName("questionnaire2");
         return mav;
     }
 
     @RequestMapping("thirdQuestionnaire")
-    public ModelAndView thirdQuestionnaire(HttpSession session, RawWastes rawWastes, WasteProcess wasteProcess) {
+    public ModelAndView thirdQuestionnaire(HttpSession session, RawWastes rawWastes, WasteProcess wasteProcess, Questionnaire newQuestionnaire) {
         ModelAndView mav = new ModelAndView();
         Questionnaire questionnaire = (Questionnaire) session.getAttribute("questionnaire");
         // 设置原材料的编号，随机
-        rawWastes.setMaterialId(RandomUtil.getRandomFileName());
-        wasteProcess.setProcessId(RandomUtil.getRandomFileName());
-        questionnaire.addRawWastes(rawWastes);
-        questionnaire.addWasteProcess(wasteProcess);
+        if (questionnaire.getRawWastesList().size() == 0) {
+            if (rawWastes != null && rawWastes.getMainMaterial() != null && !rawWastes.getMainMaterial().equals("")) {
+                rawWastes.setMaterialId(RandomUtil.getRandomFileName());
+                questionnaire.addRawWastes(rawWastes);
+            }
+            if (wasteProcess != null && wasteProcess.getDescription() != null && !wasteProcess.getDescription().equals("")) {
+                wasteProcess.setProcessId(RandomUtil.getRandomFileName());
+                questionnaire.addWasteProcess(wasteProcess);
+            }
 
-        // 遍历枚举数据
+        } else {
+            if (rawWastes != null && rawWastes.getMainMaterial() != null && !rawWastes.getMainMaterial().equals("")) {
+                questionnaire.getRawWastesList().set(0, rawWastes);
+            }
+            if (wasteProcess != null && wasteProcess.getDescription() != null && !wasteProcess.getDescription().equals("")) {
+                questionnaire.getWasteProcessList().set(0, wasteProcess);
+            }
+        }
+        // 设置特别关注的物质
+        if (newQuestionnaire.getWasteInclusionTypeList() != null && newQuestionnaire.getWasteInclusionTypeList().size() > 0) {
+            questionnaire.setWasteInclusionTypeList(newQuestionnaire.getWasteInclusionTypeList());
+        }
+
+        // 遍历枚举数据，显示下拉框
         List<String> formTypeStrList = new ArrayList<>();
         for (FormType formType : FormType.values()) {
             formTypeStrList.add(formType.getName());

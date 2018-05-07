@@ -32,4 +32,15 @@ public class StringToDateConverter implements Converter<String, Date> {
         // 如果参数绑定失败返回null
         return null;
     }
+
+    public String convert(Date date) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String time;
+        try {
+            time = simpleDateFormat.format(date);
+        } catch (Exception e) {
+            return "时间错误";
+        }
+        return time;
+    }
 }

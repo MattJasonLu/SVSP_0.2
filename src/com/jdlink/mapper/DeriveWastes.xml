@@ -7,10 +7,13 @@
     <insert id="add" parameterType="DeriveWastes" >
         insert into t_deriveWastes ( id, name, code, formType, formTypeDetail,
         smellType, smellTypeDetail, solubility, solubilityDetail, isLowTemp,
-        lowTemp, solubleTemp, isMixture )
-        values (#{id}, #{name}, #{code}, #{formType}, #{formTypeDetail},
+        lowTemp, solubleTemp, isMixture, eyeMeasures, skinMeasures, swallowMeasures,
+        suctionMeasures, putOutFireMeasures, leakMeasures )
+        values ( #{id}, #{name}, #{code}, #{formType}, #{formTypeDetail},
         #{smellType}, #{smellTypeDetail}, #{solubility}, #{solubilityDetail},
-        #{isLowTemp}, #{lowTemp}, #{solubleTemp}, #{isMixture} );
+        #{isLowTemp}, #{lowTemp}, #{solubleTemp}, #{isMixture}, #{eyeMeasures},
+        #{skinMeasures}, #{swallowMeasures}, #{suctionMeasures}, #{putOutFireMeasures},
+        #{leakMeasures} );
         <if test="mixingElementList != null and mixingElementList.size() > 0">
             insert into r_deriveWastesAndMixingElement (deriveWastesId,mixingElementId)
             values
@@ -23,6 +26,20 @@
             values
             <foreach collection="sensitiveElementList" item="sensitiveElement" index="index" separator="," close=";">
                 (#{id,jdbcType=VARCHAR},#{sensitiveElement.id,jdbcType=VARCHAR})
+            </foreach>
+        </if>
+        <if test="wasteCharacterList != null and wasteCharacterList.size() > 0">
+            insert into r_deriveWastesAndWasteCharacter (deriveWastesId, wasteCharacterId)
+            values
+            <foreach collection="wasteCharacterList" item="wasteCharacter" index="index" separator="," close=";">
+                (#{id,jdbcType=VARCHAR},#{wasteCharacter.index,jdbcType=INTEGER})
+            </foreach>
+        </if>
+        <if test="wasteProtectList != null and wasteProtectList.size() > 0">
+            insert into r_deriveWastesAndWasteProtect (deriveWastesId, wasteProtectId)
+            values
+            <foreach collection="wasteProtectList" item="wasteProtect" index="index" separator="," close=";">
+                (#{id,jdbcType=VARCHAR},#{wasteProtect.index,jdbcType=INTEGER})
             </foreach>
         </if>
     </insert>

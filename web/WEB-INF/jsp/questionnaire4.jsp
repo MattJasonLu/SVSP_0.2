@@ -45,7 +45,7 @@
                 <th colspan="2">应急对应措施</th>
             </tr>
             <tr>
-                <td rowspan="6">${deriveWastes.id}</td>
+                <td rowspan="6">1</td>
                 <td rowspan="6">${deriveWastes.name}</td>
                 <td rowspan="6">
                     <input type="checkbox" name="wasteCharacterList" value="1">毒性
