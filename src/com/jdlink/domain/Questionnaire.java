@@ -27,6 +27,10 @@ public class Questionnaire {
      */
     private String author;
     /**
+     * 申请状态
+     */
+    private ApplyState applyState;
+    /**
      * 原始危废
      */
     private List<RawWastes> rawWastesList = new ArrayList<>();
@@ -131,6 +135,14 @@ public class Questionnaire {
         this.wasteInclusionTypeList = wasteInclusionTypeList;
     }
 
+    public ApplyState getApplyState() {
+        return applyState;
+    }
+
+    public void setApplyState(ApplyState applyState) {
+        this.applyState = applyState;
+    }
+
     public String getTimeStr() {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String timeStr;
@@ -150,6 +162,7 @@ public class Questionnaire {
                 ", clientId='" + clientId + '\'' +
                 ", evaluationnaireId='" + evaluationnaireId + '\'' +
                 ", author='" + author + '\'' +
+                ", applyState=" + applyState +
                 ", rawWastesList=" + rawWastesList +
                 ", wasteInclusionTypeList=" + wasteInclusionTypeList +
                 ", wasteProcessList=" + wasteProcessList +

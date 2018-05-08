@@ -28,6 +28,8 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+
+
     <!--自定义枚举类封装 -->
     <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
         <property name="converters">
@@ -46,6 +48,7 @@
                 <bean class="com.jdlink.util.StringToWasteCharacterConverter"/>
                 <bean class="com.jdlink.util.StringToWasteProtectConverter"/>
                 <bean class="com.jdlink.util.StringToChemicalTypeConverter"/>
+                <bean class="com.jdlink.util.StringToApplyStateConverter"/>
                 <!--<bean class="com.jdlink.util.StringToEnumConverterFactory"/>-->
                 <bean class="com.jdlink.util.StringToDateConverter"/>
             </set>

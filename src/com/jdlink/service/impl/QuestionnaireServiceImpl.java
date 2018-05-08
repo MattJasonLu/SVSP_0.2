@@ -45,4 +45,14 @@ public class QuestionnaireServiceImpl implements QuestionnaireService {
     public void update(Questionnaire questionnaire) {
         questionnaireMapper.update(questionnaire);
     }
+
+    @Override
+    public void signIn(String questionnaireId) {
+        questionnaireMapper.signIn(questionnaireId);
+    }
+
+    @Override
+    public void back(String quesionnaireId) {
+        questionnaireMapper.back(quesionnaireId);
+    }
 }

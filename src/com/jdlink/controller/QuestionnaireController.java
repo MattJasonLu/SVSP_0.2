@@ -168,6 +168,14 @@ public class QuestionnaireController {
         return mav;
     }
 
+    // 记录清空
+    @RequestMapping("showAdminQuestionnaire")
+    public ModelAndView showAdminQuestionnaire() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("questionnaire1");
+        return mav;
+    }
+
     @RequestMapping("secondQuestionnaire")
     public ModelAndView secondQuestionnaire(HttpSession session, String author) {
         ModelAndView mav = new ModelAndView();
@@ -253,6 +261,51 @@ public class QuestionnaireController {
 
         mav.addObject("deriveWastes", deriveWastes);
         mav.setViewName("questionnaire4");
+        return mav;
+    }
+
+    @RequestMapping("listAllQuestionnaire")
+    public ModelAndView listAllQuestionnaire(HttpSession session) {
+        ModelAndView mav = new ModelAndView();
+        List<Questionnaire> questionnaireList = questionnaireService.list();
+        List<Client> clientList = new ArrayList<>();
+        for (Questionnaire questionnaire : questionnaireList) {
+            Client client = clientService.getByClientId(questionnaire.getClientId());
+            clientList.add(client);
+        }
+        mav.addObject("clientList", clientList);
+        mav.addObject("questionnaireList", questionnaireList);
+        mav.setViewName("assessmentAdmin");
+        return mav;
+    }
+
+    @RequestMapping("signInQuestionnaire")
+    public ModelAndView signInQuestionnaire(String questionnaireId) {
+        ModelAndView mav = new ModelAndView();
+        try {
+            questionnaireService.signIn(questionnaireId);
+            mav.addObject("message", "签收成功!");
+            mav.setViewName("success");
+        } catch (Exception e) {
+            e.printStackTrace();
+            mav.addObject("message", "签收失败!");
+            mav.setViewName("fail");
+        }
+        return mav;
+    }
+
+    @RequestMapping("backQuestionnaire")
+    public ModelAndView backQuestionnaire(String questionnaireId) {
+        ModelAndView mav = new ModelAndView();
+        try {
+            questionnaireService.back(questionnaireId);
+            mav.addObject("message", "退回成功!");
+            mav.setViewName("success");
+        } catch (Exception e) {
+            e.printStackTrace();
+            mav.addObject("message", "退回失败!");
+            mav.setViewName("fail");
+        }
         return mav;
     }
 

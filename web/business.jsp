@@ -58,7 +58,7 @@
             <LI><A href="listClient" target="mainframe2">客户备案</A></LI>
             <LI><A href="listSalesman" target="mainframe2">业务员分配管理</A></LI>
             <LI><A href="listQuestionnaire" target="mainframe2">危险废物数据填报(生产单位)</A></LI>
-            <LI><A href="#"  target="mainframe2">危险废物数据评估(处置单位)</A></LI>
+            <LI><A href="listAllQuestionnaire"  target="mainframe2">危险废物数据评估(处置单位)</A></LI>
             <LI><A href="#"  target="mainframe2">客户样品管理</A></LI>
             <LI><A href="#"  target="mainframe2">客户档案</A></LI>
         </UL>
