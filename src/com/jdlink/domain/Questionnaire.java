@@ -1,5 +1,6 @@
 package com.jdlink.domain;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -128,6 +129,18 @@ public class Questionnaire {
 
     public void setWasteInclusionTypeList(List<WasteInclusionType> wasteInclusionTypeList) {
         this.wasteInclusionTypeList = wasteInclusionTypeList;
+    }
+
+    public String getTimeStr() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        String timeStr;
+        try {
+            timeStr = simpleDateFormat.format(time);
+            return timeStr;
+        } catch (Exception e) {
+            return "时间错误";
+        }
+
     }
 
     @Override

@@ -3,6 +3,7 @@ package com.jdlink.controller;
 import com.jdlink.domain.*;
 import com.jdlink.service.*;
 import com.jdlink.util.RandomUtil;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -54,6 +55,43 @@ public class QuestionnaireController {
             mav.setViewName("fail");
         }
 
+        return mav;
+    }
+
+    @RequestMapping("deleteQuestionnaire")
+    public ModelAndView deleteQuestionnaire(HttpSession session, String questionnaireId) {
+        ModelAndView mav = new ModelAndView();
+        try {
+            questionnaireService.delete(questionnaireId);
+            // 通过session获取到客户编号clientId
+            Client client = (Client) session.getAttribute("client");
+            List<Questionnaire> questionnaireList = questionnaireService.getByClientId(client.getClientId());
+            mav.addObject("questionnaireList", questionnaireList);
+            mav.addObject("client", client);
+            mav.setViewName("assessment");
+        } catch (Exception e) {
+            mav.addObject("message", "删除失败！");
+            mav.setViewName("fail");
+        }
+        return mav;
+    }
+
+    @RequestMapping("getQuestionnaire")
+    public ModelAndView getQuestionnaire(HttpSession session, String questionnaireId) {
+        ModelAndView mav = new ModelAndView();
+        try {
+            // 通过session获取到客户编号clientId
+            Client client = (Client) session.getAttribute("client");
+            String clientId = client.getClientId();
+            List<Questionnaire> questionnaireList = questionnaireService.get(clientId, questionnaireId);
+            mav.addObject("questionnaireList", questionnaireList);
+            mav.addObject("client", client);
+            mav.setViewName("assessment");
+        } catch (Exception e) {
+            e.printStackTrace();
+            mav.addObject("message", "查询失败！");
+            mav.setViewName("fail");
+        }
         return mav;
     }
 

@@ -89,8 +89,8 @@
                 <td colspan="4"><p id="p4">特别关注的物质</p>&nbsp;<p>请确认原料、辅料、废料、工艺是否含有以下物质：</p></td>
             </tr>
             <tr>
-                <td><input type="checkbox" name="wasteInclusionTypeList[0]" value="1">过氯化物${questionnaire.wasteInclusionTypeList[0]!=null}</td>
-                <td><input type="checkbox" name="wasteInclusionTypeList[1]" value="2">过氧化物${questionnaire.wasteInclusionTypeList[1]!=null}</td>
+                <td><input type="checkbox" name="wasteInclusionTypeList[0]" value="1">过氯化物</td>
+                <td><input type="checkbox" name="wasteInclusionTypeList[1]" value="2">过氧化物</td>
                 <td><input type="checkbox" name="wasteInclusionTypeList[2]" value="3">有机氰</td>
                 <td><input type="checkbox" name="wasteInclusionTypeList[3]" value="4">爆炸物</td>
             </tr>
@@ -130,9 +130,9 @@
                 <td>1</td>
                 <td><input type="text" name="code" value="${questionnaire.wasteProcessList[0].code}"></td>
                 <td><input type="text" name="description" value="${questionnaire.wasteProcessList[0].description}"></td>
-                <td><input type="text" name="quantity" value="${questionnaire.wasteProcessList[0].quantity}"></td>
+                <td><input type="text" name="quantity" value="${questionnaire.wasteProcessList[0].quantity}" disabled></td>
                 <td><input type="text" name="lastProcessTime" value="${questionnaire.wasteProcessList[0].lastProcessTime}"></td>
-                <td><input type="text" name="yearQuantity" value="${questionnaire.wasteProcessList[0].yearQuantity}"></td>
+                <td><input type="text" name="yearQuantity" value="${questionnaire.wasteProcessList[0].yearQuantity}" disabled></td>
                 <td><input type="text" name="packageSituation" value="${questionnaire.wasteProcessList[0].packageSituation}"></td>
             </tr>
             <tr>

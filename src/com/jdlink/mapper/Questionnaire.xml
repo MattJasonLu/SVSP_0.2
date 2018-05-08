@@ -38,12 +38,7 @@
     </delete>
 
     <select id="get" parameterType="String" resultType="Questionnaire">
-        select * from questionnaire
-        <where>
-            <if test="questionnaireId != null and questionnaireId != ''">
-                and questionnaireId like "%"#{keyword}"%"
-            </if>
-        </where>
+        select * from questionnaire where clientId = #{0} and questionnaireId like "%"#{1}"%"
     </select>
 
     <select id="getByClientId" parameterType="String" resultType="Questionnaire">

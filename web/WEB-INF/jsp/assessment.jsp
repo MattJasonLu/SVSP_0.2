@@ -76,8 +76,8 @@
         <input type="button" class="fm" value="⇋ 批量导出">
     </div>
     <div id="rightButton" class="dd">
-        <form action="#" method="post">
-            <input type="text" name="keyword">
+        <form action="getQuestionnaire" method="post">
+            <input type="text" name="questionnaireId">
             <input type="submit" class="em" name="search" value="🔎 搜索">
         </form>
     </div>
@@ -104,7 +104,7 @@
                                     <li><a href="#">修改</a></li>
                                     <li><a href="#" onclick="alert('提交成功')">提交</a></li>
                                     <li><a href="#">上传附件</a></li>
-                                    <li><a href="#">删除</a></li>
+                                    <li><a href="deleteQuestionnaire?questionnaireId=${questionnaire.questionnaireId}">删除</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -115,7 +115,7 @@
                     <td>${client.industry}</td>
                     <td>${client.product}</td>
                     <td>${client.contactName}</td>
-                    <td>2018-1-1</td>
+                    <td>${questionnaire.getTimeStr()}</td>
                 </tr>
             </c:forEach>
         </table>

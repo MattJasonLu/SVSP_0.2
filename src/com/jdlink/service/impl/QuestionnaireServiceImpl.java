@@ -22,8 +22,8 @@ public class QuestionnaireServiceImpl implements QuestionnaireService {
     }
 
     @Override
-    public List<Questionnaire> get(String keyword) {
-        return questionnaireMapper.get(keyword);
+    public List<Questionnaire> get(String clientId, String questionnaireId) {
+        return questionnaireMapper.get(clientId, questionnaireId);
     }
 
     @Override
