@@ -132,7 +132,7 @@ public class Questionnaire {
     }
 
     public String getTimeStr() {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String timeStr;
         try {
             timeStr = simpleDateFormat.format(time);
