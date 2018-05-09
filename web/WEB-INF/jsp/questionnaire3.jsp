@@ -119,6 +119,7 @@
                 <td><input type="radio" name="deriveWastesList[0].sensitiveElementList[1].isOrganic" value="false"></td>
             </tr>
             <tr>
+                <%--TODO: 此处对于三个小数存在问题，如果禁用后则无法传值，需要判断是否有值，有值则不禁用(JS)--%>
                 <td>说明<input type="text" name="deriveWastesList[0].smellTypeDetail" value="${deriveWastesList[0].smellTypeDetail}"></td>
                 <td><input type="text" name="deriveWastesList[0].mixingElementList[0].name" value="${deriveWastesList[0].mixingElementList[0].name}" readonly onclick="enableText()" onblur="checkText()"></td>
                 <td><input type="number" name="deriveWastesList[0].mixingElementList[0].minimum" value="${deriveWastesList[0].mixingElementList[0].minimum}" min="0.00" max="100.00" step="0.01" disabled></td>
@@ -171,7 +172,7 @@
             </tr>
             <tr>
                 <td>
-                    <input type="radio" name="deriveWastesList[0].isLowTemp" value="true">低温<input type="text" size="3" name="lowTemp" disabled value="${deriveWastesList[4].lowTemp}">˚C
+                    <input type="radio" name="deriveWastesList[0].isLowTemp" value="true">低温<input type="text" size="3" name="deriveWastesList[0].lowTemp" disabled value="${deriveWastesList[0].lowTemp}">˚C
                 </td>
                 <td><input type="text" name="deriveWastesList[0].mixingElementList[4].name" value="${deriveWastesList[4].mixingElementList[4].name}" readonly onclick="enableText()" onblur="checkText()"></td>
                 <td><input type="number" name="deriveWastesList[0].mixingElementList[4].minimum" value="${deriveWastesList[4].mixingElementList[4].minimum}" min="0.00" max="100.00" step="0.01" disabled></td>
@@ -184,7 +185,7 @@
             <tr>
                 <td rowspan="4">其他</td>
                 <td rowspan="4">
-                    如为精馏残渣<br>其可溶温度：<input type="text" size="3" name="deriveWastesList[0].solubleTemp" disabled value="${deriveWastesList[4].solubleTemp}">˚C
+                    如为精馏残渣<br>其可溶温度：<input type="text" size="3" name="deriveWastesList[0].solubleTemp" disabled value="${deriveWastesList[0].solubleTemp}">˚C
                 </td>
                 <td><input type="text" name="deriveWastesList[0].mixingElementList[5].name" value="${deriveWastesList[5].mixingElementList[5].name}" readonly onclick="enableText()" onblur="checkText()"></td>
                 <td><input type="number" name="deriveWastesList[0].mixingElementList[5].minimum" value="${deriveWastesList[5].mixingElementList[5].minimum}" min="0.00" max="100.00" step="0.01" disabled></td>

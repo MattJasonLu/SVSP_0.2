@@ -96,21 +96,27 @@ public class QuestionnaireController {
     }
 
     @RequestMapping("addQuestionnaire")
-    public ModelAndView addQuestionnaire(HttpSession session, DeriveWastes deriveWastes) {
+    public ModelAndView addQuestionnaire(HttpSession session, Questionnaire newQuestionnaire) {
         // TODO: 当前增加调查表仅支持单个材料，多个材料后期完善
         ModelAndView mav = new ModelAndView();
         // 从session中获取
         Questionnaire questionnaire = (Questionnaire) session.getAttribute("questionnaire");
         // 更新数据
-        DeriveWastes deriveWastes1 = questionnaire.getDeriveWastesList().get(0);
-        deriveWastes1.setWasteCharacterList(deriveWastes.getWasteCharacterList());
-        deriveWastes1.setWasteProtectList(deriveWastes.getWasteProtectList());
-        deriveWastes1.setEyeMeasures(deriveWastes.getEyeMeasures());
-        deriveWastes1.setSkinMeasures(deriveWastes.getSkinMeasures());
-        deriveWastes1.setSwallowMeasures(deriveWastes.getSwallowMeasures());
-        deriveWastes1.setSuctionMeasures(deriveWastes.getSuctionMeasures());
-        deriveWastes1.setPutOutFireMeasures(deriveWastes.getPutOutFireMeasures());
-        deriveWastes1.setLeakMeasures(deriveWastes.getLeakMeasures());
+        for (int i = 0; i < questionnaire.getDeriveWastesList().size() && i < newQuestionnaire.getDeriveWastesList().size(); i++) {
+            DeriveWastes newDeriveWastes = newQuestionnaire.getDeriveWastesList().get(i);
+            DeriveWastes deriveWastes = questionnaire.getDeriveWastesList().get(i);
+
+            deriveWastes.setWasteCharacterList(newDeriveWastes.getWasteCharacterList());
+            deriveWastes.setWasteProtectList(newDeriveWastes.getWasteProtectList());
+            deriveWastes.setWasteCharacterList(newDeriveWastes.getWasteCharacterList());
+            deriveWastes.setWasteProtectList(newDeriveWastes.getWasteProtectList());
+            deriveWastes.setEyeMeasures(newDeriveWastes.getEyeMeasures());
+            deriveWastes.setSkinMeasures(newDeriveWastes.getSkinMeasures());
+            deriveWastes.setSwallowMeasures(newDeriveWastes.getSwallowMeasures());
+            deriveWastes.setSuctionMeasures(newDeriveWastes.getSuctionMeasures());
+            deriveWastes.setPutOutFireMeasures(newDeriveWastes.getPutOutFireMeasures());
+            deriveWastes.setLeakMeasures(newDeriveWastes.getLeakMeasures());
+        }
 
         // 添加调查表
         questionnaireService.add(questionnaire);
@@ -134,7 +140,7 @@ public class QuestionnaireController {
                 sensitiveElementService.add(sensitiveElement);
             }
         }
-
+        mav.addObject("questionnaire", questionnaire);
         mav.addObject("message", "新增调查表成功！");
         mav.setViewName("success");
 
@@ -146,6 +152,7 @@ public class QuestionnaireController {
         ModelAndView mav = new ModelAndView();
 
         Client client = (Client) session.getAttribute("client");
+        session.removeAttribute("questionnaire");
         mav.addObject("client", client);
 
         // 获取当前时间
@@ -177,13 +184,35 @@ public class QuestionnaireController {
     }
 
     @RequestMapping("secondQuestionnaire")
-    public ModelAndView secondQuestionnaire(HttpSession session, String author) {
+    public ModelAndView secondQuestionnaire(HttpSession session, String author, Questionnaire newQuestionnaire) {
         ModelAndView mav = new ModelAndView();
 
         Questionnaire questionnaire = (Questionnaire) session.getAttribute("questionnaire");
         if (author != null) {
             questionnaire.setAuthor(author);
         }
+
+        // 更新数据
+        for (int i = 0; i < questionnaire.getDeriveWastesList().size() && i < newQuestionnaire.getDeriveWastesList().size(); i++) {
+            DeriveWastes newDeriveWastes = newQuestionnaire.getDeriveWastesList().get(i);
+            DeriveWastes deriveWastes = questionnaire.getDeriveWastesList().get(i);
+
+            deriveWastes.setName(newDeriveWastes.getName());
+            deriveWastes.setCode(newDeriveWastes.getCode());
+            deriveWastes.setFormType(newDeriveWastes.getFormType());
+            deriveWastes.setFormTypeDetail(newDeriveWastes.getFormTypeDetail());
+            deriveWastes.setSmellType(newDeriveWastes.getSmellType());
+            deriveWastes.setSmellTypeDetail(newDeriveWastes.getSmellTypeDetail());
+            deriveWastes.setSolubility(newDeriveWastes.getSolubility());
+            deriveWastes.setSolubilityDetail(newDeriveWastes.getSolubilityDetail());
+            deriveWastes.setIsLowTemp(newDeriveWastes.getIsLowTemp());
+            deriveWastes.setLowTemp(newDeriveWastes.getLowTemp());
+            deriveWastes.setSolubleTemp(newDeriveWastes.getSolubleTemp());
+            deriveWastes.setIsMixture(newDeriveWastes.getIsMixture());
+            deriveWastes.setMixingElementList(newDeriveWastes.getMixingElementList());
+            deriveWastes.setSensitiveElementList(newDeriveWastes.getSensitiveElementList());
+        }
+
         mav.setViewName("questionnaire2");
         return mav;
     }
@@ -192,7 +221,26 @@ public class QuestionnaireController {
     public ModelAndView thirdQuestionnaire(HttpSession session, RawWastes rawWastes, WasteProcess wasteProcess, Questionnaire newQuestionnaire) {
         ModelAndView mav = new ModelAndView();
         Questionnaire questionnaire = (Questionnaire) session.getAttribute("questionnaire");
+        // 更新数据
+        for (int i = 0; i < newQuestionnaire.getDeriveWastesList().size(); i++) {
+            if (questionnaire.getDeriveWastesList().size() == 0) {
+                questionnaire.setDeriveWastesList(newQuestionnaire.getDeriveWastesList());
+                break;
+            }
+            DeriveWastes newDeriveWastes = newQuestionnaire.getDeriveWastesList().get(i);
+            DeriveWastes deriveWastes = questionnaire.getDeriveWastesList().get(i);
 
+            deriveWastes.setWasteCharacterList(newDeriveWastes.getWasteCharacterList());
+            deriveWastes.setWasteProtectList(newDeriveWastes.getWasteProtectList());
+            deriveWastes.setWasteCharacterList(newDeriveWastes.getWasteCharacterList());
+            deriveWastes.setWasteProtectList(newDeriveWastes.getWasteProtectList());
+            deriveWastes.setEyeMeasures(newDeriveWastes.getEyeMeasures());
+            deriveWastes.setSkinMeasures(newDeriveWastes.getSkinMeasures());
+            deriveWastes.setSwallowMeasures(newDeriveWastes.getSwallowMeasures());
+            deriveWastes.setSuctionMeasures(newDeriveWastes.getSuctionMeasures());
+            deriveWastes.setPutOutFireMeasures(newDeriveWastes.getPutOutFireMeasures());
+            deriveWastes.setLeakMeasures(newDeriveWastes.getLeakMeasures());
+        }
         // 设置原材料的编号，随机
         if (questionnaire.getRawWastesList().size() == 0) {
             if (rawWastes != null && rawWastes.getMainMaterial() != null && !rawWastes.getMainMaterial().equals("")) {
@@ -235,6 +283,7 @@ public class QuestionnaireController {
         mav.addObject("solubilityStrList", solubilityStrList);
 
         if (questionnaire.getDeriveWastesList().size() > 0) {
+
             mav.addObject("deriveWastesList", questionnaire.getDeriveWastesList());
         }
         mav.addObject("questionnaire", questionnaire);
@@ -265,7 +314,30 @@ public class QuestionnaireController {
                 }
             }
         }
-        questionnaire.setDeriveWastesList(newQuestionnaire.getDeriveWastesList());
+        // 更新数据
+        for (int i = 0; i < newQuestionnaire.getDeriveWastesList().size(); i++) {
+            if (questionnaire.getDeriveWastesList().size() == 0) {
+                questionnaire.setDeriveWastesList(newQuestionnaire.getDeriveWastesList());
+                break;
+            }
+            DeriveWastes newDeriveWastes = newQuestionnaire.getDeriveWastesList().get(i);
+            DeriveWastes deriveWastes = questionnaire.getDeriveWastesList().get(i);
+
+            deriveWastes.setName(newDeriveWastes.getName());
+            deriveWastes.setCode(newDeriveWastes.getCode());
+            deriveWastes.setFormType(newDeriveWastes.getFormType());
+            deriveWastes.setFormTypeDetail(newDeriveWastes.getFormTypeDetail());
+            deriveWastes.setSmellType(newDeriveWastes.getSmellType());
+            deriveWastes.setSmellTypeDetail(newDeriveWastes.getSmellTypeDetail());
+            deriveWastes.setSolubility(newDeriveWastes.getSolubility());
+            deriveWastes.setSolubilityDetail(newDeriveWastes.getSolubilityDetail());
+            deriveWastes.setIsLowTemp(newDeriveWastes.getIsLowTemp());
+            deriveWastes.setLowTemp(newDeriveWastes.getLowTemp());
+            deriveWastes.setSolubleTemp(newDeriveWastes.getSolubleTemp());
+            deriveWastes.setIsMixture(newDeriveWastes.getIsMixture());
+            deriveWastes.setMixingElementList(newDeriveWastes.getMixingElementList());
+            deriveWastes.setSensitiveElementList(newDeriveWastes.getSensitiveElementList());
+        }
 
         mav.addObject("deriveWastesList", questionnaire.getDeriveWastesList());
         mav.addObject("questionnaire", questionnaire);

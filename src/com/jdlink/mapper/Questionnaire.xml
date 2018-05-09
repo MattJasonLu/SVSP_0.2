@@ -9,13 +9,20 @@
     </resultMap>
     <insert id="add" parameterType="Questionnaire" >
         insert into questionnaire ( questionnaireId, clientId, evaluationnaireId, time, author, state )
-        values ( #{questionnaireId}, #{clientId}, #{evaluationnaireId} ,#{time}, #{author}, 'ToSignIn' );
+        values ( #{questionnaireId}, #{clientId}, #{evaluationnaireId} ,#{time}, #{author}, 1 );
 
         <if test="rawWastesList.size() > 0">
             insert into r_questionnaireAndRawWastes (questionnaireId,rawWastesId)
             values
             <foreach collection="rawWastesList" item="rawWastes" index="index" separator="," close=";">
                 (#{questionnaireId,jdbcType=VARCHAR},#{rawWastes.materialId,jdbcType=VARCHAR})
+            </foreach>
+        </if>
+        <if test="wasteInclusionTypeList != null and wasteInclusionTypeList.size() > 0">
+            insert into r_questionnaireAndWasteInclusionType (questionnaireId, wasteInclusionTypeId)
+            values
+            <foreach collection="wasteInclusionTypeList" item="wasteInclusionType" index="index" separator="," close=";">
+                (#{materialId,jdbcType=VARCHAR},#{wasteInclusionType.index,jdbcType=INTEGER})
             </foreach>
         </if>
         <if test="wasteProcessList.size() > 0">

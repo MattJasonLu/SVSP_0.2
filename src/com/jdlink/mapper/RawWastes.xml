@@ -7,14 +7,6 @@
     <insert id="add" parameterType="RawWastes" >
         insert into t_rawWastes ( materialId, code, mainMaterial, auxMaterial, draginMaterial )
         values (#{materialId}, #{code}, #{mainMaterial}, #{auxMaterial}, #{draginMaterial});
-
-        <if test="wasteInclusionTypeList.size() > 0">
-            insert into r_rawWastesAndWasteInclusionType (rawWastesId, wasteInclusionTypeId)
-            values
-            <foreach collection="wasteInclusionTypeList" item="wasteInclusionType" index="index" separator=",">
-                (#{materialId,jdbcType=VARCHAR},#{wasteInclusionType.index,jdbcType=INTEGER})
-            </foreach>
-        </if>
     </insert>
 
     <delete id="delete" parameterType="String" >
