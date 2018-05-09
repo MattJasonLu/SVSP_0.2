@@ -192,6 +192,7 @@ public class QuestionnaireController {
     public ModelAndView thirdQuestionnaire(HttpSession session, RawWastes rawWastes, WasteProcess wasteProcess, Questionnaire newQuestionnaire) {
         ModelAndView mav = new ModelAndView();
         Questionnaire questionnaire = (Questionnaire) session.getAttribute("questionnaire");
+
         // 设置原材料的编号，随机
         if (questionnaire.getRawWastesList().size() == 0) {
             if (rawWastes != null && rawWastes.getMainMaterial() != null && !rawWastes.getMainMaterial().equals("")) {
@@ -232,6 +233,11 @@ public class QuestionnaireController {
         mav.addObject("formTypeStrList", formTypeStrList);
         mav.addObject("smellTypeStrList", smellTypeStrList);
         mav.addObject("solubilityStrList", solubilityStrList);
+
+        if (questionnaire.getDeriveWastesList().size() > 0) {
+            mav.addObject("deriveWastesList", questionnaire.getDeriveWastesList());
+        }
+        mav.addObject("questionnaire", questionnaire);
         mav.setViewName("questionnaire3");
         return mav;
     }
@@ -239,27 +245,30 @@ public class QuestionnaireController {
     // TODO: 对于DeriveWastes参数绑定，浮点型数据不填则无法绑定，出现错误400，待完善
 
     @RequestMapping("forthQuestionnaire")
-    public ModelAndView forthQuestionnaire(HttpSession session, DeriveWastes deriveWastes) {
+    public ModelAndView forthQuestionnaire(HttpSession session, Questionnaire newQuestionnaire) {
         ModelAndView mav = new ModelAndView();
         Questionnaire questionnaire = (Questionnaire) session.getAttribute("questionnaire");
-        deriveWastes.setId(RandomUtil.getRandomFileName());
-        // 对于此处更新混合物成分列表的操作，因迭代时删除发生错误故采取不删反增继续事务
-        List<MixingElement> newMixingElementList = new ArrayList<>();
-        for (MixingElement mixingElement : deriveWastes.getMixingElementList()) {
-            if (mixingElement.getName() != "") {
-                mixingElement.setId(RandomUtil.getRandomFileName());
-                newMixingElementList.add(mixingElement);
+        for (DeriveWastes deriveWastes : newQuestionnaire.getDeriveWastesList()) {
+            deriveWastes.setId(RandomUtil.getRandomFileName());
+            // 对于此处更新混合物成分列表的操作，因迭代时删除发生错误故采取不删反增继续事务
+            List<MixingElement> newMixingElementList = new ArrayList<>();
+            for (MixingElement mixingElement : deriveWastes.getMixingElementList()) {
+                if (mixingElement.getName() != "") {
+                    mixingElement.setId(RandomUtil.getRandomFileName());
+                    newMixingElementList.add(mixingElement);
+                }
+            }
+            deriveWastes.setMixingElementList(newMixingElementList);
+            if (deriveWastes.getSensitiveElementList() != null) {
+                for (SensitiveElement sensitiveElement : deriveWastes.getSensitiveElementList()) {
+                    sensitiveElement.setId(RandomUtil.getRandomFileName());
+                }
             }
         }
-        deriveWastes.setMixingElementList(newMixingElementList);
-        if (deriveWastes.getSensitiveElementList() != null) {
-            for (SensitiveElement sensitiveElement : deriveWastes.getSensitiveElementList()) {
-                sensitiveElement.setId(RandomUtil.getRandomFileName());
-            }
-        }
-        questionnaire.addDeriveWastesList(deriveWastes);
+        questionnaire.setDeriveWastesList(newQuestionnaire.getDeriveWastesList());
 
-        mav.addObject("deriveWastes", deriveWastes);
+        mav.addObject("deriveWastesList", questionnaire.getDeriveWastesList());
+        mav.addObject("questionnaire", questionnaire);
         mav.setViewName("questionnaire4");
         return mav;
     }

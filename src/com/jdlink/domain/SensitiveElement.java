@@ -31,11 +31,11 @@ public class SensitiveElement {
         this.chemicalType = chemicalType;
     }
 
-    public boolean isOrganic() {
+    public boolean getIsOrganic() {
         return isOrganic;
     }
 
-    public void setOrganic(boolean organic) {
+    public void setIsOrganic(boolean organic) {
         isOrganic = organic;
     }
 }

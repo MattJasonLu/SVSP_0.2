@@ -172,11 +172,11 @@ public class DeriveWastes {
         this.solubilityDetail = solubilityDetail;
     }
 
-    public boolean isLowTemp() {
+    public boolean getIsLowTemp() {
         return isLowTemp;
     }
 
-    public void setLowTemp(boolean lowTemp) {
+    public void setIsLowTemp(boolean lowTemp) {
         isLowTemp = lowTemp;
     }
 
@@ -196,11 +196,11 @@ public class DeriveWastes {
         this.solubleTemp = solubleTemp;
     }
 
-    public boolean isMixture() {
+    public boolean getIsMixture() {
         return isMixture;
     }
 
-    public void setMixture(boolean mixture) {
+    public void setIsMixture(boolean mixture) {
         isMixture = mixture;
     }
 

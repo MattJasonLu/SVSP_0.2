@@ -58,8 +58,8 @@ public class UserController {
                 Client client = clientService.getByClientId(user.getClientId());
                 // 将用户对应的客户编号或者管理员编号加入session保存
                 session.setAttribute("client", client);
-                // 设置session的有效时间为3个小时
-                session.setMaxInactiveInterval(3 * 60 * 60);
+                // 设置session的有效时间为30分钟
+                session.setMaxInactiveInterval(30 * 60);
             } else {
                 throw new Exception("用户名密码错误，请重试！");
             }
