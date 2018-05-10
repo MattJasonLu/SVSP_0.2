@@ -55,7 +55,7 @@
 </head>
 <body>
     <div><p style="font-size: 18px">危险废物数据调查表</p></div>
-    <form action="forthQuestionnaire" method="post">
+    <form method="post">
     <div>
         <p class="red">危废中使用的主要原料、辅料和有可能带入的化学物质</p>
         <p>查询单号(问卷编号):xxxxxxxx</p>
@@ -172,7 +172,7 @@
             </tr>
             <tr>
                 <td>
-                    <input type="radio" name="deriveWastesList[0].isLowTemp" value="true">低温<input type="text" size="3" name="deriveWastesList[0].lowTemp" disabled value="${deriveWastesList[0].lowTemp}">˚C
+                    <input type="radio" name="deriveWastesList[0].isLowTemp" value="true">低温<input type="text" size="3" name="deriveWastesList[0].lowTemp" value="${empty deriveWastesList[0].lowTemp?0.0:deriveWastesList[0].lowTemp}">˚C
                 </td>
                 <td><input type="text" name="deriveWastesList[0].mixingElementList[4].name" value="${deriveWastesList[4].mixingElementList[4].name}" readonly onclick="enableText()" onblur="checkText()"></td>
                 <td><input type="number" name="deriveWastesList[0].mixingElementList[4].minimum" value="${deriveWastesList[4].mixingElementList[4].minimum}" min="0.00" max="100.00" step="0.01" disabled></td>
@@ -185,7 +185,7 @@
             <tr>
                 <td rowspan="4">其他</td>
                 <td rowspan="4">
-                    如为精馏残渣<br>其可溶温度：<input type="text" size="3" name="deriveWastesList[0].solubleTemp" disabled value="${deriveWastesList[0].solubleTemp}">˚C
+                    如为精馏残渣<br>其可溶温度：<input type="text" size="3" name="deriveWastesList[0].solubleTemp" value="${empty deriveWastesList[0].solubleTemp?0.0:deriveWastesList[0].solubleTemp}">˚C
                 </td>
                 <td><input type="text" name="deriveWastesList[0].mixingElementList[5].name" value="${deriveWastesList[5].mixingElementList[5].name}" readonly onclick="enableText()" onblur="checkText()"></td>
                 <td><input type="number" name="deriveWastesList[0].mixingElementList[5].minimum" value="${deriveWastesList[5].mixingElementList[5].minimum}" min="0.00" max="100.00" step="0.01" disabled></td>
@@ -222,8 +222,8 @@
         </table>
     </div>
     <div class="div4">
-        <input id="input1" type="button" value="上一步" onclick="jump1()">
-        <input id="input2" type="submit" value="下一步">
+        <input id="input1" type="submit" value="上一步" formaction="secondQuestionnaire">
+        <input id="input2" type="submit" value="下一步" formaction="forthQuestionnaire">
         <input id="input3" type="button" value="返回" onclick="jump3()">
     </div>
     </form>

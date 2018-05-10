@@ -101,7 +101,7 @@
                         <ul>
                             <li class="" onmouseover="over()" onmouseleave="out()">操作
                                 <ul>
-                                    <li><a href="#">修改</a></li>
+                                    <li><a href="showQuestionnaire?questionnaireId=${questionnaire.questionnaireId}">修改</a></li>
                                     <li><a href="#" onclick="alert('提交成功')">提交</a></li>
                                     <li><a href="#">上传附件</a></li>
                                     <li><a href="deleteQuestionnaire?questionnaireId=${questionnaire.questionnaireId}">删除</a></li>

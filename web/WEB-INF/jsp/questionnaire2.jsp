@@ -32,7 +32,7 @@
     </style>
     <script>
         function jump1(){
-            window.location.href="showQuestionnaire";
+            window.location.href="firstQuestionnaire";
         }
         function jump2(){
             window.location.href="thirdQuestionnaire";
@@ -57,9 +57,9 @@
 <body onload="checkedWasteInclusion()">
     <div>
         <p id="p1"><b>危险废物数据调查表</b></p>
-        <p>查询单号:<%=request.getParameter("queryId")%></p>
+        <p>查询单号:${questionnaire.questionnaireId}</p>
     </div>
-    <form action="thirdQuestionnaire" method="post">
+    <form method="post">
     <div style="width: 100%" class="text-center">
         <p id="p3">危废中使用的主要原料、辅料和有可能带入的化学物质</p><br>
         <table border="1px" width="80%">
@@ -71,9 +71,9 @@
             </tr>
             <tr>
                 <td>1</td>
-                <td><input type="text" name="mainMaterial" value="${questionnaire.rawWastesList[0].mainMaterial}"></td>
-                <td><input type="text" name="auxMaterial" value="${questionnaire.rawWastesList[0].auxMaterial}"></td>
-                <td><input type="text" name="draginMaterial" value="${questionnaire.rawWastesList[0].draginMaterial}"></td>
+                <td><input type="text" name="rawWastesList[0].mainMaterial" value="${questionnaire.rawWastesList[0].mainMaterial}"></td>
+                <td><input type="text" name="rawWastesList[0].auxMaterial" value="${questionnaire.rawWastesList[0].auxMaterial}"></td>
+                <td><input type="text" name="rawWastesList[0].draginMaterial" value="${questionnaire.rawWastesList[0].draginMaterial}"></td>
             </tr>
             <tr>
                 <td><input type="button" value="+" onclick=""></td>
@@ -128,12 +128,12 @@
             </tr>
             <tr>
                 <td>1</td>
-                <td><input type="text" name="code" value="${questionnaire.wasteProcessList[0].code}"></td>
-                <td><input type="text" name="description" value="${questionnaire.wasteProcessList[0].description}"></td>
-                <td><input type="text" name="quantity" value="${questionnaire.wasteProcessList[0].quantity}" disabled></td>
-                <td><input type="text" name="lastProcessTime" value="${questionnaire.wasteProcessList[0].lastProcessTime}"></td>
-                <td><input type="text" name="yearQuantity" value="${questionnaire.wasteProcessList[0].yearQuantity}" disabled></td>
-                <td><input type="text" name="packageSituation" value="${questionnaire.wasteProcessList[0].packageSituation}"></td>
+                <td><input type="text" name="wasteProcessList[0].code" value="${questionnaire.wasteProcessList[0].code}"></td>
+                <td><input type="text" name="wasteProcessList[0].description" value="${questionnaire.wasteProcessList[0].description}"></td>
+                <td><input type="text" name="wasteProcessList[0].quantity" value="${empty questionnaire.wasteProcessList[0].quantity?0.0:questionnaire.wasteProcessList[0].quantity}"></td>
+                <td><input type="text" name="wasteProcessList[0].lastProcessTime" value="${questionnaire.wasteProcessList[0].getLastProcessTimeStr()}"></td>
+                <td><input type="text" name="wasteProcessList[0].yearQuantity" value="${empty questionnaire.wasteProcessList[0].yearQuantity?0.0:questionnaire.wasteProcessList[0].yearQuantity}"></td>
+                <td><input type="text" name="wasteProcessList[0].packageSituation" value="${questionnaire.wasteProcessList[0].packageSituation}"></td>
             </tr>
             <tr>
                 <td><input type="button" value="+" onclick=""></td>
@@ -147,8 +147,8 @@
         </table>
     </div>
     <div class="div4">
-        <input id="input1" type="button" value="上一个" onclick="jump1()">
-        <input id="input2" type="submit" value="下一个">
+        <input id="input1" type="submit" value="上一个" formaction="firstQuestionnaire">
+        <input id="input2" type="submit" value="下一个" formaction="thirdQuestionnaire">
         <input id="input3" type="button" value="返回" onclick="jump3()">
     </div>
     </form>

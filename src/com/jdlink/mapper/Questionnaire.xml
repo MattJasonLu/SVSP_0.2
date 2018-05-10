@@ -22,7 +22,9 @@
             insert into r_questionnaireAndWasteInclusionType (questionnaireId, wasteInclusionTypeId)
             values
             <foreach collection="wasteInclusionTypeList" item="wasteInclusionType" index="index" separator="," close=";">
-                (#{materialId,jdbcType=VARCHAR},#{wasteInclusionType.index,jdbcType=INTEGER})
+                <if test="wasteInclusionType != null">
+                  (#{questionnaireId,jdbcType=VARCHAR},#{wasteInclusionType.index,jdbcType=INTEGER})
+                </if>
             </foreach>
         </if>
         <if test="wasteProcessList.size() > 0">

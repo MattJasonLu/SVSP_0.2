@@ -63,7 +63,7 @@
             </tr>
             <tr>
                 <td>填报人:  <input type="text" name="author" value="${questionnaire.author}"></td>
-                <td>填报日期:  <input type="text" name="time" value="${time}" readonly></td>
+                <td>填报日期:  <input type="text" name="time" value="${questionnaire.getTimeStr()}" readonly></td>
             </tr>
 
         </table>

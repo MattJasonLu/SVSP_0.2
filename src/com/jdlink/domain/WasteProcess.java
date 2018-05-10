@@ -1,5 +1,6 @@
 package com.jdlink.domain;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -74,6 +75,18 @@ public class WasteProcess {
 
     public void setLastProcessTime(Date lastProcessTime) {
         this.lastProcessTime = lastProcessTime;
+    }
+
+    public String getLastProcessTimeStr() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String time;
+        try {
+            time = simpleDateFormat.format(lastProcessTime);
+            return time;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "时间错误";
+        }
     }
 
     public float getYearQuantity() {
