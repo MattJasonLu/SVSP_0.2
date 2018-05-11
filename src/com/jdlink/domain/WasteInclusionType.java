@@ -1,10 +1,12 @@
 package com.jdlink.domain;
 
+import com.jdlink.util.CodeBaseEnum;
+
 /**
  * Created by matt on 2018/5/2.
  * 特别关注的物质
  */
-public enum WasteInclusionType {
+public enum WasteInclusionType implements CodeBaseEnum {
     Perchlorhydria("过氯化物", 1),
     Organonitrogen("有机氮", 2),
     DiethylEther("乙醚", 3),
@@ -22,6 +24,11 @@ public enum WasteInclusionType {
     Phenol("苯酚", 15),
     Reductant("还原剂", 16),
     ;
+
+    @Override
+    public int code() {
+        return index;
+    }
 
     private String name;
     private int index;

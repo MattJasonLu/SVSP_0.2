@@ -58,7 +58,7 @@
     <form method="post">
     <div>
         <p class="red">危废中使用的主要原料、辅料和有可能带入的化学物质</p>
-        <p>查询单号(问卷编号):xxxxxxxx</p>
+        <p>查询单号(问卷编号):${questionnaire.questionnaireId}</p>
     </div>
     <div>
         <table border="1">

@@ -38,6 +38,11 @@ public class WasteProcessServiceImpl implements WasteProcessService {
     }
 
     @Override
+    public List<WasteProcess> getByQuestionnaireId(String questionnaireId) {
+        return wasteProcessMapper.getByQuestionnaireId(questionnaireId);
+    }
+
+    @Override
     public List<WasteProcess> list() {
         return wasteProcessMapper.list();
     }

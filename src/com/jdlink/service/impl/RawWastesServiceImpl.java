@@ -33,6 +33,11 @@ public class RawWastesServiceImpl implements RawWastesService {
     }
 
     @Override
+    public List<RawWastes> getByQuestionnaireId(String questionnaireId) {
+        return rawWastesMapper.getByQuestionnaireId(questionnaireId);
+    }
+
+    @Override
     public void update(RawWastes rawWastes) {
         rawWastesMapper.update(rawWastes);
     }

@@ -15,6 +15,8 @@ public interface RawWastesMapper {
 
     RawWastes get(String materialId);
 
+    List<RawWastes> getByQuestionnaireId(String questionnaireId);
+
     void update(RawWastes rawWastes);
 
     List<RawWastes> list();

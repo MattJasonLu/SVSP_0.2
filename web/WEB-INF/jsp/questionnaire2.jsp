@@ -57,7 +57,7 @@
 <body onload="checkedWasteInclusion()">
     <div>
         <p id="p1"><b>危险废物数据调查表</b></p>
-        <p>查询单号:${questionnaire.questionnaireId}</p>
+        <p>查询单号(问卷编号):${questionnaire.questionnaireId}</p>
     </div>
     <form method="post">
     <div style="width: 100%" class="text-center">

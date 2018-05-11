@@ -17,6 +17,12 @@
         select * from t_wasteProcess WHERE processId = #{processId}
     </select>
 
+    <select id="getByQuestionnaireId" parameterType="String" resultType="WasteProcess">
+        SELECT * FROM t_wasteProcess WHERE processId in (
+          SELECT r_questionnaireAndWasteProcess.wasteProcessId FROM r_questionnaireAndWasteProcess
+          WHERE questionnaireId=#{questionnaireId});
+    </select>
+
     <update id="update" parameterType="WasteProcess" >
         update t_wasteProcess set description=#{description} where processId=#{processId}
     </update>

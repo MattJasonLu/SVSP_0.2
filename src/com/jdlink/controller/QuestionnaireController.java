@@ -32,6 +32,8 @@ public class QuestionnaireController {
     @Autowired
     RawWastesService rawWastesService;
     @Autowired
+    WasteInclusionTypeService wasteInclusionTypeService;
+    @Autowired
     WasteProcessService wasteProcessService;
     @Autowired
     DeriveWastesService deriveWastesService;
@@ -157,33 +159,65 @@ public class QuestionnaireController {
     }
 
     @RequestMapping("showQuestionnaire")
-    public ModelAndView showQuestionnaire(HttpSession session, String questionnaireId) {
+    public ModelAndView showQuestionnaire(HttpSession session, Questionnaire newQuestionnaire) {
         ModelAndView mav = new ModelAndView();
-
-        Client client = (Client) session.getAttribute("client");
+        // 第一次进入清空session
         session.removeAttribute("questionnaire");
+        // 获取用户
+        Client client = (Client) session.getAttribute("client");
         mav.addObject("client", client);
-
-        // 获取当前时间
-        Date now = new Date();
-        String time = new SimpleDateFormat("yyyy-MM-dd").format(now);
-        mav.addObject("time", time);
         mav.setViewName("questionnaire1");
+        // 如果存在问卷编号
         if (session.getAttribute("questionnaire") == null) {
             Questionnaire questionnaire = new Questionnaire();
-            if (questionnaireId == null) {
+            if (newQuestionnaire.getQuestionnaireId() == null) {
                 // 创建调查表数据对象
-                questionnaire.setTime(now);
+                questionnaire.setTime(new Date()); // 获取当前时间
                 questionnaire.setClientId(client.getClientId());
                 questionnaire.setQuestionnaireId(RandomUtil.getRandomFileName());
             } else {
-                List<Questionnaire> questionnaireList = questionnaireService.get(client.getClientId(), questionnaireId);
-                questionnaire = questionnaireList.get(0);
-            }
+                // 取得调查表对象
+                questionnaire = questionnaireService.getById(newQuestionnaire.getQuestionnaireId());
+                // 装载原材料
+                questionnaire.setRawWastesList(rawWastesService.getByQuestionnaireId(newQuestionnaire.getQuestionnaireId()));
+                // TODO: 处理枚举列表发生问题，暂时无法处理
+                // 装载特别关注物质
+//                questionnaire.setWasteInclusionTypeList(wasteInclusionTypeService.getByQuestionnaireId(newQuestionnaire.getQuestionnaireId()));
+                // 装载处理流程
+                questionnaire.setWasteProcessList(wasteProcessService.getByQuestionnaireId(newQuestionnaire.getQuestionnaireId()));
+                // 装载次生危废
 
+            }
+            // 添加session
             session.setAttribute("questionnaire", questionnaire);
+            mav.addObject("questionnaire", questionnaire);
         } else {
             Questionnaire questionnaire = (Questionnaire) session.getAttribute("questionnaire");
+
+            // 更新页面2传递过来的数据
+            // 设置原材料的编号
+            for (RawWastes rawWastes : newQuestionnaire.getRawWastesList()) {
+                if (rawWastes != null) {
+                    rawWastes.setMaterialId(RandomUtil.getRandomFileName());
+                }
+            }
+            // 设置生产工艺流程的编号
+            for (WasteProcess wasteProcess : newQuestionnaire.getWasteProcessList()) {
+                if (wasteProcess != null) {
+                    wasteProcess.setProcessId(RandomUtil.getRandomFileName());
+                }
+            }
+            questionnaire.setRawWastesList(newQuestionnaire.getRawWastesList());
+            questionnaire.setWasteProcessList(newQuestionnaire.getWasteProcessList());
+            // 特别关注的物质列表
+            List<WasteInclusionType> wasteInclusionTypeList = new ArrayList<>();
+            if (newQuestionnaire.getWasteInclusionTypeList() != null && newQuestionnaire.getWasteInclusionTypeList().size() > 0) {
+                for (WasteInclusionType wasteInclusionType : newQuestionnaire.getWasteInclusionTypeList()) {
+                    if (wasteInclusionType != null) wasteInclusionTypeList.add(wasteInclusionType);
+                }
+                // 更新
+                questionnaire.setWasteInclusionTypeList(wasteInclusionTypeList);
+            }
             mav.addObject("questionnaire", questionnaire);
         }
         return mav;

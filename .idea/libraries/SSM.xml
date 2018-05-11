@@ -15,7 +15,6 @@
       <root url="jar://$USER_HOME$/Documents/jar/ssm/mybatis-3.1.1.jar!/" />
       <root url="jar://$USER_HOME$/Documents/jar/ssm/mybatis-spring-1.2.3.jar!/" />
       <root url="jar://$USER_HOME$/Documents/jar/ssm/mysql-connector-java-5.1.6-bin.jar!/" />
-      <root url="jar://$USER_HOME$/Documents/jar/ssm/servlet-api.jar!/" />
       <root url="jar://$USER_HOME$/Documents/jar/ssm/spring-aop-3.2.16.RELEASE.jar!/" />
       <root url="jar://$USER_HOME$/Documents/jar/ssm/spring-aspects-3.2.16.RELEASE.jar!/" />
       <root url="jar://$USER_HOME$/Documents/jar/ssm/spring-beans-3.2.16.RELEASE.jar!/" />

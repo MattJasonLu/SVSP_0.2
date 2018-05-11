@@ -27,6 +27,11 @@ public class QuestionnaireServiceImpl implements QuestionnaireService {
     }
 
     @Override
+    public Questionnaire getById(String questionnaireId) {
+        return questionnaireMapper.getById(questionnaireId);
+    }
+
+    @Override
     public List<Questionnaire> getByClientId(String clientId) {
         return questionnaireMapper.getByClientId(clientId);
     }

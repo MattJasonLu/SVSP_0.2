@@ -17,6 +17,8 @@ public interface WasteProcessService {
 
     void update(WasteProcess wasteProcess);
 
+    List<WasteProcess> getByQuestionnaireId(String questionnaireId);
+
     List<WasteProcess> list();
 
     int count();

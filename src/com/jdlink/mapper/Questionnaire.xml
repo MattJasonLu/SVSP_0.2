@@ -6,6 +6,8 @@
 <mapper namespace="com.jdlink.mapper.QuestionnaireMapper">
     <resultMap type="Questionnaire" id="getQuestionnaireRM">
         <result property="applyState" column="state" javaType="com.jdlink.domain.ApplyState" typeHandler="com.jdlink.util.EnumTypeHandler"/>
+        <collection property="wasteInclusionTypeList" select="getInclusionType" column="questionnaireId"
+                    ofType="com.jdlink.domain.WasteInclusionType" javaType="ArrayList" typeHandler="com.jdlink.util.EnumTypeHandler"/>
     </resultMap>
     <insert id="add" parameterType="Questionnaire" >
         insert into questionnaire ( questionnaireId, clientId, evaluationnaireId, time, author, state )
@@ -51,6 +53,14 @@
 
     <select id="get" parameterType="String" resultType="Questionnaire">
         select * from questionnaire where clientId = #{0} and questionnaireId like "%"#{1}"%"
+    </select>
+
+    <select id="getById" parameterType="String" resultType="Questionnaire">
+        select * from questionnaire where questionnaireId = #{questionnaireId};
+    </select>
+
+    <select id="getInclusionType" parameterType="String" resultType="WasteInclusionType" >
+        select wasteInclusionTypeId from r_questionnaireAndWasteInclusionType WHERE questionnaireId=#{questionnaireId}
     </select>
 
     <select id="getByClientId" parameterType="String" resultType="Questionnaire">

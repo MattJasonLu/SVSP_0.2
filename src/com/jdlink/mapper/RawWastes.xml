@@ -17,6 +17,12 @@
         select * from t_rawWastes WHERE materialId = #{materialId}
     </select>
 
+    <select id="getByQuestionnaireId" parameterType="String" resultType="RawWastes">
+        SELECT * FROM t_rawWastes WHERE materialId in (
+          SELECT r_questionnaireAndRawWastes.rawWastesId FROM r_questionnaireAndRawWastes
+          WHERE questionnaireId=#{questionnaireId});
+    </select>
+
     <update id="update" parameterType="RawWastes" >
         update t_rawWastes set mainMaterial=#{mainMaterial} where materialId=#{materialId}
     </update>

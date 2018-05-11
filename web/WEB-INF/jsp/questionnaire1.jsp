@@ -40,7 +40,7 @@
     <br>
     <div class="div2" style="width: 100%;height: 10%">
         <p class="p2">基本信息</p>
-        <p class="p3">查询单号(问卷编号):xxxxxxxx</p>
+        <p class="p3">查询单号(问卷编号):${questionnaire.questionnaireId}</p>
     </div>
     <br>
     <br>
