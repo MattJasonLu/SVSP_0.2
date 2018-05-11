@@ -176,13 +176,11 @@ public class QuestionnaireController {
                 questionnaire.setClientId(client.getClientId());
                 questionnaire.setQuestionnaireId(RandomUtil.getRandomFileName());
             } else {
+                // TODO: 优化部分，后期有时间将其get统一整合进 "questionnaire.xml"
                 // 取得调查表对象
                 questionnaire = questionnaireService.getById(newQuestionnaire.getQuestionnaireId());
                 // 装载原材料
                 questionnaire.setRawWastesList(rawWastesService.getByQuestionnaireId(newQuestionnaire.getQuestionnaireId()));
-                // TODO: 处理枚举列表发生问题，暂时无法处理
-                // 装载特别关注物质
-//                questionnaire.setWasteInclusionTypeList(wasteInclusionTypeService.getByQuestionnaireId(newQuestionnaire.getQuestionnaireId()));
                 // 装载处理流程
                 questionnaire.setWasteProcessList(wasteProcessService.getByQuestionnaireId(newQuestionnaire.getQuestionnaireId()));
                 // 装载次生危废

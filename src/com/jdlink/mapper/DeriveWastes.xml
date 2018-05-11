@@ -4,6 +4,16 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.jdlink.mapper.DeriveWastesMapper">
+    <resultMap type="DeriveWastes" id="getDeriveWastesRM">
+        <collection property="mixingElementList" select="getMixingElement" column="id"
+                    ofType="com.jdlink.domain.MixingElement" javaType="ArrayList"/>
+        <collection property="sensitiveElementList" select="getSensitiveElement" column="id"
+                    ofType="com.jdlink.domain.SensitiveElement" javaType="ArrayList"/>
+        <collection property="wasteCharacterList" select="getWasteCharacter" column="id"
+                    ofType="com.jdlink.domain.WasteCharacter" javaType="ArrayList"/>
+        <collection property="wasteProtectList" select="getWasteProtect" column="id"
+                    ofType="com.jdlink.domain.WasteProtect" javaType="ArrayList"/>
+    </resultMap>
     <insert id="add" parameterType="DeriveWastes" >
         insert into t_deriveWastes ( id, name, code, formType, formTypeDetail,
         smellType, smellTypeDetail, solubility, solubilityDetail, isLowTemp,
@@ -29,17 +39,17 @@
             </foreach>
         </if>
         <if test="wasteCharacterList != null and wasteCharacterList.size() > 0">
-            insert into r_deriveWastesAndWasteCharacter (deriveWastesId, wasteCharacterId)
+            insert into r_deriveWastesAndWasteCharacter (deriveWastesId, wasteCharacter)
             values
             <foreach collection="wasteCharacterList" item="wasteCharacter" index="index" separator="," close=";">
-                (#{id,jdbcType=VARCHAR},#{wasteCharacter.index,jdbcType=INTEGER})
+                (#{id,jdbcType=VARCHAR},#{wasteCharacter,jdbcType=VARCHAR})
             </foreach>
         </if>
         <if test="wasteProtectList != null and wasteProtectList.size() > 0">
-            insert into r_deriveWastesAndWasteProtect (deriveWastesId, wasteProtectId)
+            insert into r_deriveWastesAndWasteProtect (deriveWastesId, wasteProtect)
             values
             <foreach collection="wasteProtectList" item="wasteProtect" index="index" separator="," close=";">
-                (#{id,jdbcType=VARCHAR},#{wasteProtect.index,jdbcType=INTEGER})
+                (#{id,jdbcType=VARCHAR},#{wasteProtect,jdbcType=VARCHAR})
             </foreach>
         </if>
     </insert>
@@ -61,10 +71,32 @@
         SELECT * FROM t_deriveWastes WHERE id = #{id}
     </select>
 
-    <select id="getByQuestionnaireId" parameterType="String" resultType="DeriveWastes">
+    <select id="getByQuestionnaireId" parameterType="String" resultMap="getDeriveWastesRM">
         SELECT * from t_deriveWastes WHERE t_deriveWastes.id in
           (select r_questionnaireAndDeriveWastes.deriveWastesId from
             r_questionnaireAndDeriveWastes WHERE questionnaireId=#{questionnaireId});
+    </select>
+
+    <select id="getMixingElement" parameterType="String" resultType="MixingElement">
+        SELECT * from t_mixingElement WHERE t_mixingElement.id in
+          (SELECT r_deriveWastesAndMixingElement.mixingElementId
+            FROM r_deriveWastesAndMixingElement WHERE deriveWastesId=#{id});
+    </select>
+
+    <select id="getSensitiveElement" parameterType="String" resultType="SensitiveElement">
+        SELECT * from t_sensitiveElement WHERE t_sensitiveElement.id in
+          (SELECT r_deriveWastesAndSensitiveElement.sensitiveElementId
+            FROM r_deriveWastesAndSensitiveElement WHERE deriveWastesId=#{id});
+    </select>
+
+    <select id="getWasteCharacter" parameterType="String" resultType="WasteCharacter">
+        SELECT r_deriveWastesAndWasteCharacter.wasteCharacter
+          FROM r_deriveWastesAndWasteCharacter WHERE deriveWastesId=#{id};
+    </select>
+
+    <select id="getWasteProtect" parameterType="String" resultType="WasteProtect">
+        SELECT r_deriveWastesAndWasteProtect.wasteProtect
+        FROM r_deriveWastesAndWasteProtect WHERE deriveWastesId=#{id};
     </select>
 
     <select id="list" resultType="DeriveWastes">

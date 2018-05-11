@@ -42,14 +42,9 @@
         }
         // 界面加载时更新特别关注物质的选中与否
         function checkedWasteInclusion() {
-            <c:forEach var="i" begin="${0}" end="${15}">
-                var item = document.getElementsByName("wasteInclusionTypeList[" + ${i} + "]")[0];
-                if (${questionnaire.wasteInclusionTypeList[i]!=null}) {
-                    item.setAttribute("checked", "checked");
-                } else {
-                    if (item.hasAttribute("checked"))
-                        item.removeAttribute("checked");
-                }
+            <c:forEach items="${questionnaire.wasteInclusionTypeList}" var="wasteInclusionType">
+                var item = document.getElementsByName("wasteInclusionTypeList[" + ${wasteInclusionType.index-1} + "]")[0];
+                item.setAttribute("checked", "checked");
             </c:forEach>
         }
     </script>

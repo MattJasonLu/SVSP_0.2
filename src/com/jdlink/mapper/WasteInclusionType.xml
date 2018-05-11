@@ -6,6 +6,6 @@
 <mapper namespace="com.jdlink.mapper.WasteInclusionTypeMapper">
 
     <select id="getByQuestionnaireId" parameterType="String" resultType="WasteInclusionType">
-        select wasteInclusionTypeId from r_questionnaireAndWasteInclusionType WHERE questionnaireId=#{questionnaireId}
+        select wasteInclusionType from r_questionnaireAndWasteInclusionType WHERE questionnaireId=#{questionnaireId}
     </select>
 </mapper>

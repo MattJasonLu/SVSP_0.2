@@ -139,20 +139,20 @@
                         </c:forEach>
                     </select>
                 </td>
-                <td><input type="text" name="deriveWastesList[0].mixingElementList[1].name" value="${deriveWastesList[1].mixingElementList[1].name}" readonly onclick="enableText()" onblur="checkText()"></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[1].minimum" value="${deriveWastesList[1].mixingElementList[1].minimum}" min="0.00" max="100.00" step="0.01" disabled></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[1].average" value="${deriveWastesList[1].mixingElementList[1].average}" min="0.00" max="100.00" step="0.01" disabled></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[1].maximum" value="${deriveWastesList[1].mixingElementList[1].maximum}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="text" name="deriveWastesList[0].mixingElementList[1].name" value="${deriveWastesList[0].mixingElementList[1].name}" readonly onclick="enableText()" onblur="checkText()"></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[1].minimum" value="${deriveWastesList[0].mixingElementList[1].minimum}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[1].average" value="${deriveWastesList[0].mixingElementList[1].average}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[1].maximum" value="${deriveWastesList[0].mixingElementList[1].maximum}" min="0.00" max="100.00" step="0.01" disabled></td>
                 <td><input type="checkbox" name="deriveWastesList[0].sensitiveElementList[3].ChemicalType" value="4">碘</td>
                 <td><input type="radio" name="deriveWastesList[0].sensitiveElementList[3].isOrganic" value="true"></td>
                 <td><input type="radio" name="deriveWastesList[0].sensitiveElementList[3].isOrganic" value="false"></td>
             </tr>
             <tr>
                 <td>说明<input type="text" name="deriveWastesList[0].solubilityDetail" value="${deriveWastesList[0].solubilityDetail}"></td>
-                <td><input type="text" name="deriveWastesList[0].mixingElementList[2].name" value="${deriveWastesList[2].mixingElementList[2].name}" readonly onclick="enableText()" onblur="checkText()"></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[2].minimum" value="${deriveWastesList[2].mixingElementList[2].minimum}" min="0.00" max="100.00" step="0.01" disabled></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[2].average" value="${deriveWastesList[2].mixingElementList[2].average}" min="0.00" max="100.00" step="0.01" disabled></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[2].maximum" value="${deriveWastesList[2].mixingElementList[2].maximum}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="text" name="deriveWastesList[0].mixingElementList[2].name" value="${deriveWastesList[0].mixingElementList[2].name}" readonly onclick="enableText()" onblur="checkText()"></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[2].minimum" value="${deriveWastesList[0].mixingElementList[2].minimum}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[2].average" value="${deriveWastesList[0].mixingElementList[2].average}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[2].maximum" value="${deriveWastesList[0].mixingElementList[2].maximum}" min="0.00" max="100.00" step="0.01" disabled></td>
                 <td><input type="checkbox" name="deriveWastesList[0].sensitiveElementList[4].ChemicalType" value="5">硫</td>
                 <td><input type="radio" name="deriveWastesList[0].sensitiveElementList[4].isOrganic" value="true"></td>
                 <td><input type="radio" name="deriveWastesList[0].sensitiveElementList[4].isOrganic" value="false"></td>
@@ -162,10 +162,10 @@
                 <td>
                     <input type="radio" name="deriveWastesList[0].isLowTemp" value="false" checked>常温
                 </td>
-                <td><input type="text" name="deriveWastesList[0].mixingElementList[3].name" value="${deriveWastesList[3].mixingElementList[3].name}" readonly onclick="enableText()" onblur="checkText()"></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[3].minimum" value="${deriveWastesList[3].mixingElementList[3].minimum}" min="0.00" max="100.00" step="0.01" disabled></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[3].average" value="${deriveWastesList[3].mixingElementList[3].average}" min="0.00" max="100.00" step="0.01" disabled></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[3].maximum" value="${deriveWastesList[3].mixingElementList[3].maximum}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="text" name="deriveWastesList[0].mixingElementList[3].name" value="${deriveWastesList[0].mixingElementList[3].name}" readonly onclick="enableText()" onblur="checkText()"></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[3].minimum" value="${deriveWastesList[0].mixingElementList[3].minimum}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[3].average" value="${deriveWastesList[0].mixingElementList[3].average}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[3].maximum" value="${deriveWastesList[0].mixingElementList[3].maximum}" min="0.00" max="100.00" step="0.01" disabled></td>
                 <td><input type="checkbox" name="deriveWastesList[0].sensitiveElementList[5].ChemicalType" value="6">磷</td>
                 <td><input type="radio" name="deriveWastesList[0].sensitiveElementList[5].isOrganic" value="true"></td>
                 <td><input type="radio" name="deriveWastesList[0].sensitiveElementList[5].isOrganic" value="false"></td>
@@ -174,10 +174,10 @@
                 <td>
                     <input type="radio" name="deriveWastesList[0].isLowTemp" value="true">低温<input type="text" size="3" name="deriveWastesList[0].lowTemp" value="${empty deriveWastesList[0].lowTemp?0.0:deriveWastesList[0].lowTemp}">˚C
                 </td>
-                <td><input type="text" name="deriveWastesList[0].mixingElementList[4].name" value="${deriveWastesList[4].mixingElementList[4].name}" readonly onclick="enableText()" onblur="checkText()"></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[4].minimum" value="${deriveWastesList[4].mixingElementList[4].minimum}" min="0.00" max="100.00" step="0.01" disabled></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[4].average" value="${deriveWastesList[4].mixingElementList[4].average}" min="0.00" max="100.00" step="0.01" disabled></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[4].maximum" value="${deriveWastesList[4].mixingElementList[4].maximum}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="text" name="deriveWastesList[0].mixingElementList[4].name" value="${deriveWastesList[0].mixingElementList[4].name}" readonly onclick="enableText()" onblur="checkText()"></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[4].minimum" value="${deriveWastesList[0].mixingElementList[4].minimum}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[4].average" value="${deriveWastesList[0].mixingElementList[4].average}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[4].maximum" value="${deriveWastesList[0].mixingElementList[4].maximum}" min="0.00" max="100.00" step="0.01" disabled></td>
                 <td><input type="checkbox" name="deriveWastesList[0].sensitiveElementList[6].ChemicalType" value="7">氮</td>
                 <td><input type="radio" name="deriveWastesList[0].sensitiveElementList[6].isOrganic" value="true"></td>
                 <td><input type="radio" name="deriveWastesList[0].sensitiveElementList[6].isOrganic" value="false"></td>
@@ -187,31 +187,31 @@
                 <td rowspan="4">
                     如为精馏残渣<br>其可溶温度：<input type="text" size="3" name="deriveWastesList[0].solubleTemp" value="${empty deriveWastesList[0].solubleTemp?0.0:deriveWastesList[0].solubleTemp}">˚C
                 </td>
-                <td><input type="text" name="deriveWastesList[0].mixingElementList[5].name" value="${deriveWastesList[5].mixingElementList[5].name}" readonly onclick="enableText()" onblur="checkText()"></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[5].minimum" value="${deriveWastesList[5].mixingElementList[5].minimum}" min="0.00" max="100.00" step="0.01" disabled></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[5].average" value="${deriveWastesList[5].mixingElementList[5].average}" min="0.00" max="100.00" step="0.01" disabled></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[5].maximum" value="${deriveWastesList[5].mixingElementList[5].maximum}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="text" name="deriveWastesList[0].mixingElementList[5].name" value="${deriveWastesList[0].mixingElementList[5].name}" readonly onclick="enableText()" onblur="checkText()"></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[5].minimum" value="${deriveWastesList[0].mixingElementList[5].minimum}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[5].average" value="${deriveWastesList[0].mixingElementList[5].average}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[5].maximum" value="${deriveWastesList[0].mixingElementList[5].maximum}" min="0.00" max="100.00" step="0.01" disabled></td>
                 <td class="red" colspan="3" rowspan="4">
                     备注：主要成分避免<br>使用溶废剂、废油等<br>笼统描述，尽可能详<br>尽算出含量
                 </td>
             </tr>
             <tr>
-                <td><input type="text" name="deriveWastesList[0].mixingElementList[6].name" value="${deriveWastesList[6].mixingElementList[6].name}" readonly onclick="enableText()" onblur="checkText()"></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[6].minimum" value="${deriveWastesList[6].mixingElementList[6].minimum}" min="0.00" max="100.00" step="0.01" disabled></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[6].average" value="${deriveWastesList[6].mixingElementList[6].average}" min="0.00" max="100.00" step="0.01" disabled></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[6].maximum" value="${deriveWastesList[6].mixingElementList[6].maximum}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="text" name="deriveWastesList[0].mixingElementList[6].name" value="${deriveWastesList[0].mixingElementList[6].name}" readonly onclick="enableText()" onblur="checkText()"></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[6].minimum" value="${deriveWastesList[0].mixingElementList[6].minimum}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[6].average" value="${deriveWastesList[0].mixingElementList[6].average}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[6].maximum" value="${deriveWastesList[0].mixingElementList[6].maximum}" min="0.00" max="100.00" step="0.01" disabled></td>
             </tr>
             <tr>
-                <td><input type="text" name="deriveWastesList[0].mixingElementList[7].name" value="${deriveWastesList[7].mixingElementList[7].name}" readonly onclick="enableText()" onblur="checkText()"></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[7].minimum" value="${deriveWastesList[7].mixingElementList[7].minimum}" min="0.00" max="100.00" step="0.01" disabled></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[7].average" value="${deriveWastesList[7].mixingElementList[7].average}" min="0.00" max="100.00" step="0.01" disabled></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[7].maximum" value="${deriveWastesList[7].mixingElementList[7].maximum}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="text" name="deriveWastesList[0].mixingElementList[7].name" value="${deriveWastesList[0].mixingElementList[7].name}" readonly onclick="enableText()" onblur="checkText()"></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[7].minimum" value="${deriveWastesList[0].mixingElementList[7].minimum}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[7].average" value="${deriveWastesList[0].mixingElementList[7].average}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[7].maximum" value="${deriveWastesList[0].mixingElementList[7].maximum}" min="0.00" max="100.00" step="0.01" disabled></td>
             </tr>
             <tr>
-                <td><input type="text" name="deriveWastesList[0].mixingElementList[8].name" value="${deriveWastesList[8].mixingElementList[8].name}" readonly onclick="enableText()" onblur="checkText()"></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[8].minimum" value="${deriveWastesList[8].mixingElementList[8].minimum}" min="0.00" max="100.00" step="0.01" disabled></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[8].average" value="${deriveWastesList[8].mixingElementList[8].average}" min="0.00" max="100.00" step="0.01" disabled></td>
-                <td><input type="number" name="deriveWastesList[0].mixingElementList[8].maximum" value="${deriveWastesList[8].mixingElementList[8].maximum}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="text" name="deriveWastesList[0].mixingElementList[8].name" value="${deriveWastesList[0].mixingElementList[8].name}" readonly onclick="enableText()" onblur="checkText()"></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[8].minimum" value="${deriveWastesList[0].mixingElementList[8].minimum}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[8].average" value="${deriveWastesList[0].mixingElementList[8].average}" min="0.00" max="100.00" step="0.01" disabled></td>
+                <td><input type="number" name="deriveWastesList[0].mixingElementList[8].maximum" value="${deriveWastesList[0].mixingElementList[8].maximum}" min="0.00" max="100.00" step="0.01" disabled></td>
             </tr>
             <tr>
                 <td>
