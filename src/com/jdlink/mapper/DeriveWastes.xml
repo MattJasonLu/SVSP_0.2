@@ -61,6 +61,12 @@
         SELECT * FROM t_deriveWastes WHERE id = #{id}
     </select>
 
+    <select id="getByQuestionnaireId" parameterType="String" resultType="DeriveWastes">
+        SELECT * from t_deriveWastes WHERE t_deriveWastes.id in
+          (select r_questionnaireAndDeriveWastes.deriveWastesId from
+            r_questionnaireAndDeriveWastes WHERE questionnaireId=#{questionnaireId});
+    </select>
+
     <select id="list" resultType="DeriveWastes">
         select * from t_deriveWastes
     </select>

@@ -15,6 +15,8 @@ public interface DeriveWastesService {
 
     DeriveWastes getById(String id);
 
+    List<DeriveWastes> getByQuestionnaireId(String questionnaireId);
+
     void update(DeriveWastes deriveWastes);
 
     List<DeriveWastes> list();

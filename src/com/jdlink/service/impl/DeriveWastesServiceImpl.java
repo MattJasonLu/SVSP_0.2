@@ -32,6 +32,11 @@ public class DeriveWastesServiceImpl implements DeriveWastesService {
     }
 
     @Override
+    public List<DeriveWastes> getByQuestionnaireId(String questionnaireId) {
+        return deriveWastesMapper.getByQuestionnaireId(questionnaireId);
+    }
+
+    @Override
     public void update(DeriveWastes deriveWastes) {
         deriveWastesMapper.update(deriveWastes);
     }

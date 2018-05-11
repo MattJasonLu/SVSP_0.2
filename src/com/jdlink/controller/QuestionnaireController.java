@@ -186,7 +186,7 @@ public class QuestionnaireController {
                 // 装载处理流程
                 questionnaire.setWasteProcessList(wasteProcessService.getByQuestionnaireId(newQuestionnaire.getQuestionnaireId()));
                 // 装载次生危废
-
+                questionnaire.setDeriveWastesList(deriveWastesService.getByQuestionnaireId(newQuestionnaire.getQuestionnaireId()));
             }
             // 添加session
             session.setAttribute("questionnaire", questionnaire);
