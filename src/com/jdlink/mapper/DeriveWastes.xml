@@ -5,6 +5,7 @@
 
 <mapper namespace="com.jdlink.mapper.DeriveWastesMapper">
     <resultMap type="DeriveWastes" id="getDeriveWastesRM">
+        <result property="id" column="id" javaType="String"/>
         <collection property="mixingElementList" select="getMixingElement" column="id"
                     ofType="com.jdlink.domain.MixingElement" javaType="ArrayList"/>
         <collection property="sensitiveElementList" select="getSensitiveElement" column="id"

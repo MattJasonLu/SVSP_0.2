@@ -193,23 +193,61 @@ public class QuestionnaireController {
             mav.addObject("questionnaire", questionnaire);
         } else {
             Questionnaire questionnaire = (Questionnaire) session.getAttribute("questionnaire");
-
             // 更新页面2传递过来的数据
-            // 设置原材料的编号
-            for (RawWastes rawWastes : newQuestionnaire.getRawWastesList()) {
-                if (rawWastes != null) {
-                    rawWastes.setMaterialId(RandomUtil.getRandomFileName());
-                }
-            }
-            // 设置生产工艺流程的编号
-            for (WasteProcess wasteProcess : newQuestionnaire.getWasteProcessList()) {
-                if (wasteProcess != null) {
-                    wasteProcess.setProcessId(RandomUtil.getRandomFileName());
-                }
-            }
-            questionnaire.setRawWastesList(newQuestionnaire.getRawWastesList());
-            questionnaire.setWasteProcessList(newQuestionnaire.getWasteProcessList());
+//            if (newQuestionnaire.getRawWastesList().size() > 0) {
+//                for (RawWastes rawWastes : newQuestionnaire.getRawWastesList()) {
+//                    if (rawWastes != null && rawWastes.getMaterialId() == null) {
+//                        rawWastes.setMaterialId(RandomUtil.getRandomFileName());
+//                    }
+//                }
+//                questionnaire.setRawWastesList(newQuestionnaire.getRawWastesList());
+//            }
+//            if (newQuestionnaire.getWasteProcessList().size() > 0) {
+//                for (WasteProcess wasteProcess : newQuestionnaire.getWasteProcessList()) {
+//                    if (wasteProcess != null && wasteProcess.getProcessId() == null) {
+//                        wasteProcess.setProcessId(RandomUtil.getRandomFileName());
+//                    }
+//                }
+//                questionnaire.setWasteProcessList(newQuestionnaire.getWasteProcessList());
+//            }
             // 特别关注的物质列表
+
+            if (newQuestionnaire.getRawWastesList().size() > 0) {
+                List<RawWastes> oldRawWastesList = questionnaire.getRawWastesList();
+                List<RawWastes> newRawWastesList = newQuestionnaire.getRawWastesList();
+                // 如果旧列表不为空
+                if (oldRawWastesList.size() > 0) {
+                    for (int i = 0; i < oldRawWastesList.size(); i++) {
+                        newRawWastesList.get(i).setMaterialId(oldRawWastesList.get(i).getMaterialId());
+                    }
+                } else {
+                    for (RawWastes rawWastes : newQuestionnaire.getRawWastesList()) {
+                        if (rawWastes != null) {
+                            rawWastes.setMaterialId(RandomUtil.getRandomFileName());
+                        }
+                    }
+                }
+                questionnaire.setRawWastesList(newQuestionnaire.getRawWastesList());
+            }
+            if (newQuestionnaire.getWasteProcessList().size() > 0) {
+
+                List<WasteProcess> oldWasteProcessList = questionnaire.getWasteProcessList();
+                List<WasteProcess> newWasteProcessList = newQuestionnaire.getWasteProcessList();
+                if (oldWasteProcessList.size() > 0) {
+                    for (int i = 0; i < oldWasteProcessList.size(); i++) {
+                        // 将旧列表的id赋值到新列表
+                        newWasteProcessList.get(i).setProcessId(oldWasteProcessList.get(i).getProcessId());
+                    }
+                } else {
+                    for (WasteProcess wasteProcess : newQuestionnaire.getWasteProcessList()) {
+                        if (wasteProcess != null && wasteProcess.getProcessId() == null) {
+                            wasteProcess.setProcessId(RandomUtil.getRandomFileName());
+                        }
+                    }
+                }
+                questionnaire.setWasteProcessList(newQuestionnaire.getWasteProcessList());
+            }
+
             List<WasteInclusionType> wasteInclusionTypeList = new ArrayList<>();
             if (newQuestionnaire.getWasteInclusionTypeList() != null && newQuestionnaire.getWasteInclusionTypeList().size() > 0) {
                 for (WasteInclusionType wasteInclusionType : newQuestionnaire.getWasteInclusionTypeList()) {
@@ -260,21 +298,41 @@ public class QuestionnaireController {
             // 保持新旧两个列表的元素id一致
             // 设置原材料的编号，随机
             if (newQuestionnaire.getRawWastesList().size() > 0) {
-                for (RawWastes rawWastes : newQuestionnaire.getRawWastesList()) {
-                    if (rawWastes != null) {
-                        rawWastes.setMaterialId(RandomUtil.getRandomFileName());
+                List<RawWastes> oldRawWastesList = questionnaire.getRawWastesList();
+                List<RawWastes> newRawWastesList = newQuestionnaire.getRawWastesList();
+                // 如果旧列表不为空
+                if (oldRawWastesList.size() > 0) {
+                    for (int i = 0; i < oldRawWastesList.size(); i++) {
+                        newRawWastesList.get(i).setMaterialId(oldRawWastesList.get(i).getMaterialId());
+                    }
+                } else {
+                    for (RawWastes rawWastes : newQuestionnaire.getRawWastesList()) {
+                        if (rawWastes != null) {
+                            rawWastes.setMaterialId(RandomUtil.getRandomFileName());
+                        }
                     }
                 }
                 questionnaire.setRawWastesList(newQuestionnaire.getRawWastesList());
             }
             if (newQuestionnaire.getWasteProcessList().size() > 0) {
-                for (WasteProcess wasteProcess : newQuestionnaire.getWasteProcessList()) {
-                    if (wasteProcess != null) {
-                        wasteProcess.setProcessId(RandomUtil.getRandomFileName());
+
+                List<WasteProcess> oldWasteProcessList = questionnaire.getWasteProcessList();
+                List<WasteProcess> newWasteProcessList = newQuestionnaire.getWasteProcessList();
+                if (oldWasteProcessList.size() > 0) {
+                    for (int i = 0; i < oldWasteProcessList.size(); i++) {
+                        // 将旧列表的id赋值到新列表
+                        newWasteProcessList.get(i).setProcessId(oldWasteProcessList.get(i).getProcessId());
+                    }
+                } else {
+                    for (WasteProcess wasteProcess : newQuestionnaire.getWasteProcessList()) {
+                        if (wasteProcess != null && wasteProcess.getProcessId() == null) {
+                            wasteProcess.setProcessId(RandomUtil.getRandomFileName());
+                        }
                     }
                 }
                 questionnaire.setWasteProcessList(newQuestionnaire.getWasteProcessList());
             }
+
             // 特别关注的物质列表
             List<WasteInclusionType> wasteInclusionTypeList = new ArrayList<>();
             if (newQuestionnaire.getWasteInclusionTypeList() != null && newQuestionnaire.getWasteInclusionTypeList().size() > 0) {
@@ -365,18 +423,54 @@ public class QuestionnaireController {
             deriveWastes.setLeakMeasures(newDeriveWastes.getLeakMeasures());
         }
         // 设置原材料的编号，随机
+//        if (newQuestionnaire.getRawWastesList().size() > 0) {
+//            for (RawWastes rawWastes : newQuestionnaire.getRawWastesList()) {
+//                if (rawWastes != null && rawWastes.getMaterialId() == null) {
+//                    rawWastes.setMaterialId(RandomUtil.getRandomFileName());
+//                }
+//            }
+//            questionnaire.setRawWastesList(newQuestionnaire.getRawWastesList());
+//        }
+//        if (newQuestionnaire.getWasteProcessList().size() > 0) {
+//            for (WasteProcess wasteProcess : newQuestionnaire.getWasteProcessList()) {
+//                if (wasteProcess != null && wasteProcess.getProcessId() == null) {
+//                    wasteProcess.setProcessId(RandomUtil.getRandomFileName());
+//                }
+//            }
+//            questionnaire.setWasteProcessList(newQuestionnaire.getWasteProcessList());
+//        }
+
         if (newQuestionnaire.getRawWastesList().size() > 0) {
-            for (RawWastes rawWastes : newQuestionnaire.getRawWastesList()) {
-                if (rawWastes != null) {
-                    rawWastes.setMaterialId(RandomUtil.getRandomFileName());
+            List<RawWastes> oldRawWastesList = questionnaire.getRawWastesList();
+            List<RawWastes> newRawWastesList = newQuestionnaire.getRawWastesList();
+            // 如果旧列表不为空
+            if (oldRawWastesList.size() > 0) {
+                for (int i = 0; i < oldRawWastesList.size(); i++) {
+                    newRawWastesList.get(i).setMaterialId(oldRawWastesList.get(i).getMaterialId());
+                }
+            } else {
+                for (RawWastes rawWastes : newQuestionnaire.getRawWastesList()) {
+                    if (rawWastes != null) {
+                        rawWastes.setMaterialId(RandomUtil.getRandomFileName());
+                    }
                 }
             }
             questionnaire.setRawWastesList(newQuestionnaire.getRawWastesList());
         }
         if (newQuestionnaire.getWasteProcessList().size() > 0) {
-            for (WasteProcess wasteProcess : newQuestionnaire.getWasteProcessList()) {
-                if (wasteProcess != null) {
-                    wasteProcess.setProcessId(RandomUtil.getRandomFileName());
+
+            List<WasteProcess> oldWasteProcessList = questionnaire.getWasteProcessList();
+            List<WasteProcess> newWasteProcessList = newQuestionnaire.getWasteProcessList();
+            if (oldWasteProcessList.size() > 0) {
+                for (int i = 0; i < oldWasteProcessList.size(); i++) {
+                    // 将旧列表的id赋值到新列表
+                    newWasteProcessList.get(i).setProcessId(oldWasteProcessList.get(i).getProcessId());
+                }
+            } else {
+                for (WasteProcess wasteProcess : newQuestionnaire.getWasteProcessList()) {
+                    if (wasteProcess != null && wasteProcess.getProcessId() == null) {
+                        wasteProcess.setProcessId(RandomUtil.getRandomFileName());
+                    }
                 }
             }
             questionnaire.setWasteProcessList(newQuestionnaire.getWasteProcessList());
