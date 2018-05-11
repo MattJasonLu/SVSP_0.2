@@ -18,8 +18,9 @@
     </select>
 
     <update id="update" parameterType="SensitiveElement" >
-        update t_sensitiveElement set name=#{chemicalType} where id=#{id}
+        update t_sensitiveElement set chemicalType=#{chemicalType}, isOrganic=#{isOrganic} where id=#{id}
     </update>
+
     <select id="list" resultType="SensitiveElement">
         select * from t_sensitiveElement
     </select>

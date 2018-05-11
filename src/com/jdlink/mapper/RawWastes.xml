@@ -24,7 +24,8 @@
     </select>
 
     <update id="update" parameterType="RawWastes" >
-        update t_rawWastes set mainMaterial=#{mainMaterial} where materialId=#{materialId}
+        update t_rawWastes set code=#{code}, mainMaterial=#{mainMaterial}, auxMaterial=#{auxMaterial},
+          draginMaterial=#{draginMaterial} where materialId=#{materialId}
     </update>
     <select id="list" resultType="RawWastes">
         select * from t_rawWastes

@@ -18,7 +18,8 @@
     </select>
 
     <update id="update" parameterType="MixingElement" >
-        update t_mixingElement set name=#{name} where id=#{id}
+        update t_mixingElement set name=#{name}, minimum=#{minimum}, average=#{average},
+          maximum=#{maximum} where id=#{id}
     </update>
     <select id="list" resultType="MixingElement">
         select * from t_mixingElement

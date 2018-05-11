@@ -69,7 +69,7 @@
     </select>
 
     <update id="update" parameterType="Questionnaire" >
-        update questionnaire set clientId=#{clientId} where questionnaireId=#{questionnaireId}
+        update questionnaire set author=#{author}, state=#{applyState} where questionnaireId=#{questionnaireId};
     </update>
 
     <update id="signIn" parameterType="String">

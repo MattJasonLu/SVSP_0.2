@@ -9,9 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.tags.form.FormTag;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -259,19 +257,24 @@ public class QuestionnaireController {
 
             // 更新页面2传递过来的数据
             // 设置原材料的编号
-            for (RawWastes rawWastes : newQuestionnaire.getRawWastesList()) {
-                if (rawWastes != null) {
-                    rawWastes.setMaterialId(RandomUtil.getRandomFileName());
+            // 保持新旧两个列表的元素id一致
+            // 设置原材料的编号，随机
+            if (newQuestionnaire.getRawWastesList().size() > 0) {
+                for (RawWastes rawWastes : newQuestionnaire.getRawWastesList()) {
+                    if (rawWastes != null) {
+                        rawWastes.setMaterialId(RandomUtil.getRandomFileName());
+                    }
                 }
+                questionnaire.setRawWastesList(newQuestionnaire.getRawWastesList());
             }
-            // 设置生产工艺流程的编号
-            for (WasteProcess wasteProcess : newQuestionnaire.getWasteProcessList()) {
-                if (wasteProcess != null) {
-                    wasteProcess.setProcessId(RandomUtil.getRandomFileName());
+            if (newQuestionnaire.getWasteProcessList().size() > 0) {
+                for (WasteProcess wasteProcess : newQuestionnaire.getWasteProcessList()) {
+                    if (wasteProcess != null) {
+                        wasteProcess.setProcessId(RandomUtil.getRandomFileName());
+                    }
                 }
+                questionnaire.setWasteProcessList(newQuestionnaire.getWasteProcessList());
             }
-            questionnaire.setRawWastesList(newQuestionnaire.getRawWastesList());
-            questionnaire.setWasteProcessList(newQuestionnaire.getWasteProcessList());
             // 特别关注的物质列表
             List<WasteInclusionType> wasteInclusionTypeList = new ArrayList<>();
             if (newQuestionnaire.getWasteInclusionTypeList() != null && newQuestionnaire.getWasteInclusionTypeList().size() > 0) {
@@ -426,10 +429,8 @@ public class QuestionnaireController {
             // 对于此处更新混合物成分列表的操作，因迭代时删除发生错误故采取不删反增继续事务
             List<MixingElement> newMixingElementList = new ArrayList<>();
             for (MixingElement mixingElement : deriveWastes.getMixingElementList()) {
-                if (mixingElement.getName() != "") {
-                    mixingElement.setId(RandomUtil.getRandomFileName());
-                    newMixingElementList.add(mixingElement);
-                }
+                mixingElement.setId(RandomUtil.getRandomFileName());
+                newMixingElementList.add(mixingElement);
             }
             deriveWastes.setMixingElementList(newMixingElementList);
             if (deriveWastes.getSensitiveElementList() != null) {
@@ -519,6 +520,59 @@ public class QuestionnaireController {
     @RequestMapping("updateQuestionnaire")
     public ModelAndView updateQuestionnaire(HttpSession session, Questionnaire newQuestionnaire) {
         ModelAndView mav = new ModelAndView();
+
+        // 从session中获取
+        Questionnaire questionnaire = (Questionnaire) session.getAttribute("questionnaire");
+        // 更新数据
+        for (int i = 0; i < questionnaire.getDeriveWastesList().size() && i < newQuestionnaire.getDeriveWastesList().size(); i++) {
+            DeriveWastes newDeriveWastes = newQuestionnaire.getDeriveWastesList().get(i);
+            DeriveWastes deriveWastes = questionnaire.getDeriveWastesList().get(i);
+            if (newDeriveWastes.getWasteCharacterList() != null) {
+                List<WasteCharacter> wasteCharacterList = new ArrayList<>();
+                for (WasteCharacter wasteCharacter : newDeriveWastes.getWasteCharacterList()) {
+                    if (wasteCharacter != null) wasteCharacterList.add(wasteCharacter);
+                }
+                deriveWastes.setWasteCharacterList(wasteCharacterList);
+            }
+            if (newDeriveWastes.getWasteProtectList() != null) {
+                List<WasteProtect> wasteProtectList = new ArrayList<>();
+                for (WasteProtect wasteProtect : newDeriveWastes.getWasteProtectList()) {
+                    if (wasteProtect != null) wasteProtectList.add(wasteProtect);
+                }
+                deriveWastes.setWasteProtectList(wasteProtectList);
+            }
+            deriveWastes.setEyeMeasures(newDeriveWastes.getEyeMeasures());
+            deriveWastes.setSkinMeasures(newDeriveWastes.getSkinMeasures());
+            deriveWastes.setSwallowMeasures(newDeriveWastes.getSwallowMeasures());
+            deriveWastes.setSuctionMeasures(newDeriveWastes.getSuctionMeasures());
+            deriveWastes.setPutOutFireMeasures(newDeriveWastes.getPutOutFireMeasures());
+            deriveWastes.setLeakMeasures(newDeriveWastes.getLeakMeasures());
+        }
+        // 添加调查表
+        questionnaireService.update(questionnaire);
+        // 添加调查表中的原材料
+        for (RawWastes rawWastes : questionnaire.getRawWastesList()) {
+            rawWastesService.update(rawWastes);
+        }
+        // 添加调查表中的处理流程
+        for (WasteProcess wasteProcess : questionnaire.getWasteProcessList()) {
+            wasteProcessService.update(wasteProcess);
+        }
+        // 添加调查表中的次生危废
+        for (DeriveWastes wastes : questionnaire.getDeriveWastesList()) {
+            deriveWastesService.update(wastes);
+            if (wastes.getMixingElementList() != null)
+                for (MixingElement mixingElement : wastes.getMixingElementList()) {
+                    mixingElementService.update(mixingElement);
+                }
+            if (wastes.getSensitiveElementList() != null)
+                for (SensitiveElement sensitiveElement : wastes.getSensitiveElementList()) {
+                    sensitiveElementService.update(sensitiveElement);
+                }
+        }
+        mav.addObject("questionnaire", questionnaire);
+        mav.addObject("message", "修改调查表成功！");
+        mav.setViewName("success");
 
         return mav;
     }

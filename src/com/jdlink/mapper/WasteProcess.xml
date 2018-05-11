@@ -24,7 +24,9 @@
     </select>
 
     <update id="update" parameterType="WasteProcess" >
-        update t_wasteProcess set description=#{description} where processId=#{processId}
+        update t_wasteProcess set code=#{code},description=#{description},quantity=#{quantity},
+        lastProcessTime=#{lastProcessTime},yearQuantity=#{yearQuantity},packageSituation=#{packageSituation}
+         where processId=#{processId};
     </update>
     <select id="list" resultType="WasteProcess">
         select * from t_wasteProcess
