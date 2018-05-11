@@ -163,6 +163,7 @@ public class QuestionnaireController {
         ModelAndView mav = new ModelAndView();
         // 第一次进入清空session
         session.removeAttribute("questionnaire");
+        session.removeAttribute("isUpdate");
         // 获取用户
         Client client = (Client) session.getAttribute("client");
         mav.addObject("client", client);
@@ -176,6 +177,8 @@ public class QuestionnaireController {
                 questionnaire.setClientId(client.getClientId());
                 questionnaire.setQuestionnaireId(RandomUtil.getRandomFileName());
             } else {
+                // 设置页面为更新进入
+                session.setAttribute("isUpdate", true);
                 // TODO: 优化部分，后期有时间将其get统一整合进 "questionnaire.xml"
                 // 取得调查表对象
                 questionnaire = questionnaireService.getById(newQuestionnaire.getQuestionnaireId());
@@ -188,6 +191,7 @@ public class QuestionnaireController {
             }
             // 添加session
             session.setAttribute("questionnaire", questionnaire);
+
             mav.addObject("questionnaire", questionnaire);
         } else {
             Questionnaire questionnaire = (Questionnaire) session.getAttribute("questionnaire");
@@ -461,7 +465,9 @@ public class QuestionnaireController {
 
         mav.addObject("deriveWastesList", questionnaire.getDeriveWastesList());
         mav.addObject("questionnaire", questionnaire);
-        mav.setViewName("questionnaire4");
+        // 此处根据session中的isUpdate来进行不同的跳转
+        if (session.getAttribute("isUpdate") == true) mav.setViewName("questionnaire5");
+        else mav.setViewName("questionnaire4");
         return mav;
     }
 
@@ -507,6 +513,13 @@ public class QuestionnaireController {
             mav.addObject("message", "退回失败!");
             mav.setViewName("fail");
         }
+        return mav;
+    }
+
+    @RequestMapping("updateQuestionnaire")
+    public ModelAndView updateQuestionnaire(HttpSession session, Questionnaire newQuestionnaire) {
+        ModelAndView mav = new ModelAndView();
+
         return mav;
     }
 

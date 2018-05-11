@@ -84,7 +84,7 @@ public class WasteProcess {
             time = simpleDateFormat.format(lastProcessTime);
             return time;
         } catch (Exception e) {
-            e.printStackTrace();
+//            e.printStackTrace();
             return "时间错误";
         }
     }
