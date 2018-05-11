@@ -70,6 +70,18 @@
 
     <update id="update" parameterType="Questionnaire" >
         update questionnaire set author=#{author}, state=#{applyState} where questionnaireId=#{questionnaireId};
+
+        DELETE FROM r_questionnaireAndWasteInclusionType WHERE questionnaireId=#{questionnaireId};
+
+        <if test="wasteInclusionTypeList != null and wasteInclusionTypeList.size() > 0">
+            insert into r_questionnaireAndWasteInclusionType (questionnaireId, wasteInclusionType)
+            values
+            <foreach collection="wasteInclusionTypeList" item="wasteInclusionType" index="index" separator="," close=";">
+                <if test="wasteInclusionType != null">
+                    (#{questionnaireId,jdbcType=VARCHAR},#{wasteInclusionType,jdbcType=VARCHAR})
+                </if>
+            </foreach>
+        </if>
     </update>
 
     <update id="signIn" parameterType="String">
