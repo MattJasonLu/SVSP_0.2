@@ -99,4 +99,10 @@
     <select id="list" resultType="Questionnaire" resultMap="getQuestionnaireRM">
         select * from questionnaire
     </select>
+
+    <select id="listQuestionnaireAdmin" resultType="QuestionnaireAdmin">
+        SELECT questionnaire.questionnaireId, client.companyName, client.industry,
+          client.product, questionnaire.state, questionnaire.author AS contactName, questionnaire.time
+            FROM questionnaire JOIN client WHERE questionnaire.clientId=client.clientId;
+    </select>
 </mapper>

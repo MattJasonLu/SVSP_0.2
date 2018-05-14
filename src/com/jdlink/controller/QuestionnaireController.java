@@ -168,7 +168,9 @@ public class QuestionnaireController {
         session.removeAttribute("isUpdate");
         // 获取用户
         Client client = (Client) session.getAttribute("client");
-        mav.addObject("client", client);
+        if (client != null) {
+            mav.addObject("client", client);
+        }
         mav.setViewName("questionnaire1");
         // 如果存在问卷编号
         if (session.getAttribute("questionnaire") == null) {
@@ -262,14 +264,6 @@ public class QuestionnaireController {
             }
             mav.addObject("questionnaire", questionnaire);
         }
-        return mav;
-    }
-
-    // 记录清空
-    @RequestMapping("showAdminQuestionnaire")
-    public ModelAndView showAdminQuestionnaire() {
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("questionnaire1");
         return mav;
     }
 
@@ -632,14 +626,9 @@ public class QuestionnaireController {
     @RequestMapping("listAllQuestionnaire")
     public ModelAndView listAllQuestionnaire(HttpSession session) {
         ModelAndView mav = new ModelAndView();
-        List<Questionnaire> questionnaireList = questionnaireService.list();
-        List<Client> clientList = new ArrayList<>();
-        for (Questionnaire questionnaire : questionnaireList) {
-            Client client = clientService.getByClientId(questionnaire.getClientId());
-            clientList.add(client);
-        }
-        mav.addObject("clientList", clientList);
-        mav.addObject("questionnaireList", questionnaireList);
+        // 取出所有的调查表
+        List<QuestionnaireAdmin> questionnaireAdminList = questionnaireService.listQuestionnaireAdmin();
+        mav.addObject("questionnaireAdminList", questionnaireAdminList);
         mav.setViewName("assessmentAdmin");
         return mav;
     }

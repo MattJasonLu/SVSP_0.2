@@ -1,6 +1,7 @@
 package com.jdlink.service.impl;
 
 import com.jdlink.domain.Questionnaire;
+import com.jdlink.domain.QuestionnaireAdmin;
 import com.jdlink.mapper.QuestionnaireMapper;
 import com.jdlink.service.QuestionnaireService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,11 @@ public class QuestionnaireServiceImpl implements QuestionnaireService {
     @Override
     public List<Questionnaire> getByClientId(String clientId) {
         return questionnaireMapper.getByClientId(clientId);
+    }
+
+    @Override
+    public List<QuestionnaireAdmin> listQuestionnaireAdmin() {
+        return questionnaireMapper.listQuestionnaireAdmin();
     }
 
     @Override

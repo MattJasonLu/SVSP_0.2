@@ -70,7 +70,7 @@
 </head>
 <body onload="changeStyle()">
     <div id="leftButton" class="dd">
-        <a href="showAdminQuestionnaire"><input type="button" class="fm" value="+ 创建"></a>
+        <a href="showQuestionnaire"><input type="button" class="fm" value="+ 创建"></a>
         <input type="button" class="fm" value="√ 签收">
         <input type="button" class="fm" value="× 退回">
         <input type="button" class="fm" value="⇋ 批量导入">
@@ -95,7 +95,7 @@
                 <th>填报人</th>
                 <th>填报日期</th>
             </tr>
-            <c:forEach items="${questionnaireList}" var="questionnaire" varStatus="id">
+            <c:forEach items="${questionnaireAdminList}" var="questionnaireAdmin" varStatus="id">
                 <tr>
                     <td><input type="checkbox" /></td>
                     <td>
@@ -104,23 +104,23 @@
                             <li class="" onmouseover="over()" onmouseleave="out()">操作
                                 <ul>
                                     <li><a href="#">查看</a></li>
-                                    <li><a href="#">修改</a></li>
-                                    <li><a href="signInQuestionnaire?questionnaireId=${questionnaire.questionnaireId}">签收</a></li>
-                                    <li><a href="backQuestionnaire?questionnaireId=${questionnaire.questionnaireId}">退回</a></li>
+                                    <li><a href="showQuestionnaire?questionnaireId=${questionnaireAdmin.questionnaireId}">修改</a></li>
+                                    <li><a href="signInQuestionnaire?questionnaireId=${questionnaireAdmin.questionnaireId}">签收</a></li>
+                                    <li><a href="backQuestionnaire?questionnaireId=${questionnaireAdmin.questionnaireId}">退回</a></li>
                                     <li><a href="#">预约送样</a></li>
-                                    <li><a href="deleteQuestionnaire?questionnaireId=${questionnaire.questionnaireId}">删除</a></li>
+                                    <li><a href="deleteQuestionnaire?questionnaireId=${questionnaireAdmin.questionnaireId}">删除</a></li>
                                 </ul>
                             </li>
                         </ul>
                         </div>
                     </td>
-                    <td>${questionnaire.questionnaireId}</td>
-                    <td>${clientList[id.index].companyName}</td>
-                    <td>${clientList[id.index].industry}</td>
-                    <td>${clientList[id.index].product}</td>
-                    <td>${questionnaire.applyState.name}</td>
-                    <td>${client.contactName}</td>
-                    <td>${questionnaire.getTimeStr()}</td>
+                    <td>${questionnaireAdmin.questionnaireId}</td>
+                    <td>${questionnaireAdmin.companyName}</td>
+                    <td>${questionnaireAdmin.industry}</td>
+                    <td>${questionnaireAdmin.product}</td>
+                    <td>${questionnaireAdmin.state.name}</td>
+                    <td>${questionnaireAdmin.contactName}</td>
+                    <td>${questionnaireAdmin.getTimeStr()}</td>
                 </tr>
             </c:forEach>
         </table>
