@@ -8,9 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -730,4 +734,29 @@ public class QuestionnaireController {
         return mav;
     }
 
+    @RequestMapping("addQuestionnaireFiles")
+    public ModelAndView addQuestionnaireFiles(Questionnaire newQuestionnaire) {
+        ModelAndView mav = new ModelAndView();
+        // 取得附件，并上传至服务器
+        if (newQuestionnaire.getAttachment() != null && !newQuestionnaire.getAttachment().getOriginalFilename().equals("")) {
+            String filename = newQuestionnaire.getAttachment().getOriginalFilename();
+
+            File file = new File("file/" + filename);
+            file.getParentFile().mkdirs();
+            if (file.exists()) file.delete();
+            try {
+                newQuestionnaire.getAttachment().transferTo(file);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            // 设置文件的路径
+            Questionnaire questionnaire = questionnaireService.getById(newQuestionnaire.getQuestionnaireId());
+            questionnaire.setAttachmentUrl(filename);
+            // 更新文件路径
+            questionnaireService.updateAttachmentUrl(questionnaire);
+        }
+        mav.addObject("message", "上传附件成功");
+        mav.setViewName("success");
+        return mav;
+    }
 }

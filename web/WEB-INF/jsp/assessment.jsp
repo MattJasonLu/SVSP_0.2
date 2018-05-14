@@ -5,7 +5,8 @@
   Time: 14:42
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" import="java.util.*" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
@@ -66,6 +67,19 @@
         function out() {
             window.event.srcElement.className = window.event.srcElement.className.replace("current", "");
         }
+        /**
+         * 打开文件对话框
+         */
+        function openFileDialog() {
+            var fileItem = document.getElementsByName("attachment")[0];
+            fileItem.click();
+        }
+        /**
+         * 文件提交
+         */
+        function onFileChange() {
+            document.getElementById("fileForm").submit();
+        }
     </script>
 </head>
 <body onload="changeStyle()">
@@ -103,7 +117,13 @@
                                 <ul>
                                     <li><a href="showQuestionnaire?questionnaireId=${questionnaire.questionnaireId}">修改</a></li>
                                     <li><a href="#" onclick="alert('提交成功')">提交</a></li>
-                                    <li><a href="#">上传附件</a></li>
+                                    <li>
+                                        <form id="fileForm" action="addQuestionnaireFiles" method="post" enctype="multipart/form-data">
+                                            <input name="questionnaireId" value="${questionnaire.questionnaireId}" hidden>
+                                            <input type="file" name="attachment" value="" hidden onchange="onFileChange()">
+                                            <a href="#" onclick="openFileDialog()">上传文件</a>
+                                        </form>
+                                    </li>
                                     <li><a href="deleteQuestionnaire?questionnaireId=${questionnaire.questionnaireId}">删除</a></li>
                                 </ul>
                             </li>

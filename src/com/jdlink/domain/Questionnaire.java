@@ -1,5 +1,7 @@
 package com.jdlink.domain;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -50,6 +52,26 @@ public class Questionnaire {
      * 填写时间
      */
     private Date time;
+
+    private MultipartFile attachment;
+
+    private String attachmentUrl;
+
+    public String getAttachmentUrl() {
+        return attachmentUrl;
+    }
+
+    public void setAttachmentUrl(String attachmentUrl) {
+        this.attachmentUrl = attachmentUrl;
+    }
+
+    public MultipartFile getAttachment() {
+        return attachment;
+    }
+
+    public void setAttachment(MultipartFile attachment) {
+        this.attachment = attachment;
+    }
 
     public String getQuestionnaireId() {
         return questionnaireId;

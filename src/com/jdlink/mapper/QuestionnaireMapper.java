@@ -17,5 +17,6 @@ public interface QuestionnaireMapper {
     void delete(String questionnaireId);
     void update(Questionnaire questionnaire);
     void signIn(String questionnaireId);
+    void updateAttachmentUrl(Questionnaire questionnaire);
     void back(String questionnaireId);
 }

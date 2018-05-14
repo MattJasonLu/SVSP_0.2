@@ -92,6 +92,10 @@
         UPDATE questionnaire SET state='Backed' WHERE questionnaireId=#{quesionnaireId}
     </update>
 
+    <update id="updateAttachmentUrl" parameterType="Questionnaire">
+        UPDATE questionnaire SET attachmentUrl=#{attachmentUrl} WHERE questionnaireId=#{questionnaireId}
+    </update>
+
     <select id="list" resultType="Questionnaire" resultMap="getQuestionnaireRM">
         select * from questionnaire
     </select>
