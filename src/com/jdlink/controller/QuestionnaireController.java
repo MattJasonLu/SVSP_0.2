@@ -380,9 +380,46 @@ public class QuestionnaireController {
             deriveWastes.setLowTemp(newDeriveWastes.getLowTemp());
             deriveWastes.setSolubleTemp(newDeriveWastes.getSolubleTemp());
             deriveWastes.setIsMixture(newDeriveWastes.getIsMixture());
-            deriveWastes.setMixingElementList(newDeriveWastes.getMixingElementList());
-            deriveWastes.setSensitiveElementList(newDeriveWastes.getSensitiveElementList());
+
+            // 更新混合物成分
+            List<MixingElement> newMixingElementList = newDeriveWastes.getMixingElementList();
+            List<MixingElement> oldMixingElementList = deriveWastes.getMixingElementList();
+            if (oldMixingElementList.size() == 0) {
+                oldMixingElementList = newMixingElementList;
+            } else if (newMixingElementList.size() > 0) {
+                // 更新原有元素的值
+                for (int j = 0; j < oldMixingElementList.size(); j++) {
+                    oldMixingElementList.get(j).setName(newMixingElementList.get(j).getName());
+                    oldMixingElementList.get(j).setMaximum(newMixingElementList.get(j).getMaximum());
+                    oldMixingElementList.get(j).setAverage(newMixingElementList.get(j).getAverage());
+                    oldMixingElementList.get(j).setMinimum(newMixingElementList.get(j).getMinimum());
+                }
+                // 添加新元素
+                for (int j = oldMixingElementList.size(); j < newMixingElementList.size(); j++) {
+                    oldMixingElementList.add(newMixingElementList.get(j));
+                }
+            }
+            // 更新敏感酸性组份
+            List<SensitiveElement> newSensitiveElementList = newDeriveWastes.getSensitiveElementList();
+            List<SensitiveElement> oldSensitiveElementList = deriveWastes.getSensitiveElementList();
+            if (oldSensitiveElementList.size() == 0) {
+                oldSensitiveElementList = newSensitiveElementList;
+            } else if (newSensitiveElementList.size() > 0) {
+                // 更新原有元素的值
+                for (int j = 0; j < oldSensitiveElementList.size(); j++) {
+                    oldSensitiveElementList.get(j).setChemicalType(newSensitiveElementList.get(j).getChemicalType());
+                    oldSensitiveElementList.get(j).setIsOrganic(newSensitiveElementList.get(j).getIsOrganic());
+                }
+                // 添加新元素
+                for (int j = oldSensitiveElementList.size(); j < newSensitiveElementList.size(); j++) {
+                    oldSensitiveElementList.add(newSensitiveElementList.get(j));
+                }
+            }
+
+//            deriveWastes.setMixingElementList(newDeriveWastes.getMixingElementList());
+//            deriveWastes.setSensitiveElementList(newDeriveWastes.getSensitiveElementList());
         }
+
         mav.addObject("questionnaire", questionnaire);
         mav.setViewName("questionnaire2");
         return mav;
@@ -512,27 +549,32 @@ public class QuestionnaireController {
         return mav;
     }
 
-    // TODO: 对于DeriveWastes参数绑定，浮点型数据不填则无法绑定，出现错误400，待完善
-
     @RequestMapping("forthQuestionnaire")
     public ModelAndView forthQuestionnaire(HttpSession session, Questionnaire newQuestionnaire) {
         ModelAndView mav = new ModelAndView();
         Questionnaire questionnaire = (Questionnaire) session.getAttribute("questionnaire");
-        for (DeriveWastes deriveWastes : newQuestionnaire.getDeriveWastesList()) {
+        // 遍历新问卷对象的次生危废列表
+        List<DeriveWastes> newDeriveWastesList = newQuestionnaire.getDeriveWastesList();
+        for (DeriveWastes deriveWastes : newDeriveWastesList) {
             deriveWastes.setId(RandomUtil.getRandomFileName());
             // 对于此处更新混合物成分列表的操作，因迭代时删除发生错误故采取不删反增继续事务
             List<MixingElement> newMixingElementList = new ArrayList<>();
             for (MixingElement mixingElement : deriveWastes.getMixingElementList()) {
-                mixingElement.setId(RandomUtil.getRandomFileName());
-                newMixingElementList.add(mixingElement);
+                // 去除列表中为空的元素
+                if (mixingElement != null && !mixingElement.getName().equals("")) {
+                    mixingElement.setId(RandomUtil.getRandomFileName());
+                    newMixingElementList.add(mixingElement);
+                }
             }
             deriveWastes.setMixingElementList(newMixingElementList);
+            // 更新敏感酸性列表的id
             if (deriveWastes.getSensitiveElementList() != null) {
                 for (SensitiveElement sensitiveElement : deriveWastes.getSensitiveElementList()) {
                     sensitiveElement.setId(RandomUtil.getRandomFileName());
                 }
             }
         }
+
         // 更新数据
         for (int i = 0; i < newQuestionnaire.getDeriveWastesList().size(); i++) {
             if (questionnaire.getDeriveWastesList().size() == 0) {
@@ -554,8 +596,44 @@ public class QuestionnaireController {
             deriveWastes.setLowTemp(newDeriveWastes.getLowTemp());
             deriveWastes.setSolubleTemp(newDeriveWastes.getSolubleTemp());
             deriveWastes.setIsMixture(newDeriveWastes.getIsMixture());
-            deriveWastes.setMixingElementList(newDeriveWastes.getMixingElementList());
-            deriveWastes.setSensitiveElementList(newDeriveWastes.getSensitiveElementList());
+            // 更新混合物成分
+            List<MixingElement> newMixingElementList = newDeriveWastes.getMixingElementList();
+            List<MixingElement> oldMixingElementList = deriveWastes.getMixingElementList();
+            if (oldMixingElementList.size() == 0) {
+                oldMixingElementList = newMixingElementList;
+            } else if (newMixingElementList.size() > 0) {
+                // 更新原有元素的值
+                for (int j = 0; j < oldMixingElementList.size(); j++) {
+                    oldMixingElementList.get(j).setName(newMixingElementList.get(j).getName());
+                    oldMixingElementList.get(j).setMaximum(newMixingElementList.get(j).getMaximum());
+                    oldMixingElementList.get(j).setAverage(newMixingElementList.get(j).getAverage());
+                    oldMixingElementList.get(j).setMinimum(newMixingElementList.get(j).getMinimum());
+                }
+                // 添加新元素
+                for (int j = oldMixingElementList.size(); j < newMixingElementList.size(); j++) {
+                    oldMixingElementList.add(newMixingElementList.get(j));
+                }
+            }
+            // 更新敏感酸性组份
+            List<SensitiveElement> newSensitiveElementList = newDeriveWastes.getSensitiveElementList();
+            List<SensitiveElement> oldSensitiveElementList = deriveWastes.getSensitiveElementList();
+            if (oldSensitiveElementList.size() == 0) {
+                oldSensitiveElementList = newSensitiveElementList;
+            } else if (newSensitiveElementList.size() > 0) {
+                // 更新原有元素的值
+                for (int j = 0; j < oldSensitiveElementList.size(); j++) {
+                    oldSensitiveElementList.get(j).setChemicalType(newSensitiveElementList.get(j).getChemicalType());
+                    oldSensitiveElementList.get(j).setIsOrganic(newSensitiveElementList.get(j).getIsOrganic());
+                }
+                // 添加新元素
+                for (int j = oldSensitiveElementList.size(); j < newSensitiveElementList.size(); j++) {
+                    oldSensitiveElementList.add(newSensitiveElementList.get(j));
+                }
+            }
+
+
+//            deriveWastes.setMixingElementList(newDeriveWastes.getMixingElementList());
+//            deriveWastes.setSensitiveElementList(newDeriveWastes.getSensitiveElementList());
         }
 
         mav.addObject("deriveWastesList", questionnaire.getDeriveWastesList());
