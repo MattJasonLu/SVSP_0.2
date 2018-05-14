@@ -738,7 +738,7 @@ public class QuestionnaireController {
     }
 
     @RequestMapping("listAllQuestionnaire")
-    public ModelAndView listAllQuestionnaire(HttpSession session) {
+    public ModelAndView listAllQuestionnaire() {
         ModelAndView mav = new ModelAndView();
         // 取出所有的调查表
         List<QuestionnaireAdmin> questionnaireAdminList = questionnaireService.listQuestionnaireAdmin();
@@ -752,8 +752,7 @@ public class QuestionnaireController {
         ModelAndView mav = new ModelAndView();
         try {
             questionnaireService.signIn(questionnaireId);
-            mav.addObject("message", "签收成功!");
-            mav.setViewName("success");
+            return listAllQuestionnaire();
         } catch (Exception e) {
             e.printStackTrace();
             mav.addObject("message", "签收失败!");
@@ -767,8 +766,7 @@ public class QuestionnaireController {
         ModelAndView mav = new ModelAndView();
         try {
             questionnaireService.back(questionnaireId);
-            mav.addObject("message", "退回成功!");
-            mav.setViewName("success");
+            return listAllQuestionnaire();
         } catch (Exception e) {
             e.printStackTrace();
             mav.addObject("message", "退回失败!");

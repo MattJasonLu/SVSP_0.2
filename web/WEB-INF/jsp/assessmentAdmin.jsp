@@ -66,6 +66,19 @@
         function out() {
             window.event.srcElement.className = window.event.srcElement.className.replace("current", "");
         }
+        function signIn() {
+//            window.event.srcElement.parentElement.parentElement.parentElement.parentElement.
+//                    parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.
+//                    nextElementSibling.nextElementSibling.innerHTML = "已签收"
+            alert("签收成功")
+        }
+
+        function back() {
+//            window.event.srcElement.parentElement.parentElement.parentElement.parentElement.
+//                    parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.
+//                    nextElementSibling.nextElementSibling.innerHTML = "已退回"
+            alert("退回成功")
+        }
     </script>
 </head>
 <body onload="changeStyle()">
@@ -105,8 +118,8 @@
                                 <ul>
                                     <li><a href="#">查看</a></li>
                                     <li><a href="showQuestionnaire?questionnaireId=${questionnaireAdmin.questionnaireId}">修改</a></li>
-                                    <li><a href="signInQuestionnaire?questionnaireId=${questionnaireAdmin.questionnaireId}">签收</a></li>
-                                    <li><a href="backQuestionnaire?questionnaireId=${questionnaireAdmin.questionnaireId}">退回</a></li>
+                                    <li><a href="signInQuestionnaire?questionnaireId=${questionnaireAdmin.questionnaireId}" onclick="signIn()">签收</a></li>
+                                    <li><a href="backQuestionnaire?questionnaireId=${questionnaireAdmin.questionnaireId}" onclick="back()">退回</a></li>
                                     <li><a href="#">预约送样</a></li>
                                     <li><a href="deleteQuestionnaire?questionnaireId=${questionnaireAdmin.questionnaireId}">删除</a></li>
                                 </ul>
@@ -118,7 +131,7 @@
                     <td>${questionnaireAdmin.companyName}</td>
                     <td>${questionnaireAdmin.industry}</td>
                     <td>${questionnaireAdmin.product}</td>
-                    <td>${questionnaireAdmin.state.name}</td>
+                    <td class="state">${questionnaireAdmin.state.name}</td>
                     <td>${questionnaireAdmin.contactName}</td>
                     <td>${questionnaireAdmin.getTimeStr()}</td>
                 </tr>
