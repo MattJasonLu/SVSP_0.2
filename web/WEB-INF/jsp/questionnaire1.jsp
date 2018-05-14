@@ -50,16 +50,16 @@
     <div class="div3" style="width: 100%">
         <table class="myTable" width="800px">
             <tr>
-                <td>企业名称:  <input type="text" name="companyName" value="${client.companyName}" readonly></td>
-                <td>地址:  <input type="text" name="location" value="${client.location}" readonly></td>
+                <td>企业名称:  <input type="text" name="companyName" value="${client.companyName}"></td>
+                <td>地址:  <input type="text" name="location" value="${client.location}"></td>
             </tr>
             <tr>
-                <td>联系人:  <input type="text" name="contactName" value="${client.contactName}" readonly></td>
-                <td>联系电话:  <input type="text" name="phone" value="${client.phone}" readonly></td>
+                <td>联系人:  <input type="text" name="contactName" value="${client.contactName}"></td>
+                <td>联系电话:  <input type="text" name="phone" value="${client.phone}"></td>
             </tr>
             <tr>
-                <td>所属行业:  <input type="text" name="industry" value="${client.industry}" readonly></td>
-                <td>主要产品:  <input type="text" name="product" value="${client.product}" readonly></td>
+                <td>所属行业:  <input type="text" name="industry" value="${client.industry}"></td>
+                <td>主要产品:  <input type="text" name="product" value="${client.product}"></td>
             </tr>
             <tr>
                 <td>填报人:  <input type="text" name="author" value="${questionnaire.author}"></td>

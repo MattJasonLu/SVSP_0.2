@@ -45,6 +45,10 @@
         SELECT * FROM client WHERE clientId = #{clientId}
     </select>
 
+    <select id="getByName" parameterType="String" resultType="Client">
+        SELECT * FROM client WHERE companyName=#{companyName}
+    </select>
+
     <update id="update" parameterType="Client" >
         update client set clientId=#{clientId} where temporaryId=#{temporaryId}
     </update>

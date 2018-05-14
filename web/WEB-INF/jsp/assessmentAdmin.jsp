@@ -70,7 +70,7 @@
 </head>
 <body onload="changeStyle()">
     <div id="leftButton" class="dd">
-        <a href="showQuestionnaire"><input type="button" class="fm" value="+ 创建"></a>
+        <a href="showQuestionnaireAdmin"><input type="button" class="fm" value="+ 创建"></a>
         <input type="button" class="fm" value="√ 签收">
         <input type="button" class="fm" value="× 退回">
         <input type="button" class="fm" value="⇋ 批量导入">

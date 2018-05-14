@@ -16,6 +16,8 @@ public interface ClientService {
 
     Client getByClientId(String clientId);
 
+    Client getByName(String companyName);
+
     List<Client> get(Map params);
 
     List<Client> get(Client client);

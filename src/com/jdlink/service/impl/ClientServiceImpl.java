@@ -34,6 +34,11 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
+    public Client getByName(String companyName) {
+        return clientMapper.getByName(companyName);
+    }
+
+    @Override
     public List<Client> get(Map params) {
         return clientMapper.get(params);
     }

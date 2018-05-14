@@ -267,6 +267,108 @@ public class QuestionnaireController {
         return mav;
     }
 
+    @RequestMapping("showQuestionnaireAdmin")
+    public ModelAndView showQuestionnaireAdmin(HttpSession session, Questionnaire newQuestionnaire) {
+        ModelAndView mav = new ModelAndView();
+        // 第一次进入清空session
+        session.removeAttribute("questionnaire");
+        session.removeAttribute("isUpdate");
+        session.removeAttribute("client");
+        mav.setViewName("questionnaire1");
+        // 如果存在问卷编号
+        if (session.getAttribute("questionnaire") == null) {
+            Questionnaire questionnaire = new Questionnaire();
+            if (newQuestionnaire.getQuestionnaireId() == null) {
+                // 创建调查表数据对象
+                questionnaire.setTime(new Date()); // 获取当前时间
+                questionnaire.setQuestionnaireId(RandomUtil.getRandomFileName());
+            } else {
+                // 设置页面为更新进入
+                session.setAttribute("isUpdate", true);
+                // TODO: 优化部分，后期有时间将其get统一整合进 "questionnaire.xml"
+                // 取得调查表对象
+                questionnaire = questionnaireService.getById(newQuestionnaire.getQuestionnaireId());
+                // 装载原材料
+                questionnaire.setRawWastesList(rawWastesService.getByQuestionnaireId(newQuestionnaire.getQuestionnaireId()));
+                // 装载处理流程
+                questionnaire.setWasteProcessList(wasteProcessService.getByQuestionnaireId(newQuestionnaire.getQuestionnaireId()));
+                // 装载次生危废
+                questionnaire.setDeriveWastesList(deriveWastesService.getByQuestionnaireId(newQuestionnaire.getQuestionnaireId()));
+            }
+            // 添加session
+            session.setAttribute("questionnaire", questionnaire);
+
+            mav.addObject("questionnaire", questionnaire);
+        } else {
+            Questionnaire questionnaire = (Questionnaire) session.getAttribute("questionnaire");
+            // 更新页面2传递过来的数据
+//            if (newQuestionnaire.getRawWastesList().size() > 0) {
+//                for (RawWastes rawWastes : newQuestionnaire.getRawWastesList()) {
+//                    if (rawWastes != null && rawWastes.getMaterialId() == null) {
+//                        rawWastes.setMaterialId(RandomUtil.getRandomFileName());
+//                    }
+//                }
+//                questionnaire.setRawWastesList(newQuestionnaire.getRawWastesList());
+//            }
+//            if (newQuestionnaire.getWasteProcessList().size() > 0) {
+//                for (WasteProcess wasteProcess : newQuestionnaire.getWasteProcessList()) {
+//                    if (wasteProcess != null && wasteProcess.getProcessId() == null) {
+//                        wasteProcess.setProcessId(RandomUtil.getRandomFileName());
+//                    }
+//                }
+//                questionnaire.setWasteProcessList(newQuestionnaire.getWasteProcessList());
+//            }
+            // 特别关注的物质列表
+
+            if (newQuestionnaire.getRawWastesList().size() > 0) {
+                List<RawWastes> oldRawWastesList = questionnaire.getRawWastesList();
+                List<RawWastes> newRawWastesList = newQuestionnaire.getRawWastesList();
+                // 如果旧列表不为空
+                if (oldRawWastesList.size() > 0) {
+                    for (int i = 0; i < oldRawWastesList.size(); i++) {
+                        newRawWastesList.get(i).setMaterialId(oldRawWastesList.get(i).getMaterialId());
+                    }
+                } else {
+                    for (RawWastes rawWastes : newQuestionnaire.getRawWastesList()) {
+                        if (rawWastes != null) {
+                            rawWastes.setMaterialId(RandomUtil.getRandomFileName());
+                        }
+                    }
+                }
+                questionnaire.setRawWastesList(newQuestionnaire.getRawWastesList());
+            }
+            if (newQuestionnaire.getWasteProcessList().size() > 0) {
+
+                List<WasteProcess> oldWasteProcessList = questionnaire.getWasteProcessList();
+                List<WasteProcess> newWasteProcessList = newQuestionnaire.getWasteProcessList();
+                if (oldWasteProcessList.size() > 0) {
+                    for (int i = 0; i < oldWasteProcessList.size(); i++) {
+                        // 将旧列表的id赋值到新列表
+                        newWasteProcessList.get(i).setProcessId(oldWasteProcessList.get(i).getProcessId());
+                    }
+                } else {
+                    for (WasteProcess wasteProcess : newQuestionnaire.getWasteProcessList()) {
+                        if (wasteProcess != null && wasteProcess.getProcessId() == null) {
+                            wasteProcess.setProcessId(RandomUtil.getRandomFileName());
+                        }
+                    }
+                }
+                questionnaire.setWasteProcessList(newQuestionnaire.getWasteProcessList());
+            }
+
+            List<WasteInclusionType> wasteInclusionTypeList = new ArrayList<>();
+            if (newQuestionnaire.getWasteInclusionTypeList() != null && newQuestionnaire.getWasteInclusionTypeList().size() > 0) {
+                for (WasteInclusionType wasteInclusionType : newQuestionnaire.getWasteInclusionTypeList()) {
+                    if (wasteInclusionType != null) wasteInclusionTypeList.add(wasteInclusionType);
+                }
+                // 更新
+                questionnaire.setWasteInclusionTypeList(wasteInclusionTypeList);
+            }
+            mav.addObject("questionnaire", questionnaire);
+        }
+        return mav;
+    }
+
     @RequestMapping("firstQuestionnaire")
     public ModelAndView firstQuestionnaire(HttpSession session, Questionnaire newQuestionnaire) {
         ModelAndView mav = new ModelAndView();
@@ -347,13 +449,25 @@ public class QuestionnaireController {
     }
 
     @RequestMapping("secondQuestionnaire")
-    public ModelAndView secondQuestionnaire(HttpSession session, Questionnaire newQuestionnaire) {
+    public ModelAndView secondQuestionnaire(HttpSession session, Questionnaire newQuestionnaire, String companyName) {
         ModelAndView mav = new ModelAndView();
         // 获取调查表对象
         Questionnaire questionnaire = (Questionnaire) session.getAttribute("questionnaire");
 
         // 更新填表人
         if (newQuestionnaire.getAuthor() != null) {
+            // 处理session不存在client信息的情况
+            if (session.getAttribute("client") == null) {
+                Client client = clientService.getByName(companyName);
+                if (client == null) {
+                    mav.addObject("message", "企业名称错误，不存在该企业!");
+                    mav.setViewName("fail");
+                    return mav;
+                } else {
+                    session.setAttribute("client", client);
+                    questionnaire.setClientId(client.getClientId());
+                }
+            }
             questionnaire.setAuthor(newQuestionnaire.getAuthor());
         }
 
