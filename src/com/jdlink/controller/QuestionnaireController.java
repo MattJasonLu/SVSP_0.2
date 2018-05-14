@@ -415,11 +415,9 @@ public class QuestionnaireController {
                     oldSensitiveElementList.add(newSensitiveElementList.get(j));
                 }
             }
-
 //            deriveWastes.setMixingElementList(newDeriveWastes.getMixingElementList());
 //            deriveWastes.setSensitiveElementList(newDeriveWastes.getSensitiveElementList());
         }
-
         mav.addObject("questionnaire", questionnaire);
         mav.setViewName("questionnaire2");
         return mav;
@@ -460,23 +458,6 @@ public class QuestionnaireController {
             deriveWastes.setLeakMeasures(newDeriveWastes.getLeakMeasures());
         }
         // 设置原材料的编号，随机
-//        if (newQuestionnaire.getRawWastesList().size() > 0) {
-//            for (RawWastes rawWastes : newQuestionnaire.getRawWastesList()) {
-//                if (rawWastes != null && rawWastes.getMaterialId() == null) {
-//                    rawWastes.setMaterialId(RandomUtil.getRandomFileName());
-//                }
-//            }
-//            questionnaire.setRawWastesList(newQuestionnaire.getRawWastesList());
-//        }
-//        if (newQuestionnaire.getWasteProcessList().size() > 0) {
-//            for (WasteProcess wasteProcess : newQuestionnaire.getWasteProcessList()) {
-//                if (wasteProcess != null && wasteProcess.getProcessId() == null) {
-//                    wasteProcess.setProcessId(RandomUtil.getRandomFileName());
-//                }
-//            }
-//            questionnaire.setWasteProcessList(newQuestionnaire.getWasteProcessList());
-//        }
-
         if (newQuestionnaire.getRawWastesList().size() > 0) {
             List<RawWastes> oldRawWastesList = questionnaire.getRawWastesList();
             List<RawWastes> newRawWastesList = newQuestionnaire.getRawWastesList();

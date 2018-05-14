@@ -111,5 +111,29 @@
         skinMeasures=#{skinMeasures}, swallowMeasures=#{swallowMeasures}, suctionMeasures=#{suctionMeasures},
         putOutFireMeasures=#{putOutFireMeasures}, leakMeasures=#{leakMeasures}
         WHERE t_deriveWastes.id=#{id};
+
+        DELETE FROM r_deriveWastesAndWasteCharacter WHERE r_deriveWastesAndWasteCharacter.deriveWastesId=#{id};
+
+        <if test="wasteCharacterList != null and wasteCharacterList.size() > 0">
+            insert into r_deriveWastesAndWasteCharacter (deriveWastesId, wasteCharacter)
+            values
+            <foreach collection="wasteCharacterList" item="wasteCharacter" index="index" separator="," close=";">
+                <if test="wasteCharacter != null">
+                    (#{id,jdbcType=VARCHAR},#{wasteCharacter,jdbcType=VARCHAR})
+                </if>
+            </foreach>
+        </if>
+
+        DELETE FROM r_deriveWastesAndWasteProtect WHERE r_deriveWastesAndWasteProtect.deriveWastesId=#{id};
+
+        <if test="wasteProtectList != null and wasteProtectList.size() > 0">
+            insert into r_deriveWastesAndWasteProtect (deriveWastesId, wasteProtect)
+            values
+            <foreach collection="wasteProtectList" item="wasteProtect" index="index" separator="," close=";">
+                <if test="wasteProtect != null">
+                    (#{id,jdbcType=VARCHAR},#{wasteProtect,jdbcType=VARCHAR})
+                </if>
+            </foreach>
+        </if>
     </update>
 </mapper>
