@@ -43,6 +43,11 @@ public class SampleAppointServiceImpl implements SampleAppointService {
     }
 
     @Override
+    public List<SampleAppoint> getByKeyword(String keyword) {
+        return sampleAppointMapper.getByKeyword(keyword);
+    }
+
+    @Override
     public void updatePdtAndCode(SampleCheck sampleCheck) {
         sampleAppointMapper.updatePdtAndCode(sampleCheck);
     }

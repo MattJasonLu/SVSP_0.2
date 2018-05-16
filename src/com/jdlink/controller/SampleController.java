@@ -90,6 +90,43 @@ public class SampleController {
         return mav;
     }
 
+    @RequestMapping("searchSampleAppoint")
+    public ModelAndView searchSampleAppoint(String keyword) {
+        ModelAndView mav = new ModelAndView();
+        switch (keyword) {
+            case "已预约":
+                keyword = "Appointed";
+                break;
+            case "已取样":
+                keyword = "SampleTaked";
+                break;
+            case "预约取消":
+                keyword = "Canceld";
+                break;
+            default:
+                break;
+        }
+        // 查询集合
+        List<SampleAppoint> sampleAppointList = sampleAppointService.getByKeyword(keyword);
+        mav.addObject("sampleAppointList", sampleAppointList);
+        // 获取枚举
+        List<String> formTypeStrList = new ArrayList<>();
+        for (FormType formType : FormType.values()) {
+            formTypeStrList.add(formType.getName());
+        }
+        List<String> packageTypeStrList = new ArrayList<>();
+        for (PackageType packageType : PackageType.values()) {
+            packageTypeStrList.add(packageType.getName());
+        }
+
+        // 添加枚举
+        mav.addObject("formTypeStrList", formTypeStrList);
+        mav.addObject("packageTypeStrList", packageTypeStrList);
+        mav.setViewName("sample");
+
+        return mav;
+    }
+
     @RequestMapping("addSampleCheck")
     public ModelAndView addSampleCheck(SampleCheck sampleCheck) {
         ModelAndView mav = new ModelAndView();

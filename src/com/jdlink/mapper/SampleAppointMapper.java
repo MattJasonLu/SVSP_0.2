@@ -20,6 +20,8 @@ public interface SampleAppointMapper {
 
     List<SampleAppoint> list();
 
+    List<SampleAppoint> getByKeyword(String keyword);
+
     void updatePdtAndCode(SampleCheck sampleCheck);
 
     void setAppointed(SampleAppoint sampleAppoint);

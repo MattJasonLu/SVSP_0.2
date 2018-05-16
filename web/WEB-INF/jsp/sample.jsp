@@ -251,7 +251,7 @@
         <input type="button" class="fm" value="⇋ 导出清单">
     </div>
     <div id="rightButton" class="dd">
-        <form action="getSample" method="post">
+        <form action="searchSampleAppoint" method="post">
             <input type="text" name="keyword">
             <input type="submit" class="em" name="search" value="🔎 检索">
         </form>
