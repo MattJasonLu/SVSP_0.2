@@ -96,15 +96,11 @@
                 }
             }
             if (appointId != undefined) {
-                var formData = new FormData();
-                formData.append('appointId', appointId);
-                var url = "http://localhost:8080/getSampleAppoint";
+                var url = "http://localhost:8080/getSampleAppoint?appointId=" + appointId;
                 xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = checkResult;
-                xmlhttp.open("POST", url, true);
-                xmlhttp.send(formData);
-
-
+                xmlhttp.open("GET", url, true);
+                xmlhttp.send(null);
                 modal.style.display = "block";
             } else {
                 alert("请选择预约单!");
@@ -112,9 +108,10 @@
         }
 
         function checkResult() {
-            if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                xmlhttp.responseType = "json";
-                alert(xmlhttp.response);
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                var result = xmlhttp.responseText;
+                var json = eval("(" + result + ")");
+                alert(json.data.companyName)
             }
         }
 

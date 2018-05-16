@@ -14,6 +14,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -72,7 +74,9 @@ public class SampleController {
 
         SampleAppoint sampleAppoint = sampleAppointService.getById(appointId);
         JSONObject jsonObject = JSONObject.fromBean(sampleAppoint);
-        mav.addObject("message", jsonObject);
+        JSONObject res = new JSONObject();
+        res.put("data", jsonObject);
+        mav.addObject("message", res);
         mav.setViewName("data");
         return mav;
     }
