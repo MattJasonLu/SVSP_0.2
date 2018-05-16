@@ -1,6 +1,6 @@
 package com.jdlink.controller;
 
-import com.jdlink.domain.Client;
+import com.jdlink.domain.*;
 import com.jdlink.service.ClientService;
 import com.jdlink.util.RandomUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Created by matt on 2018/4/23.
@@ -72,14 +69,8 @@ public class ClientController {
     @RequestMapping("updateClient")
     public ModelAndView updateClient(Client client) {
         ModelAndView mav = new ModelAndView();
-        try {
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            mav.addObject("message", "信息输入错误，请重试！");
-            mav.setViewName("fail");
-        }
-        return mav;
+        clientService.update(client);
+        return listClient();
     }
 
     @RequestMapping("listClient")
@@ -122,5 +113,52 @@ public class ClientController {
         clientService.disableState(clientId);
         // 刷新页面
         return listClient();
+    }
+
+    @RequestMapping("showClient")
+    public ModelAndView showClient(String clientId) {
+        ModelAndView mav = new ModelAndView();
+        Client client = clientService.getByClientId(clientId);
+        mav.addObject("client", client);
+        // 获取枚举列表
+        // 企业类型
+        List<String> enterpriseTypeStrList = new ArrayList<>();
+        for (EnterpriseType enterpriseType : EnterpriseType.values()) {
+            enterpriseTypeStrList.add(enterpriseType.getName());
+        }
+        // 经营方式
+        List<String> operationModeStrList = new ArrayList<>();
+        for (OperationMode operationMode : OperationMode.values()) {
+            operationModeStrList.add(operationMode.getName());
+        }
+        // 经营单位类别
+        List<String> operationTypeStrList = new ArrayList<>();
+        for (OperationType operationType : OperationType.values()) {
+            operationTypeStrList.add(operationType.getName());
+        }
+        // 应急预案
+        List<String> contingencyPlanStrList = new ArrayList<>();
+        for (ContingencyPlan contingencyPlan : ContingencyPlan.values()) {
+            contingencyPlanStrList.add(contingencyPlan.getName());
+        }
+        // 危废记录
+        List<String> operationRecordStrList = new ArrayList<>();
+        for (OperationRecord operationRecord : OperationRecord.values()) {
+            operationRecordStrList.add(operationRecord.getName());
+        }
+        // 申报状态
+        List<String> applicationStatusStrList = new ArrayList<>();
+        for (ApplicationStatus applicationStatus : ApplicationStatus.values()) {
+            applicationStatusStrList.add(applicationStatus.getName());
+        }
+
+        mav.addObject("operationModeStrList", operationModeStrList);
+        mav.addObject("enterpriseTypeStrList", enterpriseTypeStrList);
+        mav.addObject("operationTypeStrList", operationTypeStrList);
+        mav.addObject("contingencyPlanStrList", contingencyPlanStrList);
+        mav.addObject("operationRecordStrList", operationRecordStrList);
+        mav.addObject("applicationStatusStrList", applicationStatusStrList);
+        mav.setViewName("showClient");
+        return mav;
     }
 }

@@ -30,6 +30,12 @@ public interface ClientMapper {
 
     void disableState(String clientId);
 
+    void setCheckStateToSubmit(String clientId);
+
+    void setCheckStateExamining(String clientId);
+
+    void setCheckStateFinished(String clientId);
+
     int count();
 
 }

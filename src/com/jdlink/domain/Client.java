@@ -125,9 +125,13 @@ public class Client {
      */
     private String email;
     /**
-     * 客户状态
+     * 账号状态
      */
     private ClientState clientState;
+    /**
+     * 审核状态
+     */
+    private CheckState checkState;
 
 
     public String getClientId() {
@@ -354,6 +358,14 @@ public class Client {
         this.clientState = clientState;
     }
 
+    public CheckState getCheckState() {
+        return checkState;
+    }
+
+    public void setCheckState(CheckState checkState) {
+        this.checkState = checkState;
+    }
+
     @Override
     public String toString() {
         return "Client{" +
@@ -385,6 +397,7 @@ public class Client {
                 ", mobile='" + mobile + '\'' +
                 ", email='" + email + '\'' +
                 ", clientState=" + clientState +
+                ", checkState=" + checkState +
                 '}';
     }
 }

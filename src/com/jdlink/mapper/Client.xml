@@ -7,6 +7,13 @@
 
     <resultMap id="ClientRM" type="Client">
         <result property="clientState" column="state" javaType="com.jdlink.domain.ClientState"/>
+        <result property="enterpriseType" column="enterpriseType" javaType="com.jdlink.domain.EnterpriseType"/>
+        <result property="operationMode" column="operationMode" javaType="com.jdlink.domain.OperationMode"/>
+        <result property="operationType" column="operationType" javaType="com.jdlink.domain.OperationType"/>
+        <result property="contingencyPlan" column="contingencyPlan" javaType="com.jdlink.domain.ContingencyPlan"/>
+        <result property="operationRecord" column="operationRecord" javaType="com.jdlink.domain.OperationRecord"/>
+        <result property="applicationStatus" column="applicationStatus" javaType="com.jdlink.domain.ApplicationStatus"/>
+        <result property="checkState" column="checkState" javaType="com.jdlink.domain.CheckState"/>
     </resultMap>
 
     <insert id="add" parameterType="Client" >
@@ -14,12 +21,13 @@
           organizationCode, licenseCode, representative, postCode, enterpriseType, operationMode,
           operationType, contingencyPlan, operationRecord, location, street, applicationStatus,
           materialAttachmentUrl, processAttachmentUrl, processDesp, contactName, phone, mobile,
-          email, state, industry, product )
+          email, state, industry, product, checkState )
         values (#{clientId}, #{temporaryId}, #{groupId}, #{companyName},
           #{organizationCode}, #{licenseCode}, #{representative}, #{postCode}, #{enterpriseType},
           #{operationMode}, #{operationType}, #{contingencyPlan}, #{operationRecord}, #{location},
           #{street}, #{applicationStatus}, #{materialAttachmentUrl}, #{processAttachmentUrl},
-          #{processDesp}, #{contactName}, #{phone}, #{mobile}, #{email}, #{clientState}, #{industry}, #{product})
+          #{processDesp}, #{contactName}, #{phone}, #{mobile}, #{email}, #{clientState}, #{industry},
+          #{product}, #{checkState})
     </insert>
 
     <delete id="delete" parameterType="Client" >
@@ -54,8 +62,15 @@
         SELECT * FROM client WHERE companyName=#{companyName}
     </select>
 
-    <update id="update" parameterType="Client" >
-        update client set clientId=#{clientId} where temporaryId=#{temporaryId}
+    <update id="update" parameterType="Client">
+        UPDATE client SET groupId=#{groupId},companyName=#{companyName},organizationCode=#{organizationCode},
+         licenseCode=#{licenseCode}, representative=#{representative}, postCode=#{postCode},
+         enterpriseType=#{enterpriseType}, operationMode=#{operationMode}, operationType=#{operationType},
+         contingencyPlan=#{contingencyPlan}, operationRecord=#{operationRecord}, location=#{location},
+         street=#{street}, materialAttachmentUrl=#{materialAttachmentUrl}, applicationStatus=#{applicationStatus},
+         processAttachmentUrl=#{processAttachmentUrl}, processDesp=#{processDesp}, contactName=#{contactName},
+         phone=#{phone}, mobile=#{mobile}, email=#{email}, industry=#{industry}, product=#{product}
+         WHERE clientId=#{clientId}
     </update>
 
     <update id="enableState" parameterType="String">
@@ -64,6 +79,18 @@
 
     <update id="disableState" parameterType="String">
         UPDATE client SET state='Disabled' WHERE clientId=#{clientId};
+    </update>
+
+    <update id="setCheckStateToSubmit" parameterType="String">
+        UPDATE client SET checkState='ToSubmit' WHERE clientId=#{clientId};
+    </update>
+
+    <update id="setCheckStateExamining" parameterType="String">
+        UPDATE client SET checkState='Examining' WHERE clientId=#{clientId};
+    </update>
+
+    <update id="setCheckStateFinished" parameterType="String">
+        UPDATE client SET checkState='Finished' WHERE clientId=#{clientId};
     </update>
 
     <select id="list" resultMap="ClientRM">

@@ -69,6 +69,21 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
+    public void setCheckStateToSubmit(String clientId) {
+        clientMapper.setCheckStateToSubmit(clientId);
+    }
+
+    @Override
+    public void setCheckStateExamining(String clientId) {
+        clientMapper.setCheckStateExamining(clientId);
+    }
+
+    @Override
+    public void setCheckStateFinished(String clientId) {
+        clientMapper.setCheckStateFinished(clientId);
+    }
+
+    @Override
     public int count() {
         return clientMapper.count();
     }

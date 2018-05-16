@@ -30,35 +30,6 @@
             x6.innerHTML="NEW CELL1";
             x7.innerHTML="NEW CELL2";
         }
-
-        /**
-         * 操作按钮点击事件，用于处理启用、禁用
-         * @constructor
-         */
-        function changeStatus() {
-            var items = document.getElementsByName("IP");
-
-            for (var i = 0; i < items.length; i++) {
-                var item = items[i];
-                //判断是否是按钮
-                //window.event.srcElement触发当前事件的元素
-                //用来判断是否是当前单击的按钮
-                if (item == window.event.srcElement) {
-                    var row = document.getElementById("myTable").rows[i+1].cells;//取得除表头外的行
-                    if(row[5].innerHTML == "T"){//若每行的第五个单元格中为"T"
-                        row[5].innerHTML = "F";
-                    }else if(row[5].innerHTML == "F"){
-                        row[5].innerHTML = "T";
-                    }
-                    //用来判断客户状态
-                    if(item.value == "已启用"){
-                        item.value = "已停用";
-                    }else {
-                        item.value = "已启用";
-                    }
-                }
-            }
-        }
         function over() {
             window.event.srcElement.className = "current";
         }
@@ -137,7 +108,8 @@
                 <th>客户编号</th>
                 <th>客户名称</th>
                 <th>申报状态</th>
-                <th>客户状态</th>
+                <th>审核状态</th>
+                <th>账号状态</th>
                 <th>联系人</th>
                 <th>联系电话</th>
             </tr>
@@ -150,7 +122,7 @@
                                 <li class="" onmouseover="over()" onmouseleave="out()">操作
                                     <ul>
                                         <li><a href="../../clientInfo.jsp">新增</a></li>
-                                        <li><a href="#">修改</a></li>
+                                        <li><a href="showClient?clientId=${client.clientId}">修改</a></li>
                                         <li><a href="#">导出</a></li>
                                         <li><a href="disableClient?clientId=${client.clientId}">停用</a></li>
                                         <li><a href="enableClient?clientId=${client.clientId}">启用</a></li>
@@ -162,6 +134,7 @@
                     <td>${client.clientId}</td>
                     <td>${client.companyName}</td>
                     <td>${client.applicationStatus.name}</td>
+                    <td>${client.checkState.name}</td>
                     <td class="clientStatus">${client.clientState.name}</td>
                     <td>${client.contactName}</td>
                     <td>${client.mobile}</td>
