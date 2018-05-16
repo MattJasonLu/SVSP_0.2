@@ -127,7 +127,7 @@ public class Client {
     /**
      * 客户状态
      */
-    private char status;
+    private ClientState clientState;
 
 
     public String getClientId() {
@@ -346,12 +346,12 @@ public class Client {
         this.email = email;
     }
 
-    public char getStatus() {
-        return status;
+    public ClientState getClientState() {
+        return clientState;
     }
 
-    public void setStatus(char status) {
-        this.status = status;
+    public void setClientState(ClientState clientState) {
+        this.clientState = clientState;
     }
 
     @Override
@@ -384,7 +384,7 @@ public class Client {
                 ", phone='" + phone + '\'' +
                 ", mobile='" + mobile + '\'' +
                 ", email='" + email + '\'' +
-                ", status=" + status +
+                ", clientState=" + clientState +
                 '}';
     }
 }

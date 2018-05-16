@@ -35,7 +35,6 @@
          * 操作按钮点击事件，用于处理启用、禁用
          * @constructor
          */
-
         function changeStatus() {
             var items = document.getElementsByName("IP");
 
@@ -60,7 +59,12 @@
                 }
             }
         }
-
+        function over() {
+            window.event.srcElement.className = "current";
+        }
+        function out() {
+            window.event.srcElement.className = window.event.srcElement.className.replace("current", "");
+        }
     </script>
     <style>
         #leftButton{
@@ -81,6 +85,34 @@
         }
         .dd{
             /*float: left;!* 前两个div显示为同一行 *!*/
+        }
+        .menu ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 50px;
+        }
+        .menu ul li{
+            /*background-color: #eee;*/
+            position: relative;
+        }
+        .menu ul li a {
+            color: #000;
+            text-decoration: none;
+        }
+        .menu ul li a:hover {
+            color: #ff0000;
+        }
+        .menu ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #eee;
+            left:45px;
+            top:0px;
+            width: 100px;
+        }
+        .menu ul li.current ul {
+            display: block;
         }
     </style>
 </head>
@@ -111,12 +143,26 @@
             </tr>
             <c:forEach items="${clientList}" var="client" varStatus="id">
                 <tr>
-                    <td><input type="checkbox" /></td>
-                    <td><input type="button" value="已启用" name="IP" onclick="changeStatus()"></td>
+                    <td><input type="checkbox"/></td>
+                    <td>
+                        <div class="menu">
+                            <ul>
+                                <li class="" onmouseover="over()" onmouseleave="out()">操作
+                                    <ul>
+                                        <li><a href="../../clientInfo.jsp">新增</a></li>
+                                        <li><a href="#">修改</a></li>
+                                        <li><a href="#">导出</a></li>
+                                        <li><a href="disableClient?clientId=${client.clientId}">停用</a></li>
+                                        <li><a href="enableClient?clientId=${client.clientId}">启用</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
                     <td>${client.clientId}</td>
                     <td>${client.companyName}</td>
-                    <td>${client.applicationStatus}</td>
-                    <td class="clientStatus">${client.status}</td>
+                    <td>${client.applicationStatus.name}</td>
+                    <td class="clientStatus">${client.clientState.name}</td>
                     <td>${client.contactName}</td>
                     <td>${client.mobile}</td>
                 </tr>

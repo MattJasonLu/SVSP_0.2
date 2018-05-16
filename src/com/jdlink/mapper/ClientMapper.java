@@ -26,6 +26,10 @@ public interface ClientMapper {
 
     List<Client> list();
 
+    void enableState(String clientId);
+
+    void disableState(String clientId);
+
     int count();
 
 }

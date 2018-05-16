@@ -4,24 +4,29 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.jdlink.mapper.ClientMapper">
+
+    <resultMap id="ClientRM" type="Client">
+        <result property="clientState" column="state" javaType="com.jdlink.domain.ClientState"/>
+    </resultMap>
+
     <insert id="add" parameterType="Client" >
         insert into client ( clientId, temporaryId, groupId, companyName,
           organizationCode, licenseCode, representative, postCode, enterpriseType, operationMode,
           operationType, contingencyPlan, operationRecord, location, street, applicationStatus,
           materialAttachmentUrl, processAttachmentUrl, processDesp, contactName, phone, mobile,
-          email, status, industry, product )
+          email, state, industry, product )
         values (#{clientId}, #{temporaryId}, #{groupId}, #{companyName},
           #{organizationCode}, #{licenseCode}, #{representative}, #{postCode}, #{enterpriseType},
           #{operationMode}, #{operationType}, #{contingencyPlan}, #{operationRecord}, #{location},
           #{street}, #{applicationStatus}, #{materialAttachmentUrl}, #{processAttachmentUrl},
-          #{processDesp}, #{contactName}, #{phone}, #{mobile}, #{email}, #{status}, #{industry}, #{product})
+          #{processDesp}, #{contactName}, #{phone}, #{mobile}, #{email}, #{clientState}, #{industry}, #{product})
     </insert>
 
     <delete id="delete" parameterType="Client" >
         delete from client where clientId= #{clientId}
     </delete>
 
-    <select id="get" parameterType="map" resultType="Client">
+    <select id="get" parameterType="map" resultMap="ClientRM">
         select * from client
         <where>
             <if test="clientId!=null and clientId!=''">
@@ -36,23 +41,32 @@
             <if test="keyword != null and keyword != ''">
                 and companyName like "%"#{keyword}"%" or clientId like "%"#{keyword}"%"
                 or contactName like "%"#{keyword}"%" or mobile like "%"#{keyword}"%"
-                or applicationStatus like "%"#{keyword}"%" or status like "%"#{keyword}"%"
+                or applicationStatus like "%"#{keyword}"%" or state like "%"#{keyword}"%"
             </if>
         </where>
     </select>
 
-    <select id="getByClientId" parameterType="String" resultType="Client">
+    <select id="getByClientId" parameterType="String" resultMap="ClientRM">
         SELECT * FROM client WHERE clientId = #{clientId}
     </select>
 
-    <select id="getByName" parameterType="String" resultType="Client">
+    <select id="getByName" parameterType="String" resultMap="ClientRM">
         SELECT * FROM client WHERE companyName=#{companyName}
     </select>
 
     <update id="update" parameterType="Client" >
         update client set clientId=#{clientId} where temporaryId=#{temporaryId}
     </update>
-    <select id="list" resultType="Client">
+
+    <update id="enableState" parameterType="String">
+        UPDATE client SET state='Enabled' WHERE clientId=#{clientId};
+    </update>
+
+    <update id="disableState" parameterType="String">
+        UPDATE client SET state='Disabled' WHERE clientId=#{clientId};
+    </update>
+
+    <select id="list" resultMap="ClientRM">
         select * from client
     </select>
 </mapper>

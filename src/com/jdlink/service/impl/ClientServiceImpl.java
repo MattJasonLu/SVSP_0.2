@@ -59,6 +59,16 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
+    public void enableState(String clientId) {
+        clientMapper.enableState(clientId);
+    }
+
+    @Override
+    public void disableState(String clientId) {
+        clientMapper.disableState(clientId);
+    }
+
+    @Override
     public int count() {
         return clientMapper.count();
     }

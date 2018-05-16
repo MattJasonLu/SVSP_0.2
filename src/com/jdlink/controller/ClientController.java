@@ -86,12 +86,6 @@ public class ClientController {
     public ModelAndView listClient() {
         ModelAndView mav = new ModelAndView();
         List<Client> clientList = clientService.list();
-
-//        for (Client c :
-//                clientList) {
-//            System.out.println(c);
-//        }
-
         mav.addObject("clientList", clientList);
         mav.setViewName("beian");
 
@@ -112,4 +106,21 @@ public class ClientController {
         return mav;
     }
 
+    @RequestMapping("enableClient")
+    public ModelAndView enableClient(String clientId) {
+        ModelAndView mav = new ModelAndView();
+        // 启用用户
+        clientService.enableState(clientId);
+        // 刷新页面
+        return listClient();
+    }
+
+    @RequestMapping("disableClient")
+    public ModelAndView disableClient(String clientId) {
+        ModelAndView mav = new ModelAndView();
+        // 禁用用户
+        clientService.disableState(clientId);
+        // 刷新页面
+        return listClient();
+    }
 }

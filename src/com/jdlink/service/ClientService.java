@@ -25,6 +25,16 @@ public interface ClientService {
     void update(Client client);
 
     List<Client> list();
+    /**
+     * 启用用户
+     * @param clientId
+     */
+    void enableState(String clientId);
+    /**
+     * 禁用用户
+     * @param clientId
+     */
+    void disableState(String clientId);
 
     int count();
 
