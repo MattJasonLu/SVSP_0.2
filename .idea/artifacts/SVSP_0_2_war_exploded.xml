@@ -10,6 +10,7 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="SSM" />
           <element id="library" level="project" name="upload" />
+          <element id="library" level="project" name="jsonlib" />
         </element>
       </element>
     </root>

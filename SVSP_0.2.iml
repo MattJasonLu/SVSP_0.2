@@ -22,5 +22,6 @@
     <orderEntry type="library" scope="PROVIDED" name="JBoss 7.1.1.Final" level="application_server_libraries" />
     <orderEntry type="library" name="SSM" level="project" />
     <orderEntry type="library" name="upload" level="project" />
+    <orderEntry type="library" name="jsonlib" level="project" />
   </component>
 </module>

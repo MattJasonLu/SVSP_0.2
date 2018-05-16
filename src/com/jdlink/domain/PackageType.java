@@ -5,14 +5,9 @@ import com.jdlink.util.CodeBaseEnum;
 /**
  * Created by matt on 2018/5/8.
  */
-public enum ApplyState implements CodeBaseEnum {
-    ToSignIn("待签收", 1),
-    SignedIn("已签收", 2),
-    Backed("已退回", 3),
-
-    Appointed("已预约", 4),
-    SampleTaked("已取样", 5),
-    Canceld("预约取消", 6),
+public enum PackageType implements CodeBaseEnum {
+    Bag("吨袋", 1),
+    Box("箱装", 2),
     ;
 
     @Override
@@ -22,14 +17,14 @@ public enum ApplyState implements CodeBaseEnum {
 
     private String name;
     private int index;
-    ApplyState(String name, int index) {
+    PackageType(String name, int index) {
         this.name = name;
         this.index = index;
     }
 
     // 普通方法
-    public static ApplyState get(int index) {
-        for (ApplyState c : ApplyState.values()) {
+    public static PackageType get(int index) {
+        for (PackageType c : PackageType.values()) {
             if (c.getIndex() == index) {
                 return c;
             }

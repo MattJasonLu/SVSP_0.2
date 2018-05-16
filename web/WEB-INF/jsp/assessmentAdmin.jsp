@@ -120,7 +120,7 @@
                                     <li><a href="showQuestionnaire?questionnaireId=${questionnaireAdmin.questionnaireId}">修改</a></li>
                                     <li><a href="signInQuestionnaire?questionnaireId=${questionnaireAdmin.questionnaireId}" onclick="signIn()">签收</a></li>
                                     <li><a href="backQuestionnaire?questionnaireId=${questionnaireAdmin.questionnaireId}" onclick="back()">退回</a></li>
-                                    <li><a href="#">预约送样</a></li>
+                                    <li><a href="listSample">预约送样</a></li>
                                     <li><a href="deleteQuestionnaire?questionnaireId=${questionnaireAdmin.questionnaireId}">删除</a></li>
                                 </ul>
                             </li>
