@@ -1,6 +1,7 @@
 package com.jdlink.service.impl;
 
 import com.jdlink.domain.SampleAppoint;
+import com.jdlink.domain.SampleCheck;
 import com.jdlink.mapper.SampleAppointMapper;
 import com.jdlink.service.SampleAppointService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,5 +40,25 @@ public class SampleAppointServiceImpl implements SampleAppointService {
     @Override
     public List<SampleAppoint> list() {
         return sampleAppointMapper.list();
+    }
+
+    @Override
+    public void updatePdtAndCode(SampleCheck sampleCheck) {
+        sampleAppointMapper.updatePdtAndCode(sampleCheck);
+    }
+
+    @Override
+    public void setAppointed(SampleAppoint sampleAppoint) {
+        sampleAppointMapper.setAppointed(sampleAppoint);
+    }
+
+    @Override
+    public void setSampleTaked(SampleAppoint sampleAppoint) {
+        sampleAppointMapper.setSampleTaked(sampleAppoint);
+    }
+
+    @Override
+    public void setCanceld(SampleAppoint sampleAppoint) {
+        sampleAppointMapper.setCanceld(sampleAppoint);
     }
 }

@@ -26,4 +26,21 @@
     <select id="list" resultType="SampleAppoint">
         select * from t_sampleAppoint
     </select>
+
+    <update id="updatePdtAndCode" parameterType="SampleCheck">
+        UPDATE t_sampleAppoint SET productName=#{productName}, code=#{code} WHERE
+        appointId=#{appointId}
+    </update>
+
+    <update id="setAppointed" parameterType="SampleAppoint">
+        UPDATE t_sampleAppoint SET state='Appointed' WHERE appointId=#{appointId}
+    </update>
+
+    <update id="setSampleTaked" parameterType="SampleAppoint">
+        UPDATE t_sampleAppoint SET state='SampleTaked' WHERE appointId=#{appointId}
+    </update>
+
+    <update id="setCanceld" parameterType="SampleAppoint">
+        UPDATE t_sampleAppoint SET state='Canceld' WHERE appointId=#{appointId}
+    </update>
 </mapper>

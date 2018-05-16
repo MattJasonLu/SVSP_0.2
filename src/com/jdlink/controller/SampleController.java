@@ -1,9 +1,6 @@
 package com.jdlink.controller;
 
-import com.jdlink.domain.ApplyState;
-import com.jdlink.domain.Client;
-import com.jdlink.domain.SampleAppoint;
-import com.jdlink.domain.SampleCheck;
+import com.jdlink.domain.*;
 import com.jdlink.service.ClientService;
 import com.jdlink.service.SampleAppointService;
 import com.jdlink.service.SampleCheckService;
@@ -41,6 +38,18 @@ public class SampleController {
         List<SampleCheck> sampleCheckList = sampleCheckService.list();
         mav.addObject("sampleAppointList", sampleAppointList);
         mav.addObject("sampleCheckList", sampleCheckList);
+        // 获取枚举
+        List<String> formTypeStrList = new ArrayList<>();
+        for (FormType formType : FormType.values()) {
+            formTypeStrList.add(formType.getName());
+        }
+        List<String> packageTypeStrList = new ArrayList<>();
+        for (PackageType packageType : PackageType.values()) {
+            packageTypeStrList.add(packageType.getName());
+        }
+        // 添加枚举
+        mav.addObject("formTypeStrList", formTypeStrList);
+        mav.addObject("packageTypeStrList", packageTypeStrList);
         mav.setViewName("sample");
         return mav;
     }
@@ -61,7 +70,7 @@ public class SampleController {
         Client client = clientService.getByName(sampleAppoint.getCompanyName());
         // 若匹配到客户则更新预约表中的客户编号
         if (client != null) sampleAppoint.setClientId(client.getClientId());
-        sampleAppoint.setState(ApplyState.Canceld);
+        sampleAppoint.setState(ApplyState.Appointed);
         // 添加预约表
         sampleAppointService.add(sampleAppoint);
         // 刷新列表
@@ -82,16 +91,22 @@ public class SampleController {
     }
 
     @RequestMapping("addSampleCheck")
-    public ModelAndView addSampleCheck(SampleCheck sampleCheck, String appointId) {
+    public ModelAndView addSampleCheck(SampleCheck sampleCheck) {
         ModelAndView mav = new ModelAndView();
+        // 取得预约号
+        String appointId = sampleCheck.getCheckId().split("R")[0];
+        // 设置预约号
         sampleCheck.setAppointId(appointId);
-        sampleCheck.setCheckId(RandomUtil.getCheckId(appointId));
-
+        // 取得预约数据
         SampleAppoint sampleAppoint = sampleAppointService.getById(appointId);
         sampleCheck.setClientId(sampleAppoint.getClientId());
-
+        sampleCheck.setCreateTime(new Date());
         // 添加登记表
         sampleCheckService.add(sampleCheck);
+        // 更新状态
+        sampleAppointService.setSampleTaked(sampleAppoint);
+        // 更新产品和危废代码
+        sampleAppointService.updatePdtAndCode(sampleCheck);
         // 刷新列表
         return listSample();
     }

@@ -8,6 +8,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" import="java.util.*" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
 <html>
 <head>
     <title>危险废物数据评估</title>
@@ -88,14 +89,20 @@
             var modal = document.getElementById('confirmModal');
             // 获取勾选的id
             var appointId;
+            // 获取项目的状态
+            var state;
             var items = document.getElementsByName('appointId');
             for (var i = 0; i < items.length; i++) {
                 if (items[i].checked) {
                     appointId = items[i].value;
+                    state = items[i].parentElement.nextElementSibling.nextElementSibling
+                            .nextElementSibling.nextElementSibling.nextElementSibling.innerHTML;
                     break;
                 }
             }
-            if (appointId != undefined) {
+            if (state == "已取样") {
+                alert("已确认收样，请勿重复操作！")
+            } else if (appointId != undefined) {
                 var url = "http://localhost:8080/getSampleAppoint?appointId=" + appointId;
                 xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = checkResult;
@@ -111,7 +118,11 @@
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 var result = xmlhttp.responseText;
                 var json = eval("(" + result + ")");
-                alert(json.data.companyName)
+                document.getElementById('confirmCheckId').value = json.data.appointId+ "R";
+                document.getElementById('confirmCompanyName').value = json.data.companyName;
+                document.getElementById('confirmContactName').value = json.data.contactName;
+                document.getElementById('confirmTelephone').value = json.data.telephone;
+                <fmt:formatDate value="<%=new Date()%>" var="date" pattern="yyyy-MM-dd"/>
             }
         }
 
@@ -265,8 +276,8 @@
                         <ul>
                             <li class="" onmouseover="over()" onmouseleave="out()">操作
                                 <ul>
-                                    <li><a href="#">查看</a></li>
-                                    <li><a href="#">登记收样</a></li>
+                                    <li><a href="#" onclick="">查看</a></li>
+                                    <li><a href="#" onclick="confirmModalBlock()">登记收样</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -290,7 +301,7 @@
             </header>
             <div class="modal-body">
                 <form method="post" id="sampleAppointForm" action="addSampleAppoint">
-                <p>预约号：********</p>
+                预约号：<b id="appointId"></b>
                 公司名称：<input type="text" name="companyName"><br>
                 联系人：<input type="text" name="contactName">
                 联系电话：<input type="text" name="telephone"><br>
@@ -313,21 +324,27 @@
             </header>
             <div class="modal-body">
                 <form method="post" id="sampleCheckForm" action="addSampleCheck">
-                <p>取样号：********</p>
-                公司名称：<input type="text" name="companyName">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;制单日期：2018-5-1<br>
-                联系人：<input type="text" name="contactName">
-                联系电话：<input type="text" name="telephone"><br>
+                取样号：<input type="text" name="checkId" id="confirmCheckId" readonly/><br>
+                公司名称：<input type="text" name="companyName" id="confirmCompanyName">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;制单日期：${date}<br>
+                联系人：<input type="text" name="contactName" id="confirmContactName">
+                联系电话：<input type="text" name="telephone" id="confirmTelephone"><br>
                 样品接收人：<input type="text" name="recipient">
                 样品名称：<input type="text" name="productName"><br>
                 代码：<input type="text" name="code">
                 状态：<select name="formType">
                     <option value="0">--请选择--</option>
+                    <c:forEach items="${formTypeStrList}" var="formTypeStr" varStatus="id">
+                        <option value="${id.index+1}">${formTypeStr}</option>
+                    </c:forEach>
                 </select><br>
                 颜色：<input type="text" name="color">
                 拟处置量（吨）：<input type="text" name="quantity"><br>
                 拟用包装：<select name="packageType">
                 <option value="0">--请选择--</option>
+                    <c:forEach items="${packageTypeStrList}" var="packageTypeStr" varStatus="id">
+                        <option value="${id.index+1}">${packageTypeStr}</option>
+                    </c:forEach>
                 </select><br>
                 主要成分：<textarea name="comment"></textarea>
                 </form>

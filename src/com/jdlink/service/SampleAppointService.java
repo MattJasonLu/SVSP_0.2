@@ -1,6 +1,7 @@
 package com.jdlink.service;
 
 import com.jdlink.domain.SampleAppoint;
+import com.jdlink.domain.SampleCheck;
 
 import java.util.List;
 
@@ -18,5 +19,13 @@ public interface SampleAppointService {
     int countById(String appointId);
 
     List<SampleAppoint> list();
+
+    void updatePdtAndCode(SampleCheck sampleCheck);
+
+    void setAppointed(SampleAppoint sampleAppoint);
+
+    void setSampleTaked(SampleAppoint sampleAppoint);
+
+    void setCanceld(SampleAppoint sampleAppoint);
 
 }
