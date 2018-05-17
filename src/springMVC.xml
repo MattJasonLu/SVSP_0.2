@@ -51,6 +51,7 @@
                 <bean class="com.jdlink.util.StringToApplyStateConverter"/>
                 <bean class="com.jdlink.util.StringToPackageTypeConverter"/>
                 <bean class="com.jdlink.util.StringToClientStateConverter"/>
+                <bean class="com.jdlink.util.StringToSupplierTypeConverter"/>
                 <!--<bean class="com.jdlink.util.StringToEnumConverterFactory"/>-->
                 <bean class="com.jdlink.util.StringToDateConverter"/>
             </set>

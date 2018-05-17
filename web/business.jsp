@@ -65,9 +65,7 @@
     </LI>
     <LI><A href="#">供应商管理</A>
         <UL>
-            <LI><A href="#"  target="mainframe2">供应商新增</A></LI>
-            <LI><A href="#"  target="mainframe2">供应商信息修改</A></LI>
-            <LI><A href="#"  target="mainframe2">查看目录</A></LI>
+            <LI><A href="listSupplier" target="mainframe2">供应商备案</A></LI>
         </UL>
     </LI>
     <LI><A href="#">合同管理</A>
