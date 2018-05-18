@@ -1,28 +1,24 @@
 package com.jdlink.domain;
 
 /**
- * Created by matt on 2018/5/16.
+ * Created by matt on 2018/5/17.
  */
-public enum CheckState {
-    Examining("审批中", 1),
-    ToSubmit("待提交", 2),
-    Finished("已完成", 3),
-
-    ToExamine("待审批", 4),
-    Keeping("履约中", 5),
-    Invalid("已作废", 6),
+public enum TaxRate {
+    Appointed("已预约", 4),
+    SampleTaked("已取样", 5),
+    Canceld("预约取消", 6),
     ;
 
     private String name;
     private int index;
-    CheckState(String name, int index) {
+    TaxRate(String name, int index) {
         this.name = name;
         this.index = index;
     }
 
     // 普通方法
-    public static CheckState get(int index) {
-        for (CheckState c : CheckState.values()) {
+    public static TaxRate get(int index) {
+        for (TaxRate c : TaxRate.values()) {
             if (c.getIndex() == index) {
                 return c;
             }
