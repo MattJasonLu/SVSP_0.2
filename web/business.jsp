@@ -70,8 +70,8 @@
     </LI>
     <LI><A href="#">合同管理</A>
         <UL>
-            <LI><A href="#"  target="mainframe2">合同列表</A></LI>
-            <LI><A href="#"  target="mainframe2">合同管理列表</A></LI>
+            <LI><A href="listContract"  target="mainframe2">合同列表</A></LI>
+            <LI><A href="#"  target="mainframe2">合同模板</A></LI>
         </UL>
     </LI>
     <LI><A href="#">一企一档</A>

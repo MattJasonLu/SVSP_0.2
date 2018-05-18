@@ -8,6 +8,10 @@ import java.util.Date;
  */
 public class Contract {
     /**
+     * 合同编号
+     */
+    private String contractId;
+    /**
      * 公司名称
      */
     private String companyName;
@@ -59,6 +63,8 @@ public class Contract {
      * 送审日期
      */
     private Date reviewDate;
+
+    private ContractType contractType;
 
     public String getCompanyName() {
         return companyName;
@@ -162,5 +168,21 @@ public class Contract {
 
     public void setReviewDate(Date reviewDate) {
         this.reviewDate = reviewDate;
+    }
+
+    public String getContractId() {
+        return contractId;
+    }
+
+    public void setContractId(String contractId) {
+        this.contractId = contractId;
+    }
+
+    public ContractType getContractType() {
+        return contractType;
+    }
+
+    public void setContractType(ContractType contractType) {
+        this.contractType = contractType;
     }
 }

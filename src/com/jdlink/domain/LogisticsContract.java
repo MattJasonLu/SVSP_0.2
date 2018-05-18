@@ -7,13 +7,13 @@ import java.util.Date;
  */
 public class LogisticsContract extends Contract{
     /**
+     * 开户行
+     */
+    private String bankName;
+    /**
      * 开户行账号
      */
     private String bankAccount;
-    /**
-     * 代理人
-     */
-    private String agentName;
     /**
      * 开票税率1
      */
@@ -39,16 +39,16 @@ public class LogisticsContract extends Contract{
         return bankAccount;
     }
 
+    public String getBankName() {
+        return bankName;
+    }
+
+    public void setBankName(String bankName) {
+        this.bankName = bankName;
+    }
+
     public void setBankAccount(String bankAccount) {
         this.bankAccount = bankAccount;
-    }
-
-    public String getAgentName() {
-        return agentName;
-    }
-
-    public void setAgentName(String agentName) {
-        this.agentName = agentName;
     }
 
     public TaxRate getFirstTaxRate() {
