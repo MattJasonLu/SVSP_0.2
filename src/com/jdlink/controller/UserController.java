@@ -38,7 +38,7 @@ public class UserController {
 
     @RequestMapping("getUser")
     public ModelAndView getUser(User user, HttpSession session) {
-        ModelAndView mav = new ModelAndView();
+        ModelAndView mav = new ModelAndView("redirect: home/");
         try {
             Map<String, String> params = new HashMap<>();
 
@@ -53,7 +53,7 @@ public class UserController {
             user = userList.get(0);
             if (userList.size() > 0) {
                 mav.addObject("username", user.getUsername());
-                mav.setViewName("home");
+//                mav.setViewName("home");
                 // 将用户绑定的客户对象信息绑定到session中
                 Client client = clientService.getByClientId(user.getClientId());
                 // 将用户对应的客户编号或者管理员编号加入session保存
@@ -78,11 +78,21 @@ public class UserController {
         if (secondPassword.equals(user.getPassword())) {
             userService.add(user);
             mav.addObject("username", user.getUsername());
-            mav.setViewName("home");
+            mav.setViewName("redirect: index.html");
         } else {
             mav.addObject("message", "两次密码不一致，请重试！");
             mav.setViewName("fail");
         }
+        return mav;
+    }
+
+    @RequestMapping("home")
+    public ModelAndView goHome(HttpSession session) {
+        ModelAndView mav = new ModelAndView();
+        Client client = clientService.getByClientId("0001");
+        // 将用户对应的客户编号或者管理员编号加入session保存
+        session.setAttribute("client", client);
+        mav.setViewName("home");
         return mav;
     }
 
