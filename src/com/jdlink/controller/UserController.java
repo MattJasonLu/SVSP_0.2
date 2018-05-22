@@ -38,7 +38,7 @@ public class UserController {
 
     @RequestMapping("getUser")
     public ModelAndView getUser(User user, HttpSession session) {
-        ModelAndView mav = new ModelAndView("redirect: home/");
+        ModelAndView mav = new ModelAndView("wastesPlatform.html");
         try {
             Map<String, String> params = new HashMap<>();
 
