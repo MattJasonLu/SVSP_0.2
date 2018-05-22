@@ -1,459 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="cfb2c0a4-c7bc-43ee-9318-92e2f8caf082" name="Default" comment="首页完成">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/image/bg_02.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/image/circle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/bootstrap/3.3.6/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/bootstrap/3.3.6/bootstrap-theme.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/bootstrap/3.3.6/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/bootstrap/3.3.6/bootstrap-theme.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/bootstrap/3.3.6/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/bootstrap/3.3.6/bootstrap.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/bootstrap/3.3.6/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/bootstrap/3.3.6/bootstrap.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/dashboard.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/signin.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/bootstrap/3.3.6/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/bootstrap/3.3.6/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/bootstrap/3.3.6/npm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/jquery/2.0.0/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/signin.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/signup.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/wastesPlatform.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/css/animate.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/css/style.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fonts/icomoon/icomoon.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fonts/icomoon/icomoon.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fonts/icomoon/icomoon.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fonts/icomoon/icomoon.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/forgot.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/404.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/about.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/blog-audio.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/blog-author.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/blog-full.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/blog-masonry.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/blog-timeline.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/blog-video.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/blog.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/careers.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/case-study.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/checkout.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/comming-soon.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/contact1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/contact2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/css/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/css/ie9.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/css/touch.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/dashboard.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/SmoothScroll/SmoothScroll.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/animated-header/css/component.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/animated-header/js/EasePack.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/animated-header/js/TweenLite.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/animated-header/js/header-animate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/animated-header/js/rAF.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap-datepicker/bootstrap-datepicker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap-datepicker/datepicker.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap-select/bootstrap-select.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap-select/bootstrap-select.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/.csscomb.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/.csslintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/alerts.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/badges.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/bootstrap.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/breadcrumbs.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/button-groups.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/buttons.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/carousel.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/close.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/code.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/component-animations.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/dropdowns.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/forms.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/glyphicons.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/grid.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/input-groups.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/jumbotron.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/labels.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/list-group.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/media.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/alerts.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/background-variant.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/border-radius.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/buttons.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/center-block.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/clearfix.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/forms.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/gradients.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/grid-framework.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/grid.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/hide-text.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/image.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/labels.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/list-group.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/nav-divider.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/nav-vertical-align.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/opacity.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/pagination.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/panels.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/progress-bar.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/reset-filter.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/resize.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/responsive-visibility.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/size.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/tab-focus.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/table-row.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/text-emphasis.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/text-overflow.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/mixins/vendor-prefixes.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/modals.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/navbar.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/navs.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/normalize.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/pager.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/pagination.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/panels.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/popovers.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/print.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/progress-bars.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/responsive-embed.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/responsive-utilities.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/scaffolding.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/tables.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/theme.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/thumbnails.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/tooltip.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/type.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/utilities.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/variables.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/bootstrap/less/wells.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/classList/classList.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/count/count.down.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/count/min/count.down.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/flexslider/flexslider.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/flexslider/jquery.flexslider-min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/flickr/colorbox.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/flickr/images/border.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/flickr/images/controls.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/flickr/images/loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/flickr/images/loading_background.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/flickr/images/overlay.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/flickr/jflickrfeed.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/flickr/jquery.colorbox.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/galleriffic/jquery.galleriffic.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/inview/jquery.inview.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/isotope/isotope.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/isotope/jquery.isotope.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/jquery/jquery-1.10.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/knob/jquery.knob.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/livicons/livicons-1.3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/livicons/raphael-min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/mCustomScrollbar/jquery.mCustomScrollbar.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/magnific-popup/jquery.magnific-popup.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/magnific-popup/magnific-popup.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/modernizr/modernizr.custom.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/range-slider/jquery.nouislider.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/range-slider/jquery.nouislider.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/raty/images/cancel-off.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/raty/images/cancel-on.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/raty/images/star-half.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/raty/images/star-off.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/raty/images/star-off.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/raty/images/star-on.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/raty/images/star-on.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/raty/jquery.raty.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/raty/jquery.raty.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/royalslider/grab.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/royalslider/grabbing.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/royalslider/jquery.easing-1.3.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/royalslider/jquery.royalslider.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/royalslider/royalslider.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/arrow_large_left.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/arrow_large_right.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/arrow_left.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/arrow_left2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/arrow_right.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/arrow_right2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/arrowleft.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/arrowright.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/arrows.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/black50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/boxed_bgtile.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/bullet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/bullet_boxed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/bullets.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/bullets.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/bullets2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/coloredbg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/grain.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/gridtile.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/gridtile_3x3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/gridtile_3x3_white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/gridtile_white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/large_left.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/large_right.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/loader.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/loader2.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/navigdots.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/navigdots_bgtile.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/shadow1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/shadow2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/shadow3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/small_arrows.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/small_left.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/small_left_boxed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/small_right.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/small_right_boxed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/timer.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/timerdot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/transparent.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/assets/white50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/css/settings-ie8.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/css/settings.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/font/revicons.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/font/revicons.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/font/revicons.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/font/revicons.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/images/decor_inside.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/images/decor_inside_white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/images/decor_testimonial.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/images/gradient/g30.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/images/gradient/g40.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/js/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/js/jquery.themepunch.plugins.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/js/jquery.themepunch.revolution.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/rs-plugin/js/jquery.themepunch.revolution.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/scrollto/jquery.scrollTo.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/swiper/idangerous.swiper.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/swiper/idangerous.swiper.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/twitterfeed/min/twitterfeed.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/twitterfeed/twitterfeed.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/waypoint/waypoints.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/z-nav/jquery.mobile.menu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/z-nav/min/jquery.mobile.menu.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/external/z-nav/z-nav.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/fonts/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/footer-1-light.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/footer-1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/footer-2-light.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/footer-2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/footer-3-light.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/footer-3.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/footer-4-light.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/footer-4.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/footer-5-light.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/footer-5.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/footer-6-light.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/footer-6.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/forum-thread.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/forum.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/gallery-2col.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/gallery-3col.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/gallery-4col.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/gallery-full.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/get-tweets1.1.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/header-1-light.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/header-1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/header-2-light.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/header-2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/header-3-light.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/header-3.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/header-4-light.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/header-4.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/header-5-light.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/header-5.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/header-6-light.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/header-6.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/bbg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/blog/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/brands/1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/brands/2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/brands/3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/brands/4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/brands/5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/brands/6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/badge.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/blanck.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/brand-circle-large.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/brand-circle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/browser.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/comming-soon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/dashboard1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/dashboard2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/dashboards.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/error-stars.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/error.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/footer-stars.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/icons-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/laptop.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/link-underline-hover.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/link-underline.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/planet-huge.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/planet-large.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/planet-small.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/progress-stripe-angle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/progress-stripe.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/promo-brand.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/promo-brand.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/promo-primary.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/rocket-path-sm.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/rocket-path.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/rocket.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/rockets.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/components/stripe.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/feature/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/feature/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/feature/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/gallery/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/android-dark.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/android.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/apple-dark.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/apple.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/arrow-smooth.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/chart.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/cloud--decorated.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/code.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/desktop-decorated.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/desktop.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/fave-hover.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/fave-null.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/fave.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/menu-icon.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/mouse.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/quality.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/radio-check.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/reply-hover.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/reply-null.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/reply.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/retweet-hover.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/retweet-null.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/retweet.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/rocket-decorated.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/star-off.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/star-on.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/star.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/stars.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/support.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/three-lines.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/track.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/icons/users-decorated.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/logo-alt.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/logo-full.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/logo-huge.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/logo-medium.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/logo-sm.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/logo-small.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/preloader.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/services/1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/services/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/services/2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/services/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/services/set.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/slider/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/slider/full-width/4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/slider/full-width/brand-phone.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/slider/full-width/secondary.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/staff/join.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/images/testimonial.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/index-animation.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/index-commerce.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/index-hero.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/index-host.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/index1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/index2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/index3.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/js/custom.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/js/form.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/js/min/custom.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/js/min/form.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/less/base/base.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/less/base/normalize.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/less/base/vars.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/less/layout/layout.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/less/objects/footer.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/less/objects/forms.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/less/objects/gallery.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/less/objects/header.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/less/objects/objects.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/less/objects/post.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/less/objects/rocket.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/less/objects/sliders.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/less/objects/widgets.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/less/state/responsive.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/less/state/state.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/less/style.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/login.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/onepage-layout.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/orders.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/page-constructor-shop.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/page-constructor.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/page-elements.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/pricing-tables.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/question.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/send.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/services.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/services2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/services3.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/shop-grid-full.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/shop-grid.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/shop-list-full.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/shop-list.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/shopping-cart.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/shortcodes/accordions-and-tabs.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/shortcodes/charts.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/shortcodes/controls.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/shortcodes/external/waypoint/waypoints.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/shortcodes/forms.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/shortcodes/icons.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/shortcodes/images.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/shortcodes/promo.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/shortcodes/sliders.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/shortcodes/tables.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/shortcodes/temp-scortcodes.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/shortcodes/typography.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/single-employee.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/single-post-full.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/single-post.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/single-product-full.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/single-product.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/single-service.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/site-map.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/support.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/testimonials.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/twitteroauth/OAuth.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/twitteroauth/twitteroauth.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/home/wishlist.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/images/bg_2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/images/geometry2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/jquery.placeholder.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/jquery.waypoints.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/modernizr-2.6.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/respond.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/sass/style.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/sign-up.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/fonts/bootstrap/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/web/css/bootstrap/fonts/glyphicons-halflings-regular.eot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/fonts/bootstrap/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/web/css/bootstrap/fonts/glyphicons-halflings-regular.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/fonts/bootstrap/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/web/css/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/fonts/bootstrap/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/web/css/bootstrap/fonts/glyphicons-halflings-regular.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/fonts/bootstrap/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/web/css/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/home/images/components/twiiter.jpg" afterPath="$PROJECT_DIR$/web/image/bg_01.jpg" />
+    <list default="true" readonly="true" id="cfb2c0a4-c7bc-43ee-9318-92e2f8caf082" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/jdlink/controller/UserController.java" afterPath="$PROJECT_DIR$/src/com/jdlink/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/springMVC.xml" afterPath="$PROJECT_DIR$/src/springMVC.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.html" afterPath="$PROJECT_DIR$/web/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/signin.html" afterPath="$PROJECT_DIR$/web/signin.html" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -473,35 +24,25 @@
     <favorites_list name="SVSP_0.3" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/jdlink/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state relative-caret-position="615">
+              <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="signin.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="signin.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/signin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="47" column="15" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
+            <state relative-caret-position="165">
+              <caret line="34" column="7" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
               <folding>
                 <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/css/bootstrap/3.3.6/bootstrap.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="6265" column="40" selection-start-line="6265" selection-start-column="40" selection-end-line="6265" selection-end-column="40" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -539,6 +80,7 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-254" />
     <option name="y" value="-1080" />
@@ -570,7 +112,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -613,6 +154,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SVSP_0.3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SVSP_0.3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -637,8 +196,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -881,6 +441,7 @@
       <setting name="cmdLine" value="run-app" />
       <setting name="passParentEnv" value="true" />
       <setting name="launchBrowser" value="true" />
+      <setting name="depsClasspath" value="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
@@ -1046,6 +607,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -1151,47 +718,56 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1526890239955</updated>
-      <workItem from="1526890241529" duration="2728000" />
+      <workItem from="1526890241529" duration="5942000" />
+      <workItem from="1526971173331" duration="11319000" />
     </task>
+    <task id="LOCAL-00001" summary="首页完成">
+      <created>1526967548758</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1526967548758</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2728000" />
+    <option name="totallyTimeSpent" value="17261000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-254" y="-1080" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32913843" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913843" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913843" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913843" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913843" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913843" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913843" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1359375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39980638" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1211,14 +787,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/jdlink/controller/UserController.java</url>
-          <line>40</line>
-          <properties />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1227,11 +796,28 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/jdlink/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/signin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1239,7 +825,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="638">
           <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1259,6 +844,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/bootstrap/3.3.6/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="6265" column="40" selection-start-line="6265" selection-start-column="40" selection-end-line="6265" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/assessmentAdmin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="72" column="25" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Documents/jar/ssm/druid-1.0.15.jar!/support/http/resources/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1672">
+          <caret line="76" column="35" selection-start-line="76" selection-start-column="35" selection-end-line="76" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/data.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Documents/jar/ssm/spring-web-3.2.16.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jdlink/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/wastesPlatform.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1267,29 +899,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jdlink/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/signin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="47" column="15" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
+        <state relative-caret-position="165">
+          <caret line="34" column="7" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
           <folding>
             <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/bootstrap/3.3.6/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="6265" column="40" selection-start-line="6265" selection-start-column="40" selection-end-line="6265" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
