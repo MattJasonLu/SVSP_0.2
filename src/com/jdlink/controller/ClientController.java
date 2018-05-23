@@ -6,6 +6,7 @@ import com.jdlink.util.RandomUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -70,17 +71,20 @@ public class ClientController {
     public ModelAndView updateClient(Client client) {
         ModelAndView mav = new ModelAndView();
         clientService.update(client);
-        return listClient();
+        return null;
     }
 
+    /**
+     * 取出所有客户对象
+     * @return 客户列表集合对象
+     */
     @RequestMapping("listClient")
-    public ModelAndView listClient() {
-        ModelAndView mav = new ModelAndView();
+    @ResponseBody
+    public List<Client> listClient() {
+        // 取出所有客户
         List<Client> clientList = clientService.list();
-        mav.addObject("clientList", clientList);
-        mav.setViewName("beian");
-
-        return mav;
+        // 返回结果
+        return clientList;
     }
 
     @RequestMapping("getClient")
@@ -103,7 +107,7 @@ public class ClientController {
         // 启用用户
         clientService.enableState(clientId);
         // 刷新页面
-        return listClient();
+        return null;
     }
 
     @RequestMapping("disableClient")
@@ -112,7 +116,7 @@ public class ClientController {
         // 禁用用户
         clientService.disableState(clientId);
         // 刷新页面
-        return listClient();
+        return null;
     }
 
     @RequestMapping("showClient")
