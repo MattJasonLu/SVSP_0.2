@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="cfb2c0a4-c7bc-43ee-9318-92e2f8caf082" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/clientBackup.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/businessModel.html" afterPath="$PROJECT_DIR$/web/businessModel.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.html" afterPath="$PROJECT_DIR$/web/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/clientBackup.html" afterPath="$PROJECT_DIR$/web/clientBackup.html" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -29,42 +27,10 @@
       <file leaf-file-name="clientBackup.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/clientBackup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="101" column="24" selection-start-line="101" selection-start-column="24" selection-end-line="101" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="59" column="15" selection-start-line="59" selection-start-column="15" selection-end-line="59" selection-end-column="15" />
+            <state relative-caret-position="66">
+              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
               <folding>
-                <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wastesPlatform.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/wastesPlatform.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="signin.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/signin.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="32" column="9" selection-start-line="10" selection-start-column="8" selection-end-line="32" selection-end-column="9" />
-              <folding>
-                <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -168,6 +134,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SVSP_0.3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SVSP_0.3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SVSP_0.3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SVSP_0.3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -717,7 +723,7 @@
       <option name="presentableId" value="Default" />
       <updated>1526890239955</updated>
       <workItem from="1526890241529" duration="5942000" />
-      <workItem from="1526971173331" duration="16006000" />
+      <workItem from="1526971173331" duration="18621000" />
     </task>
     <task id="LOCAL-00001" summary="首页完成">
       <created>1526967548758</created>
@@ -740,11 +746,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526985228252</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="客户备案页面初步">
+      <created>1526988514558</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1526988514558</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21948000" />
+    <option name="totallyTimeSpent" value="24563000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-254" y="-1080" width="1920" height="1080" extended-state="0" />
@@ -797,7 +810,8 @@
     <MESSAGE value="首页完成" />
     <MESSAGE value="首页到产废平台的跳转已完成，哈哈哈哈哈哈哈" />
     <MESSAGE value="商务管理页面初步搭建" />
-    <option name="LAST_COMMIT_MESSAGE" value="商务管理页面初步搭建" />
+    <MESSAGE value="客户备案页面初步" />
+    <option name="LAST_COMMIT_MESSAGE" value="客户备案页面初步" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -898,14 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/beian.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="113" column="29" selection-start-line="105" selection-start-column="16" selection-end-line="113" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/businessModel.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="121">
@@ -942,11 +948,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/beian.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="106" column="27" selection-start-line="106" selection-start-column="27" selection-end-line="106" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/clientBackup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="101" column="24" selection-start-line="101" selection-start-column="24" selection-end-line="101" selection-end-column="24" />
-          <folding />
+        <state relative-caret-position="66">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <folding>
+            <element signature="n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
