@@ -3,6 +3,9 @@ package com.jdlink.controller;
 import com.jdlink.domain.*;
 import com.jdlink.service.ClientService;
 import com.jdlink.util.RandomUtil;
+import com.sun.org.apache.bcel.internal.generic.InstructionConstants;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -80,11 +83,14 @@ public class ClientController {
      */
     @RequestMapping("listClient")
     @ResponseBody
-    public List<Client> listClient() {
+    public String listClient(Page page) {
         // 取出所有客户
-        List<Client> clientList = clientService.list();
+        List<Client> clientList = clientService.list(page);
+        // 计算最后页
+        page.caculateLast(clientService.total());
+        JSONArray array = JSONArray.fromArray(clientList.toArray(new Client[clientList.size()]));
         // 返回结果
-        return clientList;
+        return array.toString();
     }
 
     @RequestMapping("getClient")

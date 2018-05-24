@@ -1,6 +1,7 @@
 package com.jdlink.service;
 
 import com.jdlink.domain.Client;
+import com.jdlink.domain.Page;
 
 import java.util.List;
 import java.util.Map;
@@ -25,6 +26,11 @@ public interface ClientService {
     void update(Client client);
 
     List<Client> list();
+
+    List<Client> list(Page page);
+
+    int total();
+
     /**
      * 启用用户
      * @param clientId

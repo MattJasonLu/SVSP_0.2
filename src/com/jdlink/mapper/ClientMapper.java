@@ -1,6 +1,7 @@
 package com.jdlink.mapper;
 
 import com.jdlink.domain.Client;
+import com.jdlink.domain.Page;
 
 import java.util.List;
 import java.util.Map;
@@ -25,6 +26,10 @@ public interface ClientMapper {
     void update(Client client);
 
     List<Client> list();
+
+    List<Client> list(Page page);
+
+    int total();
 
     void enableState(String clientId);
 

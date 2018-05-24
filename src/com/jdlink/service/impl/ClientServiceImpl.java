@@ -1,6 +1,7 @@
 package com.jdlink.service.impl;
 
 import com.jdlink.domain.Client;
+import com.jdlink.domain.Page;
 import com.jdlink.mapper.ClientMapper;
 import com.jdlink.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +57,16 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public List<Client> list() {
         return clientMapper.list();
+    }
+
+    @Override
+    public List<Client> list(Page page) {
+        return clientMapper.list(page);
+    }
+
+    @Override
+    public int total() {
+        return clientMapper.total();
     }
 
     @Override
