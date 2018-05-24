@@ -8,6 +8,11 @@
     <script src="js/bootstrap/3.3.6/bootstrap.min.js"></script>
     <link href="css/signin.css" rel="stylesheet">
 </head>
+<style>
+    .gap {
+        margin-top: 10%;
+    }
+</style>
 <body>
 <!--导航条-->
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -46,7 +51,7 @@
     </nav>
 
 
-    <form class="form-signin" action="addUser" method="post">
+    <form class="form-signin gap" action="addUser" method="post">
         <h2 class="form-signin-heading">注册</h2>
         <label for="inputAccount" class="sr-only">账号</label>
         <input type="text" id="inputAccount" class="form-control" placeholder="账号" required autofocus>
