@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="cfb2c0a4-c7bc-43ee-9318-92e2f8caf082" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/quotation.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/signin.html" afterPath="$PROJECT_DIR$/web/signin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/signup.html" afterPath="$PROJECT_DIR$/web/signup.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/businessModel.html" afterPath="$PROJECT_DIR$/web/businessModel.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/clientBackup.html" afterPath="$PROJECT_DIR$/web/clientBackup.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/clientInfo.html" afterPath="$PROJECT_DIR$/web/clientInfo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/contractManage.html" afterPath="$PROJECT_DIR$/web/contractManage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/contractTemplate.html" afterPath="$PROJECT_DIR$/web/contractTemplate.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/questionnaireManage.html" afterPath="$PROJECT_DIR$/web/questionnaireManage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/salesInfo.html" afterPath="$PROJECT_DIR$/web/salesInfo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/salesManage.html" afterPath="$PROJECT_DIR$/web/salesManage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/sampleManage.html" afterPath="$PROJECT_DIR$/web/sampleManage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/supplierBackup.html" afterPath="$PROJECT_DIR$/web/supplierBackup.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/supplierInfo.html" afterPath="$PROJECT_DIR$/web/supplierInfo.html" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -31,43 +41,7 @@
     <favorites_list name="SVSP_0.3" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="contractTemplate.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/contractTemplate.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2508">
-              <caret line="138" column="37" selection-start-line="138" selection-start-column="37" selection-end-line="138" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="signin.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/signin.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-              <folding>
-                <element signature="n#script#2;n#head#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="signup.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/signup.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-              <folding>
-                <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -94,19 +68,20 @@
         <option value="$PROJECT_DIR$/web/test.php" />
         <option value="$PROJECT_DIR$/web/index.html" />
         <option value="$PROJECT_DIR$/web/wastesPlatform.html" />
-        <option value="$PROJECT_DIR$/web/contractTemplate.html" />
+        <option value="$PROJECT_DIR$/web/signin.html" />
+        <option value="$PROJECT_DIR$/web/signup.html" />
+        <option value="$PROJECT_DIR$/web/quotation.html" />
         <option value="$PROJECT_DIR$/web/businessModel.html" />
         <option value="$PROJECT_DIR$/web/clientBackup.html" />
         <option value="$PROJECT_DIR$/web/clientInfo.html" />
         <option value="$PROJECT_DIR$/web/contractManage.html" />
+        <option value="$PROJECT_DIR$/web/contractTemplate.html" />
         <option value="$PROJECT_DIR$/web/questionnaireManage.html" />
         <option value="$PROJECT_DIR$/web/salesInfo.html" />
         <option value="$PROJECT_DIR$/web/salesManage.html" />
         <option value="$PROJECT_DIR$/web/sampleManage.html" />
         <option value="$PROJECT_DIR$/web/supplierBackup.html" />
         <option value="$PROJECT_DIR$/web/supplierInfo.html" />
-        <option value="$PROJECT_DIR$/web/signin.html" />
-        <option value="$PROJECT_DIR$/web/signup.html" />
       </list>
     </option>
   </component>
@@ -737,7 +712,7 @@
       <option name="presentableId" value="Default" />
       <updated>1526890239955</updated>
       <workItem from="1526890241529" duration="5942000" />
-      <workItem from="1526971173331" duration="44659000" />
+      <workItem from="1526971173331" duration="45321000" />
     </task>
     <task id="LOCAL-00001" summary="首页完成">
       <created>1526967548758</created>
@@ -858,15 +833,22 @@
       <option name="project" value="LOCAL" />
       <updated>1527130238962</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="修改登录界面">
+      <created>1527130484683</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1527130484683</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50601000" />
+    <option name="totallyTimeSpent" value="51263000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-254" y="-1080" width="1920" height="1080" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -884,7 +866,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.114583336" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.114583336" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -927,7 +909,8 @@
     <MESSAGE value="供应商页面调整" />
     <MESSAGE value="合同列表页面完成" />
     <MESSAGE value="合同模板列表完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="合同模板列表完成" />
+    <MESSAGE value="修改登录界面" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改登录界面" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1119,115 +1102,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/businessModel.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="51" column="62" selection-start-line="51" selection-start-column="62" selection-end-line="51" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/clientBackup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="72" column="62" selection-start-line="72" selection-start-column="62" selection-end-line="72" selection-end-column="62" />
-          <folding>
-            <element signature="n#script#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/clientInfo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="54" column="62" selection-start-line="54" selection-start-column="62" selection-end-line="54" selection-end-column="62" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#1;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#1;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#2;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#2;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/contractManage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="72" column="62" selection-start-line="72" selection-start-column="62" selection-end-line="72" selection-end-column="62" />
-          <folding>
-            <element signature="n#style#0;n#select#0;n#div#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/questionnaireManage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="72" column="62" selection-start-line="72" selection-start-column="62" selection-end-line="72" selection-end-column="62" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/salesInfo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="54" column="62" selection-start-line="54" selection-start-column="62" selection-end-line="54" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/salesManage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="72" column="62" selection-start-line="72" selection-start-column="62" selection-end-line="72" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/sampleManage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="72" column="62" selection-start-line="72" selection-start-column="62" selection-end-line="72" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/supplierBackup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="72" column="62" selection-start-line="72" selection-start-column="62" selection-end-line="72" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/supplierInfo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="54" column="62" selection-start-line="54" selection-start-column="62" selection-end-line="54" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/wastesPlatform.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="23" column="59" selection-start-line="23" selection-start-column="59" selection-end-line="23" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/contractTemplate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2508">
-          <caret line="138" column="37" selection-start-line="138" selection-start-column="37" selection-end-line="138" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -1258,6 +1136,119 @@
           <folding>
             <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/quotation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1518">
+          <caret line="132" column="18" selection-start-line="132" selection-start-column="18" selection-end-line="132" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/businessModel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="57" column="55" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/clientBackup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="78" column="55" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
+          <folding>
+            <element signature="n#script#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/clientInfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="60" column="55" selection-start-line="60" selection-start-column="55" selection-end-line="60" selection-end-column="55" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#1;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#2;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#2;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/contractManage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="78" column="55" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
+          <folding>
+            <element signature="n#style#0;n#select#0;n#div#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/questionnaireManage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="78" column="65" selection-start-line="78" selection-start-column="65" selection-end-line="78" selection-end-column="65" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/salesInfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="60" column="65" selection-start-line="60" selection-start-column="65" selection-end-line="60" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/salesManage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="78" column="55" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/sampleManage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="78" column="55" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/supplierBackup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="78" column="55" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/supplierInfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="60" column="55" selection-start-line="60" selection-start-column="55" selection-end-line="60" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/contractTemplate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="78" column="55" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
