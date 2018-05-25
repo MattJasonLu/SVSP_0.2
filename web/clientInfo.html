@@ -4,16 +4,118 @@
     <meta charset="UTF-8">
     <title>客户新增</title>
     <script src="js/jquery/2.0.0/jquery.min.js"></script>
+    <script src="js/jquery/2.0.0/jquery.serializejson.js"></script>
     <link href="css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
     <script src="js/bootstrap/3.3.6/bootstrap.min.js"></script>
     <link href="css/dashboard.css" rel="stylesheet">
 </head>
-<style>
-    .gap {
-
+<script>
+    function printClient() {
+        console.log(JSON.stringify($('#clientInfoForm').serializeJSON()));
     }
-</style>
-<body>
+    function clientSave() {
+        printClient();
+        $.ajax({
+            type: "POST",                            // 方法类型
+            url: "saveClient",                       // url
+            async : false,                           // 同步：意思是当有返回值以后才会进行后面的js程序
+            data: JSON.stringify($('#clientInfoForm').serializeJSON()),
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                if (result != undefined) {
+                    console.log("success: " + result);
+                } else {
+                    console.log("fail: " + result);
+                }
+            },
+            error:function (result) {
+                console.log("error: " + result);
+            }
+        });
+    }
+    function clientSubmit() {
+        printClient();
+        $.ajax({
+            type: "POST",                            // 方法类型
+            url: "submitClient",                        // url
+            async : false,                           // 同步：意思是当有返回值以后才会进行后面的js程序
+            data: JSON.stringify($('#clientInfoForm').serializeJSON()),
+            dataType: "json",
+            success: function (result) {
+                if (result != undefined) {
+                    console.log("success: " + result);
+                } else {
+                    console.log("fail: " + result);
+                }
+            },
+            error:function (result) {
+                console.log("error: " + result);
+            }
+        });
+    }
+    function loadSelectList() {
+        $.ajax({
+            type: "POST",                            // 方法类型
+            url: "getSelectedList",                  // url
+            dataType: "json",
+            success: function (result) {
+                if (result != undefined) {
+                    var data = eval(result);
+                    // 各下拉框数据填充
+                    var enterpriseType = $("#enterpriseType");
+                    $.each(data.enterpriseTypeStrList, function (index, item) {
+                        var option = $('<option />');
+                        option.val(index+1);
+                        option.text(item);
+                        enterpriseType.append(option);
+                    });
+                    var operationType = $("#operationType");
+                    $.each(data.operationTypeStrList, function (index, item) {
+                        var option = $('<option />');
+                        option.val(index+1);
+                        option.text(item);
+                        operationType.append(option);
+                    });
+                    var operationRecord = $("#operationRecord");
+                    $.each(data.operationRecordStrList, function (index, item) {
+                        var option = $('<option />');
+                        option.val(index+1);
+                        option.text(item);
+                        operationRecord.append(option);
+                    });
+                    var operationMode = $("#operationMode");
+                    $.each(data.operationModeStrList, function (index, item) {
+                        var option = $('<option />');
+                        option.val(index+1);
+                        option.text(item);
+                        operationMode.append(option);
+                    });
+                    var contingencyPlan = $("#contingencyPlan");
+                    $.each(data.contingencyPlanStrList, function (index, item) {
+                        var option = $('<option />');
+                        option.val(index+1);
+                        option.text(item);
+                        contingencyPlan.append(option);
+                    });
+                    var applicationStatus = $("#applicationStatus");
+                    $.each(data.applicationStatusStrList, function (index, item) {
+                        var option = $('<option />');
+                        option.val(index+1);
+                        option.text(item);
+                        applicationStatus.append(option);
+                    });
+                } else {
+                    console.log("fail: " + result);
+                }
+            },
+            error:function (result) {
+                console.log("error: " + result);
+            }
+        });
+    }
+</script>
+<body onload="loadSelectList()">
     <!--导航条-->
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -94,7 +196,7 @@
                 </ol>
             </div>
             <h2 class="sub-header">客户新增</h2>
-            <form method="post" id="clientInfoForm">
+            <form method="post" id="clientInfoForm" enctype="multipart/form-data">
                 <h4 class="text-info">基本信息</h4>
                 <div class="row">
                     <div class="form-horizontal col-md-6">
@@ -127,10 +229,6 @@
                             <div class="col-xs-5">
                                 <select class="form-control" name="enterpriseType" id="enterpriseType">
                                     <option value="0">--请选择--</option>
-                                    <option value="1" >国有企业</option>
-                                    <option value="2" >集体企业</option>
-                                    <option value="3" >国有企业改组的股份合作企业</option>
-                                    <option value="4" >集体企业改组的股份合作企业</option>
                                 </select>
                             </div>
                         </div>
@@ -139,10 +237,6 @@
                             <div class="col-xs-5">
                                 <select class="form-control" name="operationType" id="operationType">
                                     <option value="0">--请选择--</option>
-                                    <option value="1" >利用处置危险废物及医疗废物</option>
-                                    <option value="2" >只从事收集活动</option>
-                                    <option value="3" >只利用处置危险废物</option>
-                                    <option value="4" >只处置医疗废物</option>
                                 </select>
                             </div>
                         </div>
@@ -151,8 +245,6 @@
                             <div class="col-xs-5">
                                 <select class="form-control" name="operationRecord" id="operationRecord">
                                     <option value="0">--请选择--</option>
-                                    <option value="1" >综合</option>
-                                    <option value="2" >收集</option>
                                 </select>
                             </div>
                         </div>
@@ -193,8 +285,6 @@
                             <div class="col-xs-5">
                                 <select class="form-control" name="operationMode" id="operationMode">
                                     <option value="0">--请选择--</option>
-                                    <option value="1">综合</option>
-                                    <option value="2">收集</option>
                                 </select>
                             </div>
                         </div>
@@ -203,8 +293,6 @@
                             <div class="col-xs-5">
                                 <select class="form-control" name="contingencyPlan" id="contingencyPlan">
                                     <option value="0">--请选择--</option>
-                                    <option value="1" >综合</option>
-                                    <option value="2" >收集</option>
                                 </select>
                             </div>
                         </div>
@@ -213,8 +301,6 @@
                             <div class="col-xs-5">
                                 <select class="form-control" name="applicationStatus" id="applicationStatus">
                                     <option value="0">--请选择--</option>
-                                    <option value="1" >已申报</option>
-                                    <option value="2" >未申报</option>
                                 </select>
                             </div>
                         </div>
@@ -283,8 +369,8 @@
                     </div>
                 </div>
                 <div class="row text-center">
-                    <a class="btn btn-success">保存</a>
-                    <a class="btn btn-primary">提交</a>
+                    <a class="btn btn-success" onclick="clientSave()">保存</a>
+                    <a class="btn btn-primary" onclick="clientSubmit()">提交</a>
                     <a class="btn btn-danger" href="clientBackup.html">返回</a>
                 </div>
             </form>

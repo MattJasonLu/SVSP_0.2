@@ -8,7 +8,9 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -27,10 +29,10 @@ public class ClientController {
     ClientService clientService;
 
     @RequestMapping("addClient")
-    public ModelAndView addClient(Client client) {
-        ModelAndView mav = new ModelAndView();
+    @ResponseBody
+    public String addClient(@RequestBody Client client) {
+        JSONObject res = new JSONObject();
         try {
-            // 文件名设置，上传文件
             // TODO: 同名文件上传会出现问题，修改为随机名称
             if (client.getMaterialAttachment() != null && !client.getMaterialAttachment().getOriginalFilename().equals("")) {
                 String materialAttachmentName = client.getMaterialAttachment().getOriginalFilename();
@@ -52,22 +54,39 @@ public class ClientController {
             }
         } catch (IOException e) {
             e.printStackTrace();
-            mav.addObject("message", "创建客户失败，请完善信息！");
-            mav.setViewName("fail");
+            res.put("status", "fail");
+            res.put("message", "创建客户失败，请完善信息!");
         }
         // TODO: 修改暂时编号（规则未定）
         client.setTemporaryId(RandomUtil.getRandomFileName());
+        // 启用账户
+        client.setClientState(ClientState.Enabled);
 
         try {
             clientService.add(client);
-            mav.addObject("message", "备案成功");
-            mav.setViewName("success");
+            res.put("status", "success");
+            res.put("message", "备案成功");
         } catch (Exception e) {
             e.printStackTrace();
-            mav.addObject("message", "信息输入错误，请重试！" + e);
-            mav.setViewName("fail");
+            res.put("status", "fail");
+            res.put("message", "信息输入错误，请重试!");
         }
-        return mav;
+        return res.toString();
+    }
+
+    @RequestMapping("saveClient")
+    @ResponseBody
+    public void saveClient(@RequestBody Client client) {
+        // 审核状态为待提交
+        client.setCheckState(CheckState.ToSubmit);
+        addClient(client);
+    }
+    @RequestMapping("submitClient")
+    @ResponseBody
+    public void submitClient(@RequestBody Client client) {
+        // 审核状态为审批中
+        client.setCheckState(CheckState.Examining);
+        addClient(client);
     }
 
     @RequestMapping("updateClient")
@@ -91,6 +110,55 @@ public class ClientController {
         JSONArray array = JSONArray.fromArray(clientList.toArray(new Client[clientList.size()]));
         // 返回结果
         return array.toString();
+    }
+
+    @RequestMapping("getSelectedList")
+    @ResponseBody
+    public String getSelectedList() {
+        JSONObject res = new JSONObject();
+        List<String> enterpriseTypeStrList = new ArrayList<>();
+        for (EnterpriseType enterpriseType : EnterpriseType.values()) {
+            enterpriseTypeStrList.add(enterpriseType.getName());
+        }
+        JSONArray array1 = JSONArray.fromArray(enterpriseTypeStrList.toArray(new String[enterpriseTypeStrList.size()]));
+        res.put("enterpriseTypeStrList", array1);
+        // 经营方式
+        List<String> operationModeStrList = new ArrayList<>();
+        for (OperationMode operationMode : OperationMode.values()) {
+            operationModeStrList.add(operationMode.getName());
+        }
+        JSONArray array2 = JSONArray.fromArray(operationModeStrList.toArray(new String[operationModeStrList.size()]));
+        res.put("operationModeStrList", array2);
+        // 经营单位类别
+        List<String> operationTypeStrList = new ArrayList<>();
+        for (OperationType operationType : OperationType.values()) {
+            operationTypeStrList.add(operationType.getName());
+        }
+        JSONArray array3 = JSONArray.fromArray(operationTypeStrList.toArray(new String[operationTypeStrList.size()]));
+        res.put("operationTypeStrList", array3);
+        // 应急预案
+        List<String> contingencyPlanStrList = new ArrayList<>();
+        for (ContingencyPlan contingencyPlan : ContingencyPlan.values()) {
+            contingencyPlanStrList.add(contingencyPlan.getName());
+        }
+        JSONArray array4 = JSONArray.fromArray(contingencyPlanStrList.toArray(new String[contingencyPlanStrList.size()]));
+        res.put("contingencyPlanStrList", array4);
+        // 危废记录
+        List<String> operationRecordStrList = new ArrayList<>();
+        for (OperationRecord operationRecord : OperationRecord.values()) {
+            operationRecordStrList.add(operationRecord.getName());
+        }
+        JSONArray array5 = JSONArray.fromArray(operationRecordStrList.toArray(new String[operationRecordStrList.size()]));
+        res.put("operationRecordStrList", array5);
+        // 申报状态
+        List<String> applicationStatusStrList = new ArrayList<>();
+        for (ApplicationStatus applicationStatus : ApplicationStatus.values()) {
+            applicationStatusStrList.add(applicationStatus.getName());
+        }
+        JSONArray array6 = JSONArray.fromArray(applicationStatusStrList.toArray(new String[applicationStatusStrList.size()]));
+        res.put("applicationStatusStrList", array6);
+
+        return res.toString();
     }
 
     @RequestMapping("getClient")
