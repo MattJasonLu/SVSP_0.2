@@ -25,12 +25,15 @@
             success: function (result) {
                 if (result != undefined) {
                     console.log("success: " + result);
+                    alert("保存成功!");
                 } else {
                     console.log("fail: " + result);
+                    alert("保存失败!");
                 }
             },
             error:function (result) {
                 console.log("error: " + result);
+                alert("服务器异常!");
             }
         });
     }
@@ -38,19 +41,23 @@
         printClient();
         $.ajax({
             type: "POST",                            // 方法类型
-            url: "submitClient",                        // url
+            url: "submitClient",                     // url
             async : false,                           // 同步：意思是当有返回值以后才会进行后面的js程序
             data: JSON.stringify($('#clientInfoForm').serializeJSON()),
             dataType: "json",
+            contentType: "application/json; charset=utf-8",
             success: function (result) {
                 if (result != undefined) {
                     console.log("success: " + result);
+                    alert("提交成功!");
                 } else {
                     console.log("fail: " + result);
+                    alert("提交失败!");
                 }
             },
             error:function (result) {
                 console.log("error: " + result);
+                alert("服务器异常!");
             }
         });
     }
@@ -66,42 +73,42 @@
                     var enterpriseType = $("#enterpriseType");
                     $.each(data.enterpriseTypeStrList, function (index, item) {
                         var option = $('<option />');
-                        option.val(index+1);
+                        option.val(index);
                         option.text(item);
                         enterpriseType.append(option);
                     });
                     var operationType = $("#operationType");
                     $.each(data.operationTypeStrList, function (index, item) {
                         var option = $('<option />');
-                        option.val(index+1);
+                        option.val(index);
                         option.text(item);
                         operationType.append(option);
                     });
                     var operationRecord = $("#operationRecord");
                     $.each(data.operationRecordStrList, function (index, item) {
                         var option = $('<option />');
-                        option.val(index+1);
+                        option.val(index);
                         option.text(item);
                         operationRecord.append(option);
                     });
                     var operationMode = $("#operationMode");
                     $.each(data.operationModeStrList, function (index, item) {
                         var option = $('<option />');
-                        option.val(index+1);
+                        option.val(index);
                         option.text(item);
                         operationMode.append(option);
                     });
                     var contingencyPlan = $("#contingencyPlan");
                     $.each(data.contingencyPlanStrList, function (index, item) {
                         var option = $('<option />');
-                        option.val(index+1);
+                        option.val(index);
                         option.text(item);
                         contingencyPlan.append(option);
                     });
                     var applicationStatus = $("#applicationStatus");
                     $.each(data.applicationStatusStrList, function (index, item) {
                         var option = $('<option />');
-                        option.val(index+1);
+                        option.val(index);
                         option.text(item);
                         applicationStatus.append(option);
                     });

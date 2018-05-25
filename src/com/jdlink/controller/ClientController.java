@@ -28,6 +28,11 @@ public class ClientController {
     @Autowired
     ClientService clientService;
 
+    /**
+     * 新增客户
+     * @param client 客户
+     * @return 成功与否
+     */
     @RequestMapping("addClient")
     @ResponseBody
     public String addClient(@RequestBody Client client) {
@@ -74,26 +79,30 @@ public class ClientController {
         return res.toString();
     }
 
+    /**
+     * 保存客户
+     * @param client 客户
+     * @return 成功与否
+     */
     @RequestMapping("saveClient")
     @ResponseBody
-    public void saveClient(@RequestBody Client client) {
+    public String saveClient(@RequestBody Client client) {
         // 审核状态为待提交
         client.setCheckState(CheckState.ToSubmit);
-        addClient(client);
-    }
-    @RequestMapping("submitClient")
-    @ResponseBody
-    public void submitClient(@RequestBody Client client) {
-        // 审核状态为审批中
-        client.setCheckState(CheckState.Examining);
-        addClient(client);
+        return addClient(client);
     }
 
-    @RequestMapping("updateClient")
-    public ModelAndView updateClient(Client client) {
-        ModelAndView mav = new ModelAndView();
-        clientService.update(client);
-        return null;
+    /**
+     * 提交客户
+     * @param client 客户
+     * @return 成功与否
+     */
+    @RequestMapping("submitClient")
+    @ResponseBody
+    public String submitClient(@RequestBody Client client) {
+        // 审核状态为审批中
+        client.setCheckState(CheckState.Examining);
+        return addClient(client);
     }
 
     /**
@@ -112,6 +121,10 @@ public class ClientController {
         return array.toString();
     }
 
+    /**
+     * 取出下拉框列表
+     * @return 下拉框json数据对象
+     */
     @RequestMapping("getSelectedList")
     @ResponseBody
     public String getSelectedList() {
@@ -238,5 +251,12 @@ public class ClientController {
         mav.addObject("applicationStatusStrList", applicationStatusStrList);
         mav.setViewName("showClient");
         return mav;
+    }
+
+    @RequestMapping("updateClient")
+    public ModelAndView updateClient(Client client) {
+        ModelAndView mav = new ModelAndView();
+        clientService.update(client);
+        return null;
     }
 }
