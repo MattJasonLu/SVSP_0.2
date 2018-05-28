@@ -20,13 +20,13 @@
             <value>com.mysql.jdbc.Driver</value>
         </property>
         <property name="url">
-            <value>jdbc:mysql://118.89.183.178:3306/jdlink?characterEncoding=UTF-8&amp;allowMultiQueries=true</value>
+            <value>jdbc:mysql://172.16.1.92:3306/jdlink?characterEncoding=UTF-8&amp;allowMultiQueries=true</value>
         </property>
         <property name="username">
             <value>root</value>
         </property>
         <property name="password">
-            <value>lujiachun1</value>
+            <value>123456</value>
         </property>
     </bean>
 

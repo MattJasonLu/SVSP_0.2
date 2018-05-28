@@ -61,6 +61,7 @@
                             }
                         });
                         // 把克隆好的tr追加到原来的tr前面
+                        clonedTr.removeAttr("id");
                         clonedTr.insertBefore(tr);
                     });
                     // 隐藏无数据的tr
@@ -147,7 +148,6 @@
         </div>
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-
             <div class="row">
                 <div>
                     <ol class="breadcrumb">
@@ -201,11 +201,11 @@
                             <div class="dropdown">
                                 <a href="#" class="btn btn-primary dropdown-toggle btn-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">操作<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">新增</a></li>
-                                    <li><a href="#">修改</a></li>
-                                    <li><a href="#">停用</a></li>
-                                    <li><a href="#">启用</a></li>
-                                    <li><a href="#">删除</a></li>
+                                    <li><a href="clientInfo.html">新增</a></li>
+                                    <li><a class="adjust-client" href="#" onclick="adjustClient(this);">修改</a></li>
+                                    <li><a class="disable-client" href="#">停用</a></li>
+                                    <li><a class="enable-client" href="#">启用</a></li>
+                                    <li><a class="delete-client" href="#">删除</a></li>
                                 </ul>
                             </div>
                         </td>
@@ -242,8 +242,39 @@
                     </ul>
                 </nav>
             </div>
+
+            <!--<button name="adjust-1">修改0</button>-->
+            <!--<a class="adjust-client" href="#" onclick="">修改1</a>-->
+            <!--<a class="adjust-client" href="#" onclick="">修改2</a>-->
+            <!--<a class="adjust-client" href="#" onclick="">修改3</a>-->
         </div>
     </div>
 
 </body>
+<script type="text/javascript">
+//    软用没有
+//    $(document).ready(function(){
+//        $("a[class=adjust-client]").click(function(){
+//            alert("click");
+//            alert($(this).html());
+//        });
+//    });
+    /**
+     * 获取用户的编号
+     * @param item
+     * @returns {string}
+     */
+    function getClientId(item) {
+        return item.parentElement.parentElement.parentElement.parentElement.nextElementSibling.innerHTML;
+    }
+    /**
+     * 修改用户
+     * @param item
+     */
+    function adjustClient(item) {
+        // 拿到点击条目的客户编号
+        var id = getClientId(item);
+        window.location.href = "showClient?id=" + id;
+    }
+</script>
 </html>
